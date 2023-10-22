@@ -1,0 +1,285 @@
+.logo {
+    width: auto;
+    height: 28px;
+}
+
+.main-header {
+    border-radius: 0px 0px 8px 8px;
+    border: 1.5px solid #111;
+    background: #FFF;
+    z-index: 1;
+
+    &__navigation {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 4px 0;
+      letter-spacing: 0.02em;
+      font-weight: 500;
+
+      @include desktop {
+        padding: 5px 0;
+      }
+    }
+  
+    &__menu {
+      display: flex;
+      font-size: 14px;
+      line-height: 16px;
+      letter-spacing: 0.02em;
+      align-items: center;
+      justify-content: flex-start;
+    }
+  
+    &__menu li:nth-of-type(2) {
+      
+      margin-left: 15px;
+
+      @include tablet {
+        margin-left: 60px ;
+      }
+
+      @include desktop {
+        margin-left: 105px;
+      }
+    }
+
+    &__hamburger {
+      background-color: transparent;
+    border: none;
+    display: flex;
+    padding-right: 25px;
+    position: absolute;
+    right: 0;
+
+    &:hover,
+    &:focus {
+      fill: blue;
+    }
+
+    @include tablet {
+      display: none;
+    }
+    }
+       
+    }
+    .main-menu__nav {
+      padding: 8px 16px;
+      text-align: center;
+      max-width: 254px;
+      margin-right: 46px;
+      color: #111;
+      font-family: 'DM Sans', sans-serif;
+      font-size: 14px;
+      font-style: normal;
+      font-weight: 700;
+      line-height: 18px; 
+      letter-spacing: -0.56px;
+      text-transform: uppercase;
+      transition: background-color 0.3s; 
+      border-radius: 36px; 
+      text-decoration: none;
+      // display: none // Do usunięcia (pojawia się po zalogowaniu)
+      
+      &__hamburger {
+        background-color: transparent;
+        border: none;
+        display: flex;
+        padding-right: 20px;
+    
+        &:hover,
+        &:focus {
+          fill: blue;
+        }
+    
+        @include tablet {
+          display: none;
+        }
+  
+    }
+  }
+
+  .main-menu__nav {
+    & a {
+    color: #111;
+    display: none;
+    
+    @include tablet {
+      display: flex;
+      
+    
+    }
+    
+    
+  }
+}
+
+.main-menu__nav:nth-of-type(2):hover,
+.main-menu__nav:nth-of-type(3):hover {
+  @include tablet {    
+  background-color: #EAC645; 
+      border-radius: 36px; 
+      padding: 8px 16px; 
+      transition: background-color 0.3s; 
+      text-decoration: none;
+      cursor: pointer;
+  }
+    }
+
+.main-menu__icon {
+  
+    margin-left: 5px;
+
+}
+
+
+
+ .mode-buttons {
+
+    &__login{
+    display: flex;
+      justify-content: flex-end;
+      align-items: center;
+      font-weight: 500;
+      gap: 50px;
+      font-size: 14px;
+      line-height: 16px;
+      letter-spacing: 0.02em;
+      
+      
+    }
+ }
+
+
+ 
+.switch {
+    position: absolute;
+    display: inline-block;
+    width: 40px;
+    height: 24px;
+    right: 85px;
+    top: 15px;
+
+    @include tablet {
+      position: absolute;
+    display: inline-block;
+    width: 40px;
+    height: 24px;
+    top: 28px;
+    right: 230px;
+    }
+    
+  }
+  
+ 
+  .switch input {
+    opacity: 0;
+    width: 0;
+    height: 0;
+  }
+  
+  
+  .slider {
+    position:absolute;
+    cursor: pointer;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: #ccc;
+    -webkit-transition: .4s;
+    transition: .4s;
+    
+  }
+  
+  .slider:before {
+    position: absolute;
+    content: "";
+    height: 18px;
+    width: 18px;
+    left: 3px;
+    bottom: 3px;
+    background-color: white;
+    -webkit-transition: .4s;
+    transition: .4s;
+  }
+  
+  input:checked + .slider {
+    background: linear-gradient(180deg, #4F2EE8 0%, #DCDCDC 100%);
+}
+
+  
+  input:focus + .slider {
+    box-shadow: 0 0 1px linear-gradient(180deg, #4F2EE8 0%, #DCDCDC 100%);
+  }
+  
+  input:checked + .slider:before {
+    -webkit-transform: translateX(18px);
+    -ms-transform: translateX(18px);
+    transform: translateX(18px);
+  }
+  
+ 
+  .slider.round {
+    border-radius: 34px;
+  }
+  
+  .slider.round:before {
+    border-radius: 50%;
+  }
+
+
+  
+  .sign-up {
+    border-radius: 18px;
+    border: 1.5px solid #111;
+    background: #4F2EE8;
+    width: 184px;
+    height: 48px;
+    text-align: left;
+    color: white;
+    padding-left: 14px;
+    cursor: pointer;
+    display: none;
+
+    @include tablet {
+      display: flex;
+      position: absolute;
+      right: 15px;
+      top: 13px
+    }
+
+    &__arrow{
+      position: absolute;
+      top: 12;
+      right: 25;
+    }
+
+    &__text {
+      position: absolute;
+      top: 14px;
+    }
+  }
+
+
+
+  .profile {
+    border-radius: 36px;
+    border: 1.5px solid ;
+    background: #4F2EE8;
+    width: 184px;
+    height: 48px;
+    text-align: left;
+    color: white;
+    padding-left: 14px;
+    cursor: pointer;
+    display: none; // do usunięcia (pojawia się po zalogowaniu)
+
+    &__down-arrow {
+      position: absolute;
+      margin-top: -4px;
+      margin-left: 80px;
+    }
+  }
+
+  
