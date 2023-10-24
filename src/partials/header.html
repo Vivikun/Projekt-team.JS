@@ -1,62 +1,66 @@
-<header class="main-header">
+<div class="container main-header__wrapper">
 
-    <div class="container main-header__wrapper">
+  <nav class="main-header__navigation">
 
-        <nav class="main-header__navigation">
+      <ul class="main-header__menu main-menu">
+          <li class="main-menu__item page-link"><a href="./index.html" class="page-link__logo">
+              <img class="logo" src="/src/images/header/logo-dark.png"></li>
+          <li class="main-menu__nav"><a href="./index.html">Home</a>
+              
+          </li>
+          <li class="main-menu__nav"><a href="#" class="shopping">Shopping List
+              <svg class="main-menu__icon" width="20" height="20">
+              <use href="/src/images/icons.svg#icon-Vector">
+              </use>
+          </svg>
+      </a>
+      </ul>
 
-            <ul class="main-header__menu main-menu">
-                <li class="main-menu__item page-link"><a href="./index.html" class="page-link__logo">
-                    <!-- <img class="logo" src="/src/images/logo (2).png"></li> -->
-                <li class="main-menu__nav"><a href="./index.html">Home</a>
+     
+       <div class="mode-buttons"> 
+          <ul class="mode-buttons__login">
+                  <li><label class="switch">
+                      <input type="checkbox">
+                      <span class="slider round"></span>
+                    </label>
                     
-                </li>
-                <li class="main-menu__nav"><a href="#" class="shopping">Shopping List
-                    <!-- <svg class="main-menu__icon" width="20" height="20">
-                    <use href="/src/images/symbol-defs.svg#icon-Vector">
-                    </use>
-                </svg> -->
-            </a>
-            </ul>
+                  </li>
+                  <li><button class="mode-buttons__sign-up sign-up" data-modal-open><a class="sign-up__text">Sign up</a>
+                    <svg class="sign-up__arrow" width="20" height="20">
+                      <use href="/src/images/icons.svg#icon-arrow-narrow-right">
+                      </use>
+                  </svg></button>
+                      <button class="mode-buttons__profile profile">Profile
+                        <svg class="sign-up__down-arrow" width="20" height="20">
+                          <use href="/src/images/icons.svg#icon-Vector-2">
+                          </use>
+                      </svg></button>
+                  </li>
+                  
+          </ul>
 
-           
-             <div class="mode-buttons"> 
-                <ul class="mode-buttons__login">
-                        <li><label class="switch">
-                            <input type="checkbox">
-                            <span class="slider round"></span>
-                          </label>
-                          
-                        </li>
-                        <li><button class="mode-buttons__sign-up sign-up" data-modal-open><a class="sign-up__text">Sign up</a>
-                            <!-- <img class="sign-up__arrow" src="/src/images/arrow-narrow-right (1).png"></button> -->
-                            <button class="mode-buttons__profile profile">Profile
-                            <!-- <img class="profile__down-arrow" src="/src/images/fi-ss-caret-down (1).png"></button> -->
-                        </li>
-                        
-                </ul>
+          
+        </div>
+      
+      <button class="main-header__hamburger js-open-menu" 
+      aria-expanded="false"
+      aria-controls="mobile-menu"
+    >
+      <svg
+        width="40"
+        height="40"
+        fill="currentColor"
+        viewBox="0 0 20 20"
+        xmlns="http://www.w3.org/2000/svg"
+      >
+        <path
+          fill-rule="evenodd"
+          d="M3 5a1 1 0 011-1h12a1 1 0 110 2H4a1 1 0 01-1-1zM3 10a1 1 0 011-1h12a1 1 0 110 2H4a1 1 0 01-1-1zM3 15a1 1 0 011-1h12a1 1 0 110 2H4a1 1 0 01-1-1z"
+          clip-rule="evenodd"
+        ></path>
+      </svg>
+    </button> 
 
-                
-              </div>
-            
-            <button class="main-header__hamburger js-open-menu" 
-            aria-expanded="false"
-            aria-controls="mobile-menu"
-          >
-            <svg
-              width="40"
-              height="40"
-              fill="currentColor"
-              viewBox="0 0 20 20"
-              xmlns="http://www.w3.org/2000/svg"
-            >
-              <path
-                fill-rule="evenodd"
-                d="M3 5a1 1 0 011-1h12a1 1 0 110 2H4a1 1 0 01-1-1zM3 10a1 1 0 011-1h12a1 1 0 110 2H4a1 1 0 01-1-1zM3 15a1 1 0 011-1h12a1 1 0 110 2H4a1 1 0 01-1-1z"
-                clip-rule="evenodd"
-              ></path>
-            </svg>
-          </button> 
+  </nav>
 
-        </nav>
-
-    </div>
+</div>
