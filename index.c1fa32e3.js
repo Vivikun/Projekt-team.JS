@@ -517,7 +517,7 @@ let t=await getTopBooks();t=t.map(t=>({...t,books:t.books}))},eF=async()=>{try{l
             </li>`).join("")}
          </ul>`;/*@__PURE__*/c(eI).Notify.failure("Not found")}// Funkcja createTopBooksMarkup nie zwraca żadnych danych.
 (e,t)},eP=document.querySelector(".js-menu-container"),eX=document.querySelector(".js-open-menu"),e_=document.querySelector(".js-close-menu"),eH=()=>{let t="true"===eX.getAttribute("aria-expanded");eX.setAttribute("aria-expanded",!t),eP.classList.toggle("is-open");let e=t?"enableBodyScroll":"disableBodyScroll";bodyScrollLock[e](document.body)};eX.addEventListener("click",eH),e_.addEventListener("click",eH),window.matchMedia("(min-width: 768px) and (orientation: portrait)").addEventListener("change",t=>{t.matches||(eP.classList.remove("is-open"),eX.setAttribute("aria-expanded",!1),bodyScrollLock.enableBodyScroll(document.body))});const eq=document.getElementById("fetchBooks");eq.addEventListener("click",//---------------------
-// importowanie ksiazek toopbooks
+// importowanie ksiazek toopbooks aaa
 // async function fetchAndLogTopBooks() {
 //   try {
 //     const books = await getTopBooks();
@@ -592,6 +592,26 @@ function(){let t=document.getElementById("books-container");eB().then(e=>{consol
 //       console.log(error);
 //     });
 // }
-function(){eB().then(t=>{console.log(t);let e=t[0];if(!e||!e.books){console.error("Nie znaleziono książek.");return}let i=e.books,n=i.map(t=>t._id);console.log("ID wszystkich książek z listy:",n),((t,e)=>{try{let i=JSON.stringify(e);localStorage.setItem(t,i)}catch(t){console.error("Set state error: ",t.message)}})("selected-books",n)}).catch(t=>{console.log(t)})});const e$=document.getElementById("orgList");[{title:"Save the Children",url:"https://www.savethechildren.net/what-we-do/emergencies/ukraine-crisis",logo:"./images/Maskgroup.png"}].forEach(t=>{let e=document.createElement("li");if(t.logo){let i=document.createElement("img");i.src=t.logo,i.alt=t.title,e.appendChild(i),i.style.cursor="pointer",i.addEventListener("click",function(){window.open(t.url,"_blank")})}let i=document.createElement("a");i.href=t.url,i.textContent=t.title,i.className="org-title",e.appendChild(i),e$.appendChild(e)});//# sourceMappingURL=index.74f61025.js.map
+// function saveTopBooks() {
+//   getTopBooks()
+//     .then(response => {
+//       console.log(response);
+//       const list = response[0];
+//       if (!list || !list.books) {
+//         console.error('Nie znaleziono książek.');
+//         return;
+//       }
+//       const books = list.books;
+//       const bookIds = books.map(book => book._id);
+//       console.log('ID wszystkich książek z listy:', bookIds);
+//       storageMethods.save('selected-books', bookIds);
+//     })
+//     .catch(error => {
+//       console.log(error);
+//     });
+// }
+//------------------
+//pobierz i zapisz wszystkie ksiazki do local storage
+function(){eB().then(t=>{if(console.log(t),!t||0===t.length){console.error("Nie znaleziono listy książek.");return}let e=[];t.forEach(t=>{if(t.books&&t.books.length>0){let i=t.books.map(t=>t._id);e.push(...i)}}),console.log("ID wszystkich książek z listy:",e),((t,e)=>{try{let i=JSON.stringify(e);localStorage.setItem(t,i)}catch(t){console.error("Set state error: ",t.message)}})("selected-books",e)}).catch(t=>{console.log(t)})});const e$=document.getElementById("orgList");[{title:"Save the Children",url:"https://www.savethechildren.net/what-we-do/emergencies/ukraine-crisis",logo:"./images/Maskgroup.png"}].forEach(t=>{let e=document.createElement("li");if(t.logo){let i=document.createElement("img");i.src=t.logo,i.alt=t.title,e.appendChild(i),i.style.cursor="pointer",i.addEventListener("click",function(){window.open(t.url,"_blank")})}let i=document.createElement("a");i.href=t.url,i.textContent=t.title,i.className="org-title",e.appendChild(i),e$.appendChild(e)});//# sourceMappingURL=index.c1fa32e3.js.map
 
-//# sourceMappingURL=index.74f61025.js.map
+//# sourceMappingURL=index.c1fa32e3.js.map
