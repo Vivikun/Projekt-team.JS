@@ -163,3 +163,7 @@ function saveTopBooks() {
 }
 
 document.getElementById('save-books-button').addEventListener('click', saveTopBooks);
+
+// Wykorzystanie innerHTML w celu tworzenia elementów HTML z kodem źródłowym może być podatne na ataki XSS (Cross-Site Scripting), jeśli dane pochodzą od użytkowników lub są niezaufane.
+//  Możesz rozważyć użycie bardziej bezpiecznych metod, takich jak document.createElement, aby utworzyć elementy HTML.
+// Przed użyciem wartości z obiektu book, upewnij się, że dane są bezpieczne i nie zawierają niebezpiecznych skryptów.
