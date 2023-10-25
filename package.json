@@ -1,11 +1,11 @@
 {
-  "name": "parcel-project-template",
+  "name": "vivikun",
   "version": "1.1.0",
   "description": "",
-  "homepage": "https://github.com/Vivikun/Projekt-team.JS",
+  "homepage": "https://vivikun.github.io/name/",
   "scripts": {
     "dev": "parcel src/*.html",
-    "build": "parcel build src/*.html --public-url /Projekt-team.JS/"
+    "build": "parcel build src/*.html --public-url /name/"
   },
   "repository": {
     "type": "git",
