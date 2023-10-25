@@ -115,19 +115,47 @@ function displayBooks() {
 //     });
 // }
 
+// function saveTopBooks() {
+//   getTopBooks()
+//     .then(response => {
+//       console.log(response);
+//       const list = response[0];
+//       if (!list || !list.books) {
+//         console.error('Nie znaleziono książek.');
+//         return;
+//       }
+//       const books = list.books;
+//       const bookIds = books.map(book => book._id);
+//       console.log('ID wszystkich książek z listy:', bookIds);
+//       storageMethods.save('selected-books', bookIds);
+//     })
+//     .catch(error => {
+//       console.log(error);
+//     });
+// }
+//------------------
+//pobierz i zapisz wszystkie ksiazki do local storage
+
 function saveTopBooks() {
   getTopBooks()
     .then(response => {
       console.log(response);
-      const list = response[0];
-      if (!list || !list.books) {
-        console.error('Nie znaleziono książek.');
+      if (!response || response.length === 0) {
+        console.error('Nie znaleziono listy książek.');
         return;
       }
-      const books = list.books;
-      const bookIds = books.map(book => book._id);
-      console.log('ID wszystkich książek z listy:', bookIds);
-      storageMethods.save('selected-books', bookIds);
+
+      const allBookIds = [];
+
+      response.forEach(list => {
+        if (list.books && list.books.length > 0) {
+          const bookIds = list.books.map(book => book._id);
+          allBookIds.push(...bookIds);
+        }
+      });
+
+      console.log('ID wszystkich książek z listy:', allBookIds);
+      storageMethods.save('selected-books', allBookIds);
     })
     .catch(error => {
       console.log(error);
@@ -135,7 +163,3 @@ function saveTopBooks() {
 }
 
 document.getElementById('save-books-button').addEventListener('click', saveTopBooks);
-
-// Wykorzystanie innerHTML w celu tworzenia elementów HTML z kodem źródłowym może być podatne na ataki XSS (Cross-Site Scripting), jeśli dane pochodzą od użytkowników lub są niezaufane.
-//  Możesz rozważyć użycie bardziej bezpiecznych metod, takich jak document.createElement, aby utworzyć elementy HTML.
-// Przed użyciem wartości z obiektu book, upewnij się, że dane są bezpieczne i nie zawierają niebezpiecznych skryptów.
