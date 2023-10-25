@@ -5,7 +5,7 @@ import storageMethods from './storage-methods';
 const fetchBooksButton = document.getElementById('fetchBooks');
 fetchBooksButton.addEventListener('click', displayBooks);
 //---------------------
-// importowanie ksiazek toopbooks
+// importowanie ksiazek toopbooks aaa
 // async function fetchAndLogTopBooks() {
 //   try {
 //     const books = await getTopBooks();
@@ -115,19 +115,47 @@ function displayBooks() {
 //     });
 // }
 
+// function saveTopBooks() {
+//   getTopBooks()
+//     .then(response => {
+//       console.log(response);
+//       const list = response[0];
+//       if (!list || !list.books) {
+//         console.error('Nie znaleziono książek.');
+//         return;
+//       }
+//       const books = list.books;
+//       const bookIds = books.map(book => book._id);
+//       console.log('ID wszystkich książek z listy:', bookIds);
+//       storageMethods.save('selected-books', bookIds);
+//     })
+//     .catch(error => {
+//       console.log(error);
+//     });
+// }
+//------------------
+//pobierz i zapisz wszystkie ksiazki do local storage
+
 function saveTopBooks() {
   getTopBooks()
     .then(response => {
       console.log(response);
-      const list = response[0];
-      if (!list || !list.books) {
-        console.error('Nie znaleziono książek.');
+      if (!response || response.length === 0) {
+        console.error('Nie znaleziono listy książek.');
         return;
       }
-      const books = list.books;
-      const bookIds = books.map(book => book._id);
-      console.log('ID wszystkich książek z listy:', bookIds);
-      storageMethods.save('selected-books', bookIds);
+
+      const allBookIds = [];
+
+      response.forEach(list => {
+        if (list.books && list.books.length > 0) {
+          const bookIds = list.books.map(book => book._id);
+          allBookIds.push(...bookIds);
+        }
+      });
+
+      console.log('ID wszystkich książek z listy:', allBookIds);
+      storageMethods.save('selected-books', allBookIds);
     })
     .catch(error => {
       console.log(error);
