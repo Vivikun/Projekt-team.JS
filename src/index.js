@@ -1,9 +1,8 @@
 import './sass/main.scss';
 
-import './UKRAINE-slider';
+import './UKRAINE-slider.js';
 
-import './js/book-api.js'
+import './js/book-api.js';
 // import './js/mobile-menu.js'
-import './js/home-categories.js'
-import './js/shoppingList.js'
-
+import './js/home-categories.js';
+import './js/shoppingList.js';
