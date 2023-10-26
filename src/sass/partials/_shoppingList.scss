@@ -39,3 +39,54 @@
   text-decoration: none;
   color: #000;
 }
+/* General styles for the container */
+#render-books {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-top: 20px;
+}
+
+/* Each book card style */
+.book {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 300px;
+  padding: 20px;
+  margin: 10px 0;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  border-radius: 5px;
+  background-color: #fff;
+}
+
+.book img {
+  width: 100%; /* Make sure the image takes up the full width of the card, but respects its aspect ratio */
+  border-radius: 5px;
+  margin-bottom: 10px;
+}
+
+.book h3 {
+  font-size: 20px;
+  font-weight: bold;
+  margin: 10px 0;
+}
+
+.book p {
+  font-size: 14px;
+  color: #666;
+  margin: 5px 0;
+}
+
+/* Buy Links */
+.book a {
+  font-size: 14px;
+  color: #0066c0; /* Amazon blue */
+  text-decoration: none;
+  margin: 5px;
+  transition: color 0.3s;
+}
+
+.book a:hover {
+  color: #004080; /* Darker blue for hover effect */
+}
