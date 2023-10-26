@@ -516,7 +516,8 @@ let t=await getTopBooks();t=t.map(t=>({...t,books:t.books}))},eF=async()=>{try{l
             </a>
             </li>`).join("")}
          </ul>`;/*@__PURE__*/c(eI).Notify.failure("Not found")}// Funkcja createTopBooksMarkup nie zwraca żadnych danych.
-(e,t)},eP=document.querySelector(".js-menu-container"),eX=document.querySelector(".js-open-menu"),e_=document.querySelector(".js-close-menu"),eH=()=>{let t="true"===eX.getAttribute("aria-expanded");eX.setAttribute("aria-expanded",!t),eP.classList.toggle("is-open");let e=t?"enableBodyScroll":"disableBodyScroll";bodyScrollLock[e](document.body)};eX.addEventListener("click",eH),e_.addEventListener("click",eH),window.matchMedia("(min-width: 768px) and (orientation: portrait)").addEventListener("change",t=>{t.matches||(eP.classList.remove("is-open"),eX.setAttribute("aria-expanded",!1),bodyScrollLock.enableBodyScroll(document.body))});const eq=document.getElementById("fetchBooks");eq.addEventListener("click",//---------------------
+(e,t)},eP=document.querySelector(".js-menu-container"),eX=document.querySelector(".js-open-menu"),e_=window.matchMedia("(min-width: 768px) and (orientation: portrait)"),eH=()=>{eP.classList.remove("is-open"),eX.setAttribute("aria-expanded",!1),bodyScrollLock.enableBodyScroll(document.body)};eX.addEventListener("click",()=>{let t="true"===eX.getAttribute("aria-expanded");eX.setAttribute("aria-expanded",!t),eP.classList.toggle("is-open");let e=t?"enableBodyScroll":"disableBodyScroll";bodyScrollLock[e](document.body)}),// closeMenuBtn.addEventListener('click', closeMenu);
+e_.addEventListener("change",t=>{t.matches||eH()});const eq=document.getElementById("fetchBooks");eq.addEventListener("click",//---------------------
 // importowanie ksiazek toopbooks aaa
 // async function fetchAndLogTopBooks() {
 //   try {
@@ -616,6 +617,6 @@ function(){eB().then(t=>{if(console.log(t),!t||0===t.length){console.error("Nie 
         <img class="book-item_image" src="${t.book_image}" alt="${t.title}">
         <h3 class="book-item_title">${t.title}</h3>
         <p class="book-item_author"> ${t.author}</p>
-      `,n.appendChild(e)}),t.appendChild(i),t.appendChild(n)})});const eV=document.querySelector(".open-modal-button"),eJ=document.querySelector(".modal__container");eV.addEventListener("click",()=>{eJ.style.display="block"});const eK=eJ.querySelector(".modal__close-button");eK.addEventListener("click",()=>{eJ.style.display="none"});//# sourceMappingURL=index.17b79372.js.map
+      `,n.appendChild(e)}),t.appendChild(i),t.appendChild(n)})});const eV=document.querySelector(".open-modal-button"),eJ=document.querySelector(".modal__container");eV.addEventListener("click",()=>{eJ.style.display="block"});const eK=eJ.querySelector(".modal__close-button");eK.addEventListener("click",()=>{eJ.style.display="none"});//# sourceMappingURL=index.d64f786f.js.map
 
-//# sourceMappingURL=index.17b79372.js.map
+//# sourceMappingURL=index.d64f786f.js.map
