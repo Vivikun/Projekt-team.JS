@@ -32,7 +32,7 @@
     }
     &_nav-item {
       color: white;
-      font-family: DM Sans;
+      font-family: $font-family-primary;
     font-size: 14px;
     font-style: normal;
     font-weight: 700;
@@ -90,7 +90,7 @@
   .log-out {
     color: #111;
 
-font-family: DM Sans;
+font-family: $font-family-primary;
 font-size: 14px;
 font-style: normal;
 font-weight: 500;
