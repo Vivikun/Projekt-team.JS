@@ -25,8 +25,8 @@
   display: flex;
   flex-direction: column;
   gap: 20px;
-  list-style: none;
-  text-decoration: none;
+  // list-style: none;
+  // text-decoration: none;
 }
 .svg-btn {
   display: block;
@@ -36,7 +36,20 @@
 // .charityList {
 //   display: none;
 // }
+
 // .charityList a {
 //   color: white; /* Zmieniamy kolor tekstu na biały */
 //   text-decoration: none; /* Opcjonalnie usuwamy podkreślenie linków */
 // }
+.logo__item {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  height: 32px;
+}
+.fundNumber {
+   color: #ffffff;
+}
+.logo__img{
+display:flex;
+}
