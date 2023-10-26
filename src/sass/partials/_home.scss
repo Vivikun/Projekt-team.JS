@@ -1,56 +1,56 @@
-.page {
-  min-height: 100vh;
-  position: relative;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: space-between;
+// .page {
+//   min-height: 100vh;
+//   position: relative;
+//   display: flex;
+//   flex-direction: column;
+//   align-items: center;
+//   justify-content: space-between;
 
-  margin-bottom: 0;
-  padding-top: 104px;
-}
-.layout {
-  display: flex;
-  flex-direction: column;
-  gap: 40px;
-  margin-bottom: 40px;
-  padding-left: 10px;
-  padding-right: 10px;
- 
-}
-.visually-hidden {
-  width: 1px;
-    height: 1px;
-    white-space: nowrap;
-    clip-path: inset(100%);
-    clip: rect(0 0 0 0);
-    border: 0;
-    margin: -1px;
-    padding: 0;
-    position: absolute;
-    overflow: hidden;
-}
-.categories-list {
-flex-direction: column;
-gap: 24px;
-display: flex;
-}
-.category {
-  letter-spacing: -.02em;
-    cursor: pointer;
-    font-size: 16px;
-    line-height: 1.12;
-    transition-property: font-size,color;
-    transition-duration: .25s;
-    transition-timing-function: cubic-bezier(.075,.82,.165,1);
-}
-.chosen-category {
-  color: #4F2EE8;
-  font-family: "DM Sans";
-  font-size: 16px;
-  font-style: normal;
-  font-weight: 700;
-  line-height: 18px; /* 112.5% */
-  letter-spacing: -0.32px;
-  text-transform: uppercase;
-}
+//   margin-bottom: 0;
+//   padding-top: 104px;
+// }
+// .layout {
+//   display: flex;
+//   flex-direction: column;
+//   gap: 40px;
+//   margin-bottom: 40px;
+//   padding-left: 10px;
+//   padding-right: 10px;
+//  back
+// }
+// .visually-hidden {
+//   width: 1px;
+//     height: 1px;
+//     white-space: nowrap;
+//     clip-path: inset(100%);
+//     clip: rect(0 0 0 0);
+//     border: 0;
+//     margin: -1px;
+//     padding: 0;
+//     position: absolute;
+//     overflow: hidden;
+// }
+// .categories-list {
+// flex-direction: column;
+// gap: 24px;
+// display: flex;
+// }
+// .category {
+//   letter-spacing: -.02em;
+//     cursor: pointer;
+//     font-size: 16px;
+//     line-height: 1.12;
+//     transition-property: font-size,color;
+//     transition-duration: .25s;
+//     transition-timing-function: cubic-bezier(.075,.82,.165,1);
+// }
+// .chosen-category {
+//   color: #4F2EE8;
+//   font-family: "DM Sans";
+//   font-size: 16px;
+//   font-style: normal;
+//   font-weight: 700;
+//   line-height: 18px; /* 112.5% */
+//   letter-spacing: -0.32px;
+//   text-transform: uppercase;
+// }
