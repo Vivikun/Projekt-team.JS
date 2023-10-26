@@ -1,0 +1,105 @@
+.modal__container {
+    position: fixed;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  z-index: 1000;
+  background-color: #4F2EE8;
+  display: flex;
+  }
+
+
+
+.modal {
+    display: flex;
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 579px;
+    height: 516px;
+    background-color: white;
+    z-index: 100;
+    opacity: 1;
+    transition-property: opacity, visibility, transform;
+    transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+    transition-duration: 250ms;
+    border-radius: 18px;
+    text-align: center;
+    padding: 20px;
+    border: 2px solid #111;
+}
+
+
+
+.form {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.modal__input-group {
+    display: flex;
+    justify-content: center;
+    width: 499px;
+    padding: 20px 173px 20px 40px;
+    align-items: center;
+    gap: 10px;
+    border-radius: 40px;
+    border: 2px solid #111;
+    margin-bottom: 28px;
+}
+
+.modal__input-group input {
+    flex: 1;
+    border: none;
+    background: transparent;
+}
+
+.modal__sign-up {
+    display: flex;
+    width: 499px;
+    padding: 20px 173px;
+    justify-content: center;
+    align-items: flex-start;
+    gap: 10px;
+    border-radius: 40px;
+    background: #111;
+    color: #fff;
+    text-decoration: none;
+    margin-top: 12px;
+    border: black;
+}
+
+.links {
+    display: flex;
+    justify-content: center;
+    margin-top: 20px;
+}
+
+.links a {
+    margin: 0 10px;
+    text-decoration: none;
+    color: rgba(17, 17, 17, 0.50);
+}
+
+.modal__close-button {
+    position: absolute;
+    display: flex;
+    width: 30px;
+    height: 30px;
+    right: 8px;
+    top: 15px;
+    background-color: transparent;
+    border: transparent;
+    cursor: pointer;
+}
+
+
+
+
+
+.hidden {
+    display: none;
+}
