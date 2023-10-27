@@ -1,4 +1,4 @@
-const openModalButton = document.querySelector('.open-modal-button');
+const openModalButton = document.querySelector('.mode-buttons__sign-up');
 const modal = document.querySelector('.modal__container');
 
 
