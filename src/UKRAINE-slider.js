@@ -1,14 +1,21 @@
+import save_the_children from './images/ukraina-support/save-the-children.png';
+import project_hope from './images/ukraina-support/project-hope.png';
+
 const organizations = [
   {
     title: 'Save the Children',
     url: 'https://www.savethechildren.net/what-we-do/emergencies/ukraine-crisis',
-    logo: './images/Maskgroup.png',
+    img: save_the_children,
+    width: 131,
+    height: 32,
   },
-  // {
-  //   title: 'Project HOPE',
-  //   url: 'https://www.projecthope.org/country/ukraine/',
-  //   img: null,
-  // },
+    {
+    title: 'Project HOPE',
+    url: 'https://www.projecthope.org/country/ukraine/',
+    img: project_hope,
+    width: 62,
+    height: 32,
+  }
   // {
   //   title: 'UNITED24',
   //   url: 'https://u24.gov.ua/uk',
@@ -46,28 +53,49 @@ const organizations = [
   // },
 ];
 
-const orgList = document.getElementById('orgList');
+const logoContainer = document.querySelector('.ukraine-solider');
 
-organizations.forEach(org => {
-  const listItem = document.createElement('li');
+function logoList() {
+  const markup = organizations
+    .map(({ title, url, img, width, height }, index) => {
+      const paddedIndex = (index + 1).toString().padStart(2, '0');
+      return `<div class="logo__item fund-item"><p class="fundNumber">${paddedIndex}</p>
+      <a href="${url}" class="logo__img" target="_blank" crossorigin="anonymous"  rel="noopener noreferrer nofollow" aria-label="${title}" >
+            <picture>
+      <source srcset="${img}" />
+      <img src="${img}" alt="${title}" loading="lazy" width="${width}" height="${height}">
+    </picture>
+      </a>
+      </div>`;
+    })
+    .join('');
+  logoContainer.insertAdjacentHTML('beforeend', markup);
+}
 
-  if (org.logo) {
-    const logo = document.createElement('img');
-    logo.src = org.logo;
-    logo.alt = org.title;
-    listItem.appendChild(logo);
+logoList();
 
-    logo.style.cursor = 'pointer';
-    logo.addEventListener('click', function () {
-      window.open(org.url, '_blank');
-    });
-  }
+// const orgList = document.getElementById('orgList');
 
-  const link = document.createElement('a');
-  link.href = org.url;
-  link.textContent = org.title;
-  link.className = 'org-title';
-  listItem.appendChild(link);
+// organizations.forEach(org => {
+//   const listItem = document.createElement('li');
 
-  orgList.appendChild(listItem);
-});
+//   if (org.logo) {
+//     const logo = document.createElement('img');
+//     logo.src = org.logo;
+//     logo.alt = org.title;
+//     listItem.appendChild(logo);
+
+//     logo.style.cursor = 'pointer';
+//     logo.addEventListener('click', function () {
+//       window.open(org.url, '_blank');
+//     });
+//   }
+
+//   const link = document.createElement('a');
+//   link.href = org.url;
+//   link.textContent = org.title;
+//   link.className = 'org-title';
+//   listItem.appendChild(link);
+
+//   orgList.appendChild(listItem);
+// });
