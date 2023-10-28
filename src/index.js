@@ -6,3 +6,4 @@ import './js/shoppingList.js';
 import './UKRAINE-slider.js';
 import './js/home-books.js';
 import './js/signup-modal.js';
+import './js/darkmode';
