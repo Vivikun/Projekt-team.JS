@@ -9,18 +9,20 @@ const organizations = [
     width: 131,
     height: 32,
   },
-    {
+  {
     title: 'Project HOPE',
     url: 'https://www.projecthope.org/country/ukraine/',
     img: project_hope,
     width: 62,
     height: 32,
-  }
-  // {
-  //   title: 'UNITED24',
-  //   url: 'https://u24.gov.ua/uk',
-  //   img: null,
-  // },
+  },
+  {
+    title: 'UNITED24',
+    url: 'https://u24.gov.ua/uk',
+    img: 'https://s3-alpha-sig.figma.com/img/95d9/047c/31f67356d9ec8836786e579f2624efcc?Expires=1699228800&Signature=FHOwGwVHXegGo0LG~SM12eIdqPEfgjx8-zrS-1PQrgDliGhhAI9B6aRpj26lQ5-oavEYgSgvvzk99NnpbkHimvrmDeci6rUkrKl5PRDv4tkBiVsO7-oQ1pmxor97QNUD~WxUHXetE5Uf-7js~nCM1P6QRX55gAHvKKg4E8KwktESYLFfzlrXmvejMaplKKT8ZPzrF9NBMbmSJi0GBRKhxhSrgoAvfs0aGBs9gU9lkNj8or-WVyhBoYI6M4X1ndndwqOQ3UXeyULyiKQ0JdjOOcuVn3eL1Ofylm3eGSRDFyNWCcdCDxrKkxihoLw8X1VvOG5v33uT7unzsbW1lf5-9Q__&Key-Pair-Id=APKAQ4GOSFWCVNEHN3O4',
+    width: 103,
+    height: 32,
+  },
   // {
   //   title: 'International Medical Corps',
   //   url: 'https://internationalmedicalcorps.org/country/ukraine/',
