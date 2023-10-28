@@ -16,7 +16,6 @@
 //   margin-bottom: 40px;
 //   padding-left: 10px;
 //   padding-right: 10px;
-//  back
 // }
 // .visually-hidden {
 //   width: 1px;
@@ -54,3 +53,67 @@
 //   letter-spacing: -0.32px;
 //   text-transform: uppercase;
 // }
+.home-heading {
+  color: #111;
+  font-family: DM Sans;
+  font-size: 48px;
+  font-style: normal;
+  font-weight: 700;
+  line-height: 52px;
+  letter-spacing: -1.92px;
+  margin-bottom: 40px;
+  &_custom {
+    color: #4f2ee8;
+  }
+}
+.category-name {
+  color: #b4afaf;
+  max-width: 390px;
+  font-family: DM Sans;
+  font-size: 14px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 24px;
+  letter-spacing: 0.42px;
+  text-transform: uppercase;
+}
+.category-books {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 24px;
+}
+.book-item {
+  display: flex;
+  width: 180px;
+  flex-direction: column;
+  gap: 4px;
+  &_image {
+    height: 256px;
+    border-radius: 8px;
+    background: lightgray 50% / cover no-repeat;
+  }
+  &_title {
+    overflow: hidden;
+    color: #111;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    font-family: DM Sans;
+    font-size: 16px;
+    font-style: normal;
+    font-weight: 700;
+    line-height: 18px;
+    letter-spacing: -0.64px;
+  }
+  &_author {
+    color: #b4afaf;
+    font-family: DM Sans;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    overflow: hidden;
+    font-size: 12px;
+    font-style: italic;
+    font-weight: 400;
+    line-height: 14px;
+    letter-spacing: -0.48px;
+  }
+}
