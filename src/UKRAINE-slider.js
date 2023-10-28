@@ -1,5 +1,12 @@
 import save_the_children from './images/ukraina-support/save-the-children.png';
 import project_hope from './images/ukraina-support/project-hope.png';
+import medical from './images/ukraina-support/Medical.png';
+import razon from './images/ukraina-support/Razon.png';
+import hunger from './images/ukraina-support/Hunger.png';
+import prytula from './images/ukraina-support/Prytula.png';
+// import frontieres from './images/ukraina-support/Frontiers.png';
+import vision from './images/ukraina-support/Vision.png';
+import united from './images/ukraina-support/United.png';
 
 const organizations = [
   {
@@ -19,40 +26,50 @@ const organizations = [
   {
     title: 'UNITED24',
     url: 'https://u24.gov.ua/uk',
-    img: 'https://s3-alpha-sig.figma.com/img/95d9/047c/31f67356d9ec8836786e579f2624efcc?Expires=1699228800&Signature=FHOwGwVHXegGo0LG~SM12eIdqPEfgjx8-zrS-1PQrgDliGhhAI9B6aRpj26lQ5-oavEYgSgvvzk99NnpbkHimvrmDeci6rUkrKl5PRDv4tkBiVsO7-oQ1pmxor97QNUD~WxUHXetE5Uf-7js~nCM1P6QRX55gAHvKKg4E8KwktESYLFfzlrXmvejMaplKKT8ZPzrF9NBMbmSJi0GBRKhxhSrgoAvfs0aGBs9gU9lkNj8or-WVyhBoYI6M4X1ndndwqOQ3UXeyULyiKQ0JdjOOcuVn3eL1Ofylm3eGSRDFyNWCcdCDxrKkxihoLw8X1VvOG5v33uT7unzsbW1lf5-9Q__&Key-Pair-Id=APKAQ4GOSFWCVNEHN3O4',
+    img: united,
     width: 103,
     height: 32,
   },
-  // {
-  //   title: 'International Medical Corps',
-  //   url: 'https://internationalmedicalcorps.org/country/ukraine/',
-  //   img: null,
-  // },
-  // {
-  //   title: 'Medicins Sans Frontieres',
-  //   url: 'https://www.msf.org/ukraine',
-  //   img: null,
-  // },
-  // {
-  //   title: 'RAZOM',
-  //   url: 'https://www.razomforukraine.org/',
-  //   img: null,
-  // },
-  // {
-  //   title: 'Action against hunger',
-  //   url: 'https://www.actionagainsthunger.org/location/europe/ukraine/',
-  //   img: null,
-  // },
-  // {
-  //   title: 'World vision',
-  //   url: 'https://www.wvi.org/emergencies/ukraine',
-  //   img: null,
-  // },
-  // {
-  //   title: 'Serhiy Prytula Charity Foundation',
-  //   url: 'https://prytulafoundation.org/en',
-  //   img: null,
-  // },
+  {
+    title: 'International Medical Corps',
+    url: 'https://internationalmedicalcorps.org/country/ukraine/',
+    img: medical,
+    width: 101,
+    height: 32,
+  },
+  {
+    title: 'Medicins Sans Frontieres',
+    url: 'https://www.msf.org/ukraine',
+    img: medicins,
+    width: 102,
+    height: 32,
+  },
+  {
+    title: 'RAZOM',
+    url: 'https://www.razomforukraine.org/',
+    img: razon,
+    width: 82,
+    height: 32,
+  },
+  {
+    title: 'Action against hunger',
+    url: 'https://www.actionagainsthunger.org/location/europe/ukraine/',
+    img: hunger,
+  },
+  {
+    title: 'World vision',
+    url: 'https://www.wvi.org/emergencies/ukraine',
+    img: vision,
+    width: 55,
+    height: 32,
+  },
+  {
+    title: 'Serhiy Prytula Charity Foundation',
+    url: 'https://prytulafoundation.org/en',
+    img: prytula,
+    width: 115,
+    height: 32,
+  },
 ];
 
 const logoContainer = document.querySelector('.ukraine-solider');
