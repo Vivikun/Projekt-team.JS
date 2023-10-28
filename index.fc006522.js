@@ -644,6 +644,6 @@ document.addEventListener("DOMContentLoaded",async()=>{let t=document.querySelec
         <img class="book-item_image" src="${t.book_image}" alt="${t.title}">
         <h3 class="book-item_title">${t.title}</h3>
         <p class="book-item_author"> ${t.author}</p>
-      `,n.appendChild(e)}),t.appendChild(i),t.appendChild(n)})});const e$=document.querySelector(".open-modal-button"),eV=document.querySelector(".modal__container");e$.addEventListener("click",()=>{eV.style.display="block"});const eJ=eV.querySelector(".modal__close-button");eJ.addEventListener("click",()=>{eV.style.display="none"});//# sourceMappingURL=index.54fa4608.js.map
+      `,n.appendChild(e)}),t.appendChild(i),t.appendChild(n)})});const e$=document.querySelector(".mode-buttons__sign-up"),eV=document.querySelector(".modal__container");e$.addEventListener("click",()=>{eV.style.display="block"});const eJ=eV.querySelector(".modal__close-button");eJ.addEventListener("click",()=>{eV.style.display="none"});const eK=document.getElementById("colorSwitch"),eY=document.body,eQ=document.querySelector(".main-header");eK.addEventListener("change",()=>{eK.checked?(eY.style.backgroundColor="#000",eQ.style.backgroundColor="#000"):(eY.style.backgroundColor="#fff",eQ.style.backgroundColor="#fff")});//# sourceMappingURL=index.fc006522.js.map
 
-//# sourceMappingURL=index.54fa4608.js.map
+//# sourceMappingURL=index.fc006522.js.map
