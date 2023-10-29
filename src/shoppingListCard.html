@@ -4,6 +4,7 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Bookstore</title>
+    <link rel="icon" href="./images/favicon.ico" type="image" />
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
@@ -19,11 +20,14 @@
     <link rel="stylesheet" href="./sass/main.scss" />
   </head>
   <body>
-    <include src="./partials/ukraine.html"></include>
-    <include src="./partials/home.html"></include>
+    <include src="./partials/header.html"></include>
     <include src="./partials/home-main.html"></include>
+    <include src="./partials/signup-modal.html"></include>
+    <!-- Skrypt jest na samym dole kodu. On juz ma w sobie podłączony SAAS plik. -->
+    <include src="./partials/home.html"></include>
+    <include src="./partials/ukraine.html"></include>
     <include src="./partials/shoppingList.html"></include>
-    <include src="./partials/mobile-menu.html"></include>
+    <!-- <include src="./partials/mobile-menu.html"></include> -->
     <!-- Skrypt jest na samym dole kodu. On juz ma w sobie podłączony SAAS plik. -->
     <script src="./index.js" type="module"></script>
   </body>
