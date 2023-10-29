@@ -11,7 +11,8 @@ import bookshopImage2 from '../images/shoppingList/bookshop-2x.png';
 shoppingListEl: document.querySelector('.shopping__cards');
 notificationContainerEl: document.querySelector('.shopping__storage');
 shoppingHeadingEl: document.querySelector('.shopping__heading');
-
+// logoTrashPath: new URL('../images/icons.svg', import.meta.url);
+const logoTrashPath = '../images/icons.svg';
 //------------------
 //pobierz i zapisz ID wszystkich ksiazek do local storage
 
@@ -115,7 +116,7 @@ async function loadAndRenderBooks() {
       </div>
       <button type="button" class="shopping__btn" aria-label="Delete the book from shopping list">
         <svg class="shopping__btn-icon" width="18" height="18">
-          <use href="#icon-trash"></use>
+          <use href="${logoTrashPath}#icon-trash"></use>
         </svg>
       </button>
       <p class="shopping__book-description">${description}</p>
