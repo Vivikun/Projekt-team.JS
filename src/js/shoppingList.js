@@ -47,7 +47,7 @@ document.getElementById('save-books-button').addEventListener('click', saveTopBo
 //  Możesz rozważyć użycie bardziej bezpiecznych metod, takich jak document.createElement, aby utworzyć elementy HTML.
 // Przed użyciem wartości z obiektu book, upewnij się, że dane są bezpieczne i nie zawierają niebezpiecznych skryptów.
 
-//Load Id from locale storage, fetch books props via API. Render markup
+//Load ID from locale storage, fetch books props via API. Render markup
 document.getElementById('load-books-and-render').addEventListener('click', loadAndRenderBooks);
 
 async function loadAndRenderBooks() {
@@ -130,6 +130,40 @@ async function loadAndRenderBooks() {
   }
 }
 
+// ONTRASHCLICK
+document.querySelector('.shopping__cards').addEventListener('click', onTrashClick);
+
+function onTrashClick(e) {
+  const target = e.target.closest('.shopping__btn');
+
+  if (!target) {
+    return;
+  }
+
+  const bookEl = target.closest('.shopping__card');
+  const seekedId = bookEl.dataset.id.trim();
+
+  // Retrieve stored book IDs from local storage
+  const storedBookIds = storageMethods.load('selected-books');
+
+  // Find the index of the book to be removed
+  const removedElIndexFromStorage = storedBookIds.findIndex(id => id === seekedId);
+
+  // Check if the book ID was found in local storage
+  if (removedElIndexFromStorage !== -1) {
+    // Remove the book from the array
+    storedBookIds.splice(removedElIndexFromStorage, 1);
+
+    // Save the updated array to local storage
+    storageMethods.save('selected-books', storedBookIds);
+
+    // Remove the book element from the DOM
+    bookEl.remove();
+  } else {
+    console.error('Book ID not found in local storage.');
+  }
+}
+
 //---------------------
 // importowanie ksiazek toopbooks
 // async function fetchAndLogTopBooks() {
@@ -150,9 +184,10 @@ async function loadAndRenderBooks() {
 //---------------------
 
 //---------------------
+// pobiez top books i wyswietl prosty markup
 // const fetchBooksButton = document.getElementById('fetchBooks');
 // fetchBooksButton.addEventListener('click', displayBooks);
-// pobiez top books i wyswietl prosty markup
+
 // function displayBooks() {
 //   const booksContainer = document.getElementById('books-container');
 
