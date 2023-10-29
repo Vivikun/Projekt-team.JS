@@ -22,25 +22,19 @@
   margin-left: 12px;
 }
 .ukraine-solider {
-  display: flex;
+  display: inline-flex;
   flex-direction: column;
+  align-items: flex-start;
   gap: 20px;
-  // list-style: none;
-  // text-decoration: none;
+  width: 159px;
+  height: 292px;
 }
 .svg-btn {
   display: block;
   margin: 0 auto;
-  margin-top: 32px;
+  margin-top: 24px;
 }
-// .charityList {
-//   display: none;
-// }
 
-// .charityList a {
-//   color: white; /* Zmieniamy kolor tekstu na biały */
-//   text-decoration: none; /* Opcjonalnie usuwamy podkreślenie linków */
-// }
 .logo__item {
   display: flex;
   align-items: center;
@@ -48,8 +42,20 @@
   height: 32px;
 }
 .fundNumber {
-   color: #ffffff;
+  color: #ffffff;
 }
-.logo__img{
-display:flex;
+.logo__img {
+  display: flex;
+}
+.scroll-container {
+  width: 159px;
+  height: 292px;
+  overflow: hidden;
+  margin-left: 40px;
+  margin-top: 40px;
+}
+.scroll-btn {
+  display: block;
+  margin: 0 auto;
+  margin-top: 20px;
 }
