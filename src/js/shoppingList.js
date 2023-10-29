@@ -115,7 +115,7 @@ async function loadAndRenderBooks() {
       </div>
       <button type="button" class="shopping__btn" aria-label="Delete the book from shopping list">
         <svg class="shopping__btn-icon" width="18" height="18">
-          <use href="#icon-dump"></use>
+          <use href="#icon-trash"></use>
         </svg>
       </button>
       <p class="shopping__book-description">${description}</p>

@@ -148,13 +148,13 @@
   align-items: center;
   gap: 14px;
 
-  @include tablet {
-    display: none;
-  }
-}
+  // @include tablet {
+  //   display: none;
+  // }
+  // }
 
-.shopping__shops--tablet {
-  display: none;
+  // .shopping__shops--tablet {
+  //   display: none;
 
   @include tablet {
     display: flex;
@@ -182,10 +182,10 @@
   letter-spacing: -0.04em;
   max-width: 98px;
 
-  @include tablet {
-    display: none;
-    max-width: 116px;
-  }
+  // @include tablet {
+  //   display: none;
+  //   max-width: 116px;
+  // }
 }
 
 .shopping__book-author--tablet {
