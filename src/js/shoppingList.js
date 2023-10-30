@@ -93,7 +93,7 @@ async function loadAndRenderBooks() {
         <div class="shopping__wrap">
           <h2 class="shopping__title">${title}</h2>
           <p class="shopping__category">${list_name}</p>
-          <p class="shopping__book-description--tablet">${description}</p>
+          <p class="shopping__book-description">${description}</p>
           <ul class="shopping__shops">
             <li class="shopping__shop">
               <a href="${amazon.url}" class="shopping__shop-link" target="_blank" crossorigin="anonymous"  rel="noopener noreferrer" aria-label="Amazon-book site">
@@ -119,7 +119,7 @@ async function loadAndRenderBooks() {
           <use href="${logoTrashPath}#icon-trash"></use>
         </svg>
       </button>
-      <p class="shopping__book-description">${description}</p>
+      
     </li>`;
         },
       )
