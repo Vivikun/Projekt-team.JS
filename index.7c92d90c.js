@@ -518,11 +518,7 @@ let t=await getTopBooks();t=t.map(t=>({...t,books:t.books}))},eU=async()=>{try{l
             </a>
             </li>`).join("")}
          </ul>`;/*@__PURE__*/c(e_).Notify.failure("Not found")}// Funkcja createTopBooksMarkup nie zwraca żadnych danych.
-(e,t)},eP=document.querySelector(".js-menu-container"),eH=document.querySelector(".js-open-menu");eH.addEventListener("click",()=>{let t="true"===eH.getAttribute("aria-expanded");eH.setAttribute("aria-expanded",!t),eP.classList.toggle("is-open"),eH.classList.toggle("opened");let e=t?"enableBodyScroll":"disableBodyScroll";bodyScrollLock[e](document.body)}),window.matchMedia("(min-width: 768px) and (orientation: portrait)").addEventListener("change",t=>{t.matches||(eP.classList.remove("is-open"),eH.setAttribute("aria-expanded",!1),bodyScrollLock.enableBodyScroll(document.body))});var eX={save:(t,e)=>{try{let i=JSON.stringify(e);localStorage.setItem(t,i)}catch(t){console.error("Set state error: ",t.message)}},load:t=>{try{let e=localStorage.getItem(t);return null===e?[]:JSON.parse(e)}catch(t){console.error("Get state error: ",t.message)}},remove:t=>{try{localStorage.removeItem(t)}catch(t){console.error("Remove state error: ",t.message)}}},eq={};eq=new URL("amazon-shop-1x.caf0b3cb.png",import.meta.url).toString();var e$={};e$=new URL("amazon-shop-2x.c246ebc6.png",import.meta.url).toString();var eV={};eV=new URL("apple-shop-1x.1a3f8a6b.png",import.meta.url).toString();var eJ={};eJ=new URL("apple-shop-2x.495409a0.png",import.meta.url).toString();var eK={};eK=new URL("bookshop-1x.6e21e8db.png",import.meta.url).toString();var eY={};async function eQ(){try{// Retrieve stored book IDs from local storage
-let t=eX.load("selected-books");if(!t||0===t.length){console.error("No book IDs found in local storage.");return}// Fetch details for each book using the IDs
-let e=await Promise.all(t.map(t=>eI(t)));// Log the fetched details for debugging
-console.log("Fetched book details:",e);// Select the ul where you want to render the books
-let i=document.querySelector(".shopping__cards"),n=e.map(({_id:t,book_image:e,author:i,book_image_width:n,book_image_height:o,title:r,list_name:a,description:s,buy_links:[l,f,,,p]})=>`<li class="shopping__card" data-id="${t}">
+(e,t)},eP=document.querySelector(".js-menu-container"),eH=document.querySelector(".js-open-menu");eH.addEventListener("click",()=>{let t="true"===eH.getAttribute("aria-expanded");eH.setAttribute("aria-expanded",!t),eP.classList.toggle("is-open"),eH.classList.toggle("opened");let e=t?"enableBodyScroll":"disableBodyScroll";bodyScrollLock[e](document.body)}),window.matchMedia("(min-width: 768px) and (orientation: portrait)").addEventListener("change",t=>{t.matches||(eP.classList.remove("is-open"),eH.setAttribute("aria-expanded",!1),bodyScrollLock.enableBodyScroll(document.body))});var eX={save:(t,e)=>{try{let i=JSON.stringify(e);localStorage.setItem(t,i)}catch(t){console.error("Set state error: ",t.message)}},load:t=>{try{let e=localStorage.getItem(t);return null===e?[]:JSON.parse(e)}catch(t){console.error("Get state error: ",t.message)}},remove:t=>{try{localStorage.removeItem(t)}catch(t){console.error("Remove state error: ",t.message)}}},eq={};eq=new URL("amazon-shop-1x.caf0b3cb.png",import.meta.url).toString();var e$={};e$=new URL("amazon-shop-2x.c246ebc6.png",import.meta.url).toString();var eV={};eV=new URL("apple-shop-1x.1a3f8a6b.png",import.meta.url).toString();var eJ={};eJ=new URL("apple-shop-2x.495409a0.png",import.meta.url).toString();var eK={};eK=new URL("bookshop-1x.6e21e8db.png",import.meta.url).toString();var eY={};eY=new URL("bookshop-2x.14e7190a.png",import.meta.url).toString(),document.querySelector(".shopping__cards");const eQ=document.querySelector(".shopping__storage");async function eG(){try{let t=eX.load("selected-books");if(!t||0===t.length){console.error("No book IDs found in local storage."),eQ.style.display="block";return}eQ.style.display="none";let e=await Promise.all(t.map(t=>eI(t)));console.log("Fetched book details:",e);let i=document.querySelector(".shopping__cards"),n=e.map(({_id:t,book_image:e,author:i,book_image_width:n,book_image_height:o,title:r,list_name:a,description:s,buy_links:[l,f,,,p]})=>`<li class="shopping__card" data-id="${t}">
       <div class="shopping__block">
         <div>
           <div class="shopping__thumb">
@@ -533,7 +529,7 @@ let i=document.querySelector(".shopping__cards"),n=e.map(({_id:t,book_image:e,au
         <div class="shopping__wrap">
           <h2 class="shopping__title">${r}</h2>
           <p class="shopping__category">${a}</p>
-          <p class="shopping__book-description--tablet">${s}</p>
+          <p class="shopping__book-description">${s}</p>
           <ul class="shopping__shops">
             <li class="shopping__shop">
               <a href="${l.url}" class="shopping__shop-link" target="_blank" crossorigin="anonymous"  rel="noopener noreferrer" aria-label="Amazon-book site">
@@ -551,22 +547,20 @@ let i=document.querySelector(".shopping__cards"),n=e.map(({_id:t,book_image:e,au
               </a>
             </li>
           </ul>
-          
-          </div>
+        </div>
       </div>
       <button type="button" class="shopping__btn" aria-label="Delete the book from shopping list">
         <svg class="shopping__btn-icon" width="18" height="18">
-          <use href="../images/icons.svg#icon-trash"></use>
+          <use href='/src/images/icons.svg#icon-dump'></use>
         </svg>
       </button>
-      <p class="shopping__book-description">${s}</p>
-    </li>`).join("");i.innerHTML=n}catch(t){console.error("Error while loading and rendering books:",t)}}eY=new URL("bookshop-2x.14e7190a.png",import.meta.url).toString(),document.querySelector(".shopping__cards"),document.querySelector(".shopping__storage"),document.querySelector(".shopping__heading"),document.getElementById("save-books-button").addEventListener("click",//------------------
+    </li>`).join("");i.innerHTML=n}catch(t){console.error("Error while loading and rendering books:",t)}}document.querySelector(".shopping__heading"),document.getElementById("save-books-button").addEventListener("click",//------------------
 //pobierz i zapisz ID wszystkich ksiazek do local storage
 function(){eB().then(t=>{if(console.log(t),!t||0===t.length){console.error("Nie znaleziono listy książek.");return}let e=[];t.forEach(t=>{if(t.books&&t.books.length>0){let i=t.books.map(t=>t._id);e.push(...i)}}),console.log("ID wszystkich książek z listy:",e),eX.save("selected-books",e)}).catch(t=>{console.log(t)})}),// Wykorzystanie innerHTML w celu tworzenia elementów HTML z kodem źródłowym może być podatne na ataki XSS (Cross-Site Scripting), jeśli dane pochodzą od użytkowników lub są niezaufane.
 //  Możesz rozważyć użycie bardziej bezpiecznych metod, takich jak document.createElement, aby utworzyć elementy HTML.
 // Przed użyciem wartości z obiektu book, upewnij się, że dane są bezpieczne i nie zawierają niebezpiecznych skryptów.
-//Load ID from locale storage, fetch books props via API. Render markup
-document.getElementById("load-books-and-render").addEventListener("click",eQ),// ONTRASHCLICK
+//ON LOAD FUNCTION loadAndRenderBooks
+window.addEventListener("load",eG),// ONTRASHCLICK
 document.querySelector(".shopping__cards").addEventListener("click",function(t){let e=t.target.closest(".shopping__btn");if(!e)return;let i=e.closest(".shopping__card"),n=i.dataset.id.trim(),o=eX.load("selected-books"),r=o.findIndex(t=>t===n);// Check if the book ID was found in local storage
 -1!==r?(// Remove the book from the array
 o.splice(r,1),eX.save("selected-books",o),// Remove the book element from the DOM
@@ -737,17 +731,92 @@ i.remove()):console.error("Book ID not found in local storage.")}//-------------
 //     console.error('Error while loading and rendering books:', error);
 //   }
 // }
-var eG={};eG=new URL("save-the-children.1db7a45e.png",import.meta.url).toString();var eZ={};eZ=new URL("project-hope.ec77605e.png",import.meta.url).toString();var e0={};e0=new URL("Medical.d4353461.png",import.meta.url).toString();var e1={};e1=new URL("Razon.497aca72.png",import.meta.url).toString();var e2={};e2=new URL("Hunger.437a7d7a.png",import.meta.url).toString();var e6={};e6=new URL("Prytula.ca1becb3.png",import.meta.url).toString();var e5={};e5=new URL("Frontiers.111af27c.png",import.meta.url).toString();var e3={};e3=new URL("Vision.d5b76983.png",import.meta.url).toString();var e8={};e8=new URL("United.cf7dfee9.png",import.meta.url).toString();const e4=[{title:"Save the Children",url:"https://www.savethechildren.net/what-we-do/emergencies/ukraine-crisis",img:/*@__PURE__*/c(eG),width:131,height:32},{title:"Project HOPE",url:"https://www.projecthope.org/country/ukraine/",img:/*@__PURE__*/c(eZ),width:62,height:32},{title:"International Medical Corps",url:"https://internationalmedicalcorps.org/country/ukraine/",img:/*@__PURE__*/c(e0),width:101,height:32},{title:"RAZOM",url:"https://www.razomforukraine.org/",img:/*@__PURE__*/c(e1),width:82,height:32},{title:"Action against hunger",url:"https://www.actionagainsthunger.org/location/europe/ukraine/",img:/*@__PURE__*/c(e2)},{title:"Serhiy Prytula Charity Foundation",url:"https://prytulafoundation.org/en",img:/*@__PURE__*/c(e6),width:115,height:32},{title:"Medicins Sans Frontieres",url:"https://www.msf.org/ukraine",img:/*@__PURE__*/c(e5),width:102,height:32},{title:"World vision",url:"https://www.wvi.org/emergencies/ukraine",img:/*@__PURE__*/c(e3),width:55,height:32},{title:"UNITED24",url:"https://u24.gov.ua/uk",img:/*@__PURE__*/c(e8),width:103,height:32}],e9=document.querySelector(".ukraine-solider");!function(){let t=e4.map(({title:t,url:e,img:i,width:n,height:o},r)=>{let a=(r+1).toString().padStart(2,"0");return`<div class="logo__item fund-item"><p class="fundNumber">${a}</p>
+//--------------
+//Load ID from locale storage, fetch books props via API. Render markup
+// document.getElementById('load-books-and-render').addEventListener('click', loadAndRenderBooks);
+// async function loadAndRenderBooks() {
+//   try {
+//     // Retrieve stored book IDs from local storage
+//     const storedBookIds = storageMethods.load('selected-books');
+//     if (!storedBookIds || storedBookIds.length === 0) {
+//       console.error('No book IDs found in local storage.');
+//       return;
+//     }
+//     // Fetch details for each book using the IDs
+//     const booksDetails = await Promise.all(storedBookIds.map(id => getBooksId(id)));
+//     // Log the fetched details for debugging
+//     console.log('Fetched book details:', booksDetails);
+//     // Select the ul where you want to render the books
+//     const container = document.querySelector('.shopping__cards');
+//     const markup = booksDetails
+//       .map(
+//         ({
+//           _id,
+//           book_image,
+//           author,
+//           book_image_width,
+//           book_image_height,
+//           title,
+//           list_name,
+//           description,
+//           buy_links: [amazon, apple, , , bookshop],
+//         }) => {
+//           return `<li class="shopping__card" data-id="${_id}">
+//       <div class="shopping__block">
+//         <div>
+//           <div class="shopping__thumb">
+//             <img src="${book_image}" alt="${list_name}" class="shopping__book-img" width="${book_image_width}" height="${book_image_height}"/>
+//           </div>
+//           <p class="shopping__book-author">${author}</p>
+//         </div>
+//         <div class="shopping__wrap">
+//           <h2 class="shopping__title">${title}</h2>
+//           <p class="shopping__category">${list_name}</p>
+//           <p class="shopping__book-description">${description}</p>
+//           <ul class="shopping__shops">
+//             <li class="shopping__shop">
+//               <a href="${amazon.url}" class="shopping__shop-link" target="_blank" crossorigin="anonymous"  rel="noopener noreferrer" aria-label="Amazon-book site">
+//                 <img srcset="${amazonImage1} 1x, ${amazonImage2} 2x" src="${amazonImage1}" alt="${amazon.name}" class="shopping__shop-img" width="48" height="15"/>
+//               </a>
+//             </li>
+//             <li class="shopping__shop">
+//               <a href="${apple.url}" class="shopping__shop-link" target="_blank" crossorigin="anonymous"  rel="noopener noreferrer" aria-label="Apple-book site">
+//                 <img srcset="${appleImage1} 1x, ${appleImage2} 2x" src="${appleImage1}" alt="${apple.name}" class="shopping__shop-img" width="28" height="27"/>
+//               </a>
+//             </li>
+//             <li class="shopping__shop">
+//               <a href="${bookshop.url}" class="shopping__shop-link" target="_blank" crossorigin="anonymous"  rel="noopener noreferrer" aria-label="Book-shop site">
+//                 <img srcset="${bookshopImage1} 1x, ${bookshopImage2} 2x" src="${bookshopImage1}" alt="${bookshop.name}" class="shopping__shop-img" width="32" height="30"/>
+//               </a>
+//             </li>
+//           </ul>
+//           </div>
+//       </div>
+//       <button type="button" class="shopping__btn" aria-label="Delete the book from shopping list">
+//         <svg class="shopping__btn-icon" width="18" height="18">
+//           <use href='/src/images/icons.svg#icon-dump'></use>
+//         </svg>
+//       </button>
+//     </li>`;
+//         },
+//       )
+//       .join('');
+//     container.innerHTML = markup;
+//   } catch (error) {
+//     console.error('Error while loading and rendering books:', error);
+//   }
+// }
+var eZ={};eZ=new URL("save-the-children.1db7a45e.png",import.meta.url).toString();var e0={};e0=new URL("project-hope.ec77605e.png",import.meta.url).toString();var e1={};e1=new URL("Medical.d4353461.png",import.meta.url).toString();var e2={};e2=new URL("Razon.497aca72.png",import.meta.url).toString();var e6={};e6=new URL("Hunger.437a7d7a.png",import.meta.url).toString();var e5={};e5=new URL("Prytula.ca1becb3.png",import.meta.url).toString();var e3={};e3=new URL("Frontiers.111af27c.png",import.meta.url).toString();var e8={};e8=new URL("Vision.d5b76983.png",import.meta.url).toString();var e4={};e4=new URL("United.cf7dfee9.png",import.meta.url).toString();const e9=[{title:"Save the Children",url:"https://www.savethechildren.net/what-we-do/emergencies/ukraine-crisis",img:/*@__PURE__*/c(eZ),width:131,height:32},{title:"Project HOPE",url:"https://www.projecthope.org/country/ukraine/",img:/*@__PURE__*/c(e0),width:62,height:32},{title:"International Medical Corps",url:"https://internationalmedicalcorps.org/country/ukraine/",img:/*@__PURE__*/c(e1),width:101,height:32},{title:"RAZOM",url:"https://www.razomforukraine.org/",img:/*@__PURE__*/c(e2),width:82,height:32},{title:"Action against hunger",url:"https://www.actionagainsthunger.org/location/europe/ukraine/",img:/*@__PURE__*/c(e6)},{title:"Serhiy Prytula Charity Foundation",url:"https://prytulafoundation.org/en",img:/*@__PURE__*/c(e5),width:115,height:32},{title:"Medicins Sans Frontieres",url:"https://www.msf.org/ukraine",img:/*@__PURE__*/c(e3),width:102,height:32},{title:"World vision",url:"https://www.wvi.org/emergencies/ukraine",img:/*@__PURE__*/c(e8),width:55,height:32},{title:"UNITED24",url:"https://u24.gov.ua/uk",img:/*@__PURE__*/c(e4),width:103,height:32}],e7=document.querySelector(".ukraine-solider");!function(){let t=e9.map(({title:t,url:e,img:i,width:n,height:o},r)=>{let a=(r+1).toString().padStart(2,"0");return`<div class="logo__item fund-item"><p class="fundNumber">${a}</p>
   <a href="${e}" class="logo__img" target="_blank" rel="noopener noreferrer nofollow" aria-label="${t}">
     <picture>
       <source srcset="${i}" />
       <img src="${i}" alt="${t}" loading="lazy" width="${n}" height="${o}">
     </picture>
   </a>
-</div>`}).join("");e9.insertAdjacentHTML("beforeend",t)}(),document.addEventListener("DOMContentLoaded",function(){let t=document.querySelector(".scroll-btn"),e=document.querySelector(".scroll-container"),i=!1,n=!0;t.addEventListener("click",()=>{i?n=!n:(i=!0,function t(){i&&(e.scrollTop+=n?5:-5,e.scrollTop>=e.scrollHeight-e.clientHeight&&(n=!0),e.scrollTop<=0&&(n=!1),requestAnimationFrame(t))}())})}),document.addEventListener("DOMContentLoaded",async()=>{let t=document.querySelector(".books-container"),e=await eB();e.forEach(e=>{let i=document.createElement("h2");i.textContent=e.list_name,i.classList.add("category-name");let n=document.createElement("ul");n.classList.add("category-books"),e.books.forEach(t=>{let e=document.createElement("li");e.classList.add("book-item"),e.innerHTML=`
+</div>`}).join("");e7.insertAdjacentHTML("beforeend",t)}(),document.addEventListener("DOMContentLoaded",function(){let t=document.querySelector(".scroll-btn"),e=document.querySelector(".scroll-container"),i=!1,n=!0;t.addEventListener("click",()=>{i?n=!n:(i=!0,function t(){i&&(e.scrollTop+=n?5:-5,e.scrollTop>=e.scrollHeight-e.clientHeight&&(n=!0),e.scrollTop<=0&&(n=!1),requestAnimationFrame(t))}())})}),document.addEventListener("DOMContentLoaded",async()=>{let t=document.querySelector(".books-container"),e=await eB();e.forEach(e=>{let i=document.createElement("h2");i.textContent=e.list_name,i.classList.add("category-name");let n=document.createElement("ul");n.classList.add("category-books"),e.books.forEach(t=>{let e=document.createElement("li");e.classList.add("book-item"),e.innerHTML=`
         <img class="book-item_image" src="${t.book_image}" alt="${t.title}">
         <h3 class="book-item_title">${t.title}</h3>
         <p class="book-item_author"> ${t.author}</p>
-      `,n.appendChild(e)}),t.appendChild(i),t.appendChild(n)})});const e7=document.querySelector(".mode-buttons__sign-up"),it=document.querySelector(".modal__container");e7.addEventListener("click",()=>{it.style.display="block"});const ie=it.querySelector(".modal__close-button");ie.addEventListener("click",()=>{it.style.display="none"});const ii=document.getElementById("colorSwitch"),io=document.body,ir=document.querySelector(".main-header");ii.addEventListener("change",()=>{ii.checked?(io.style.backgroundColor="#000",ir.style.backgroundColor="#000"):(io.style.backgroundColor="#fff",ir.style.backgroundColor="#fff")});//# sourceMappingURL=index.61e8e86b.js.map
+      `,n.appendChild(e)}),t.appendChild(i),t.appendChild(n)})});const it=document.querySelector(".mode-buttons__sign-up"),ie=document.querySelector(".modal__container");it.addEventListener("click",()=>{ie.style.display="block"});const ii=ie.querySelector(".modal__close-button");ii.addEventListener("click",()=>{ie.style.display="none"});const io=document.getElementById("colorSwitch"),ir=document.body,ia=document.querySelector(".main-header");io.addEventListener("change",()=>{io.checked?(ir.style.backgroundColor="#000",ia.style.backgroundColor="#000"):(ir.style.backgroundColor="#fff",ia.style.backgroundColor="#fff")});//# sourceMappingURL=index.7c92d90c.js.map
 
-//# sourceMappingURL=index.61e8e86b.js.map
+//# sourceMappingURL=index.7c92d90c.js.map
