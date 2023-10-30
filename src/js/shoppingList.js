@@ -11,8 +11,8 @@ import bookshopImage2 from '../images/shoppingList/bookshop-2x.png';
 shoppingListEl: document.querySelector('.shopping__cards');
 notificationContainerEl: document.querySelector('.shopping__storage');
 shoppingHeadingEl: document.querySelector('.shopping__heading');
-// logoTrashPath: new URL('../images/icons.svg', import.meta.url);
-const logoTrashPath = '../images/icons.svg';
+// logoTrashPath: new URL('/src/images/icons.svg#icon-dump', import.meta.url);
+const logoTrashPath = '/src/images/icons.svg#icon-dump';
 //------------------
 //pobierz i zapisz ID wszystkich ksiazek do local storage
 
@@ -93,7 +93,7 @@ async function loadAndRenderBooks() {
         <div class="shopping__wrap">
           <h2 class="shopping__title">${title}</h2>
           <p class="shopping__category">${list_name}</p>
-          <p class="shopping__book-description--tablet">${description}</p>
+          <p class="shopping__book-description">${description}</p>
           <ul class="shopping__shops">
             <li class="shopping__shop">
               <a href="${amazon.url}" class="shopping__shop-link" target="_blank" crossorigin="anonymous"  rel="noopener noreferrer" aria-label="Amazon-book site">
@@ -116,10 +116,10 @@ async function loadAndRenderBooks() {
       </div>
       <button type="button" class="shopping__btn" aria-label="Delete the book from shopping list">
         <svg class="shopping__btn-icon" width="18" height="18">
-          <use href="${logoTrashPath}#icon-trash"></use>
+          <use href='/src/images/icons.svg#icon-dump'></use>
         </svg>
       </button>
-      <p class="shopping__book-description">${description}</p>
+     
     </li>`;
         },
       )

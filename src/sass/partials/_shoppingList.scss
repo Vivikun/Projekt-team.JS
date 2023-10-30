@@ -31,9 +31,9 @@
     color: #4f2ee8;
   }
 
-  &.empty-js {
-    margin-bottom: 140px;
-  }
+  // &.empty-js {
+  //   margin-bottom: 140px;
+  // }
 }
 
 // Card
@@ -137,24 +137,16 @@
   }
 }
 
-.shopping__wrap-shops--tablet {
-  display: flex;
-  justify-content: space-between;
-  align-items: end;
-}
+// .shopping__wrap-shops--tablet {
+//   display: flex;
+//   justify-content: space-between;
+//   align-items: end;
+// }
 
 .shopping__shops {
   display: flex;
   align-items: center;
   gap: 14px;
-
-  // @include tablet {
-  //   display: none;
-  // }
-  // }
-
-  // .shopping__shops--tablet {
-  //   display: none;
 
   @include tablet {
     display: flex;
@@ -182,15 +174,8 @@
   letter-spacing: -0.04em;
   max-width: 98px;
 
-  // @include tablet {
-  //   display: none;
-  //   max-width: 116px;
-  // }
-}
-
-.shopping__book-author--tablet {
-  display: none;
   @include tablet {
+    max-width: 116px;
     display: block;
   }
 }
@@ -206,7 +191,7 @@
   width: 28px;
   height: 28px;
 
-  background-color: #4f2ee8;
+  // background-color: #4f2ee8;
   border-radius: 50%;
   border: none;
 
@@ -219,7 +204,7 @@
 }
 
 .shopping__btn-icon {
-  stroke: white;
+  // stroke: white;
   fill: transparent;
   @include tablet {
     width: 18px;
@@ -242,32 +227,42 @@
   color: #111111;
 
   @include tablet {
-    display: none;
+    // display: none;
+    flex-grow: 1;
+    display: block;
   }
+}
+
+.shopping__shop-img {
+  filter: invert(0);
+  transition: 0.5s;
+}
+.shopping__shop-img:hover {
+  transform: translateY(-7);
 }
 
 // Notification
 
-.shopping__storage {
-  display: none;
-}
+// .shopping__storage {
+//   display: none;
+// }
 
-.shopping__storage-notification {
-  margin-bottom: 14px;
+// .shopping__storage-notification {
+//   margin-bottom: 14px;
 
-  font-size: 14px;
-  line-height: 1.29;
-  letter-spacing: -0.02em;
-  text-align: center;
+//   font-size: 14px;
+//   line-height: 1.29;
+//   letter-spacing: -0.02em;
+//   text-align: center;
 
-  color: rgba(0, 0, 0, 0.6);
-}
+//   color: rgba(0, 0, 0, 0.6);
+// }
 
-.shopping__storage.empty-js {
-  display: block;
-  margin: 0 auto;
-  width: 265px;
-}
+// .shopping__storage.empty-js {
+//   display: block;
+//   margin: 0 auto;
+//   width: 265px;
+// }
 
 //first, basic markup
 // V2
