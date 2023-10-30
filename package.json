@@ -9,13 +9,13 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/migace/Projekt-team.JS"
+    "url": "git+https://github.com/vivikun/Projekt-team.JS"
   },
   "keywords": [],
   "author": "Alexander Repeta <alexander.repeta@gmail.com>",
   "license": "ISC",
   "bugs": {
-    "url": "https://github.com/migace/parcel-project-template-pl-main/issues"
+    "url": "https://github.com/vivikun/parcel-project-template-pl-main/issues"
   },
   "devDependencies": {
     "@parcel/transformer-sass": "^2.10.0",
