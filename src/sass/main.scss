@@ -1,16 +1,8 @@
-/*
- * Główny plik dla stylów.
- * Wszystkie partials podłączamy tutaj.
- */
-
-// Style dla pliku z przykładem HTML fragmentu
+@import './partials/mixins';
+@import './partials/setup';
 @import './partials/ukraine.scss';
-
-// @import './partials/home';
 @import './partials/home-categories';
 @import './partials/home';
-@import './partials/setup';
-@import './partials/mixins';
 @import './partials/header';
 @import './partials/mobile-menu';
 @import './partials/shoppingList';
