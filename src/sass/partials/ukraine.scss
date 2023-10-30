@@ -17,6 +17,8 @@
   padding-left: 40px;
   padding-top: 26px;
   margin: 0;
+  display: flex;
+  align-items: center;
 }
 .ukraine-svg {
   margin-left: 12px;
@@ -41,9 +43,6 @@
   gap: 14px;
   height: 32px;
 }
-.fundNumber {
-  color: #ffffff;
-}
 .logo__img {
   display: flex;
 }
@@ -58,4 +57,13 @@
   display: block;
   margin: 0 auto;
   margin-top: 20px;
+}
+.fundNumber {
+  color: #fff;
+  font-family: DM Sans;
+  font-size: 14px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 18px; /* 128.571% */
+  letter-spacing: -0.56px;
 }
