@@ -1,12 +1,12 @@
-import save_the_children from './images/ukraina-support/save-the-children.png';
-import project_hope from './images/ukraina-support/project-hope.png';
-import medical from './images/ukraina-support/Medical.png';
-import razon from './images/ukraina-support/Razon.png';
-import hunger from './images/ukraina-support/Hunger.png';
-import prytula from './images/ukraina-support/Prytula.png';
-import frontieres from './images/ukraina-support/Frontiers.png';
-import vision from './images/ukraina-support/Vision.png';
-import united from './images/ukraina-support/United.png';
+import save_the_children from '/src/images/ukraina-support/save-the-children.png';
+import project_hope from '/src/images/ukraina-support/project-hope.png';
+import medical from '/src/images/ukraina-support/Medical.png';
+import razon from '/src/images/ukraina-support/Razon.png';
+import hunger from '/src/images/ukraina-support/Hunger.png';
+import prytula from '/src/images/ukraina-support/Prytula.png';
+import frontieres from '/src/images/ukraina-support/Frontiers.png';
+import vision from '/src/images/ukraina-support/Vision.png';
+import united from '/src/images/ukraina-support/United.png';
 
 const organizations = [
   {
