@@ -7,3 +7,4 @@ import './UKRAINE-slider.js';
 import './js/home-books.js';
 import './js/signup-modal.js';
 import './js/darkmode';
+import './sass/main.scss';
