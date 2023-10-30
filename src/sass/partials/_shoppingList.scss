@@ -250,26 +250,23 @@
 
 // Notification
 
-// .shopping__storage {
-//   display: none;
-// }
+.shopping__storage {
+  // display: none;
+  display: block;
+  margin: 0 auto;
+  width: 265px;
+}
 
-// .shopping__storage-notification {
-//   margin-bottom: 14px;
+.shopping__storage-notification {
+  margin-bottom: 14px;
 
-//   font-size: 14px;
-//   line-height: 1.29;
-//   letter-spacing: -0.02em;
-//   text-align: center;
+  font-size: 14px;
+  line-height: 1.29;
+  letter-spacing: -0.02em;
+  text-align: center;
 
-//   color: rgba(0, 0, 0, 0.6);
-// }
-
-// .shopping__storage.empty-js {
-//   display: block;
-//   margin: 0 auto;
-//   width: 265px;
-// }
+  color: rgba(0, 0, 0, 0.6);
+}
 
 //first, basic markup
 // V2
