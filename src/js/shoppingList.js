@@ -38,6 +38,7 @@ function saveTopBooks() {
       console.log(error);
     });
 }
+// document.getElementById('save-books-button').addEventListener('click', saveTopBooks);
 
 window.addEventListener('load', loadAndRenderBooks);
 
