@@ -19,24 +19,16 @@
   .home__category-container.container_active {
     display: block;
   }
-// .home-typeBook{ // kategpria do usuniecia - techniczna
-//   display: block;
-//   // background-color:yellowgreen;
-//   // font-size: 25px;
-// }
   .home-typeBook.container_active {
     display: block;
       }
-  
-  .category-item {
+    .category-item {
     color: rgba(17, 17, 17, 0.6);
     cursor: pointer;
     transform: scale(0.97);
     transform-origin: center left;
-    
-      }
-  
-  .category-item:not(:last-child) {
+          }
+    .category-item:not(:last-child) {
     margin-bottom: 24px;
     @media screen and (min-width: 768px) {
       margin-bottom: 32px;
@@ -69,6 +61,7 @@
     }
   }
   .categories-list{
+    margin-bottom:86px; 
     width: 356px;
     height: 472px;
     gap: 20px;
@@ -95,5 +88,4 @@
   .aside {
     width: 360px; //356px Aga
     margin-left: 24px;
-    // background-color: rgb(232, 175, 175);//Aga
-  }
+      }

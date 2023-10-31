@@ -47,7 +47,7 @@ function saveTopBooks() {
     });
 }
 
-// document.getElementById('save-books-button').addEventListener('click', saveTopBooks);
+// document.getElementById('save-books-button').addEventListener('click', saveTopBooks);//Aga
 
 //ON LOAD FUNCTION loadAndRenderBooks
 window.addEventListener('load', loadAndRenderBooks);
@@ -62,7 +62,7 @@ async function loadAndRenderBooks() {
       return;
     }
 
-    // notificationContainerEl.style.display = 'none';
+    notificationContainerEl.style.display = 'none';//Aga
 
     const booksDetails = await Promise.all(storedBookIds.map(id => getBooksId(id)));
 
