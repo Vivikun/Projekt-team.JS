@@ -38,7 +38,10 @@ async function getSelectedCategory(category) {
 async function getBooksId(id) {
   const { data } = await axios.get(`${BOOKS_ID}/${id}`);
   return data;
-}
+};
+
+
+
 
 //----------------- export ---------------------------------
 
