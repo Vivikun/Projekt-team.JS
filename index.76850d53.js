@@ -576,11 +576,11 @@ window.addEventListener("load",e1);var e6={};e6=new URL("save-the-children.1db7a
   </a>
 </div>`}).join("");io.insertAdjacentHTML("beforeend",t)}(),document.addEventListener("DOMContentLoaded",function(){let t=document.querySelector(".scroll-btn"),e=document.querySelector(".scroll-container"),i=!1,n=!0;t.addEventListener("click",()=>{i?n=!n:(i=!0,function t(){i&&(e.scrollTop+=n?5:-5,e.scrollTop>=e.scrollHeight-e.clientHeight&&(n=!0),e.scrollTop<=0&&(n=!1),requestAnimationFrame(t))}())})}),document.addEventListener("DOMContentLoaded",async()=>{let t=document.querySelector(".layout"),e=document.querySelector(".books-container"),i=document.querySelector(".home-typeBook"),n=null,o=await eB();o.forEach(o=>{let r=document.createElement("h2");r.textContent=o.list_name,r.classList.add("category-name");let a=document.createElement("ul");a.classList.add("category-books");//UUdodanie przycisku "see more"//
 let s=document.createElement("button");s.textContent="See More",s.classList.add("see-more-button"),s.dataset.categoryId=o.list_name,//obsluga przycisku 'see more'
-s.addEventListener("click",async e=>{let o=e.target.dataset.categoryId;i.style.display="none",n=await eO(o),function(){if(n){let e=document.createElement("div");e.classList.add("selected-category-section");let i=document.createElement("h1");i.textContent=n[0].list_name,e.appendChild(i),n.forEach(t=>{let i=document.createElement("li");i.classList.add("book-item"),i.innerHTML=`
+s.addEventListener("click",async e=>{let o=e.target.dataset.categoryId;i.style.display="none",n=await eO(o),function(){if(n){let e=document.createElement("div");e.classList.add("selected-category-section");let i=document.createElement("h1");i.textContent=n[0].list_name,e.appendChild(i);let o=document.createElement("ul");o.classList.add("book-item__list"),e.appendChild(o),n.forEach(t=>{let e=document.createElement("li");e.classList.add("book-item"),e.innerHTML=`
           <img class="book-item_image" src="${t.book_image}" alt="${t.title}">
           <h3 class="book-item_title">${t.title}</h3>
           <p class="book-item_author">${t.author}</p>
-        `,e.appendChild(i)}),t.appendChild(e)}}()}),//
+        `,o.appendChild(e)}),t.appendChild(e)}}()}),//
 o.books.forEach(t=>{let e=document.createElement("li");e.classList.add("book-item"),e.innerHTML=`
         <img class="book-item_image" src="${t.book_image}" alt="${t.title}">
         <h3 class="book-item_title">${t.title}</h3>
@@ -599,6 +599,6 @@ im.src=e.book_image,iu.href=e.amazon_product_url;let i=`<h2 class="popup__title"
 //  )
 //  .join('');
 // shopsList.innerHTML = shopsBooks;
-},iN=()=>{ix.classList.add("popup-is-hidden"),iy.removeEventListener("click",iN),ix.removeEventListener("click",iS),document.removeEventListener("keydown",iC)},iS=t=>{t.target===ix&&iN()};ib.addEventListener("click",t=>{t.stopPropagation()});const iC=t=>{"Escape"===t.code&&iN()},iE=t=>{if(t.target.closest("li")){let e=t.target.closest("li").dataset.id;ik(e),iy.addEventListener("click",iN),ix.addEventListener("click",iS),document.addEventListener("keydown",iC),ix.classList.remove("popup-is-hidden")}};iw.addEventListener("click",iE),iv.addEventListener("click",iE),ig.addEventListener("click",removeFromLocalStorage),ih.addEventListener("click",addToLocalStorage);//# sourceMappingURL=index.a64c9ccd.js.map
+},iN=()=>{ix.classList.add("popup-is-hidden"),iy.removeEventListener("click",iN),ix.removeEventListener("click",iS),document.removeEventListener("keydown",iC)},iS=t=>{t.target===ix&&iN()};ib.addEventListener("click",t=>{t.stopPropagation()});const iC=t=>{"Escape"===t.code&&iN()},iE=t=>{if(t.target.closest("li")){let e=t.target.closest("li").dataset.id;ik(e),iy.addEventListener("click",iN),ix.addEventListener("click",iS),document.addEventListener("keydown",iC),ix.classList.remove("popup-is-hidden")}};iw.addEventListener("click",iE),iv.addEventListener("click",iE),ig.addEventListener("click",removeFromLocalStorage),ih.addEventListener("click",addToLocalStorage);//# sourceMappingURL=index.76850d53.js.map
 
-//# sourceMappingURL=index.a64c9ccd.js.map
+//# sourceMappingURL=index.76850d53.js.map
