@@ -5,6 +5,7 @@
   border-radius: 16px;
   background: radial-gradient(189.32% 190.93% at 59.76% -23.42%, #4f2ee8 18.03%, #fff 100%);
   box-shadow: 0px 10px 10px 0px rgba(245, 245, 247, 0.1);
+  margin-top: 86px;
 }
 .ukraine-tittle {
   color: #fff;
@@ -17,39 +18,53 @@
   padding-left: 40px;
   padding-top: 26px;
   margin: 0;
+  display: flex;
+  align-items: center;
 }
 .ukraine-svg {
   margin-left: 12px;
 }
 .ukraine-solider {
-  display: flex;
+  display: inline-flex;
   flex-direction: column;
+  align-items: flex-start;
   gap: 20px;
-  // list-style: none;
-  // text-decoration: none;
+  width: 159px;
+  height: 292px;
 }
 .svg-btn {
   display: block;
   margin: 0 auto;
-  margin-top: 32px;
+  margin-top: 24px;
 }
-// .charityList {
-//   display: none;
-// }
 
-// .charityList a {
-//   color: white; /* Zmieniamy kolor tekstu na biały */
-//   text-decoration: none; /* Opcjonalnie usuwamy podkreślenie linków */
-// }
 .logo__item {
   display: flex;
   align-items: center;
   gap: 14px;
   height: 32px;
 }
-.fundNumber {
-   color: #ffffff;
+.logo__img {
+  display: flex;
 }
-.logo__img{
-display:flex;
+.scroll-container {
+  width: 159px;
+  height: 292px;
+  overflow: hidden;
+  margin-left: 40px;
+  margin-top: 40px;
+}
+.scroll-btn {
+  display: block;
+  margin: 0 auto;
+  margin-top: 20px;
+}
+.fundNumber {
+  color: #fff;
+  font-family: DM Sans;
+  font-size: 14px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 18px; /* 128.571% */
+  letter-spacing: -0.56px;
 }
