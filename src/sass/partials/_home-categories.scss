@@ -33,6 +33,7 @@
     cursor: pointer;
     transform: scale(0.97);
     transform-origin: center left;
+    
       }
   
   .category-item:not(:last-child) {
@@ -68,9 +69,9 @@
     }
   }
   .categories-list{
-    width: 335px;
+    width: 356px;
     height: 472px;
-    margin-bottom: 0;
+    gap: 20px;
     font-size: 18px;
     line-height: 1.33333;
    font-size: 16px;
@@ -91,4 +92,7 @@
   }
   .scategories-list::-webkit-scrollbar-thumb:hover {
     background-color:  #b4afaf;
+  }
+  .aside {
+    margin-left: 24px;
   }

@@ -43,7 +43,7 @@ const renderCategories = async () => {
 renderCategories();
 
 function markupCategoriesList(categories) {
-  return `<li class="category-item active" data-id="all-categories">
+  return `<li class="category-item" data-id="all-categories">
         All categories</li>
         ${categories
           .map(
