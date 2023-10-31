@@ -53,8 +53,19 @@
 //   letter-spacing: -0.32px;
 //   text-transform: uppercase;
 // }
+.layout{
+    display: flex;
+  flex-direction:row;
+  gap: 40px;
+//   margin-bottom: 40px;
+//   padding-left: 10px;
+//   padding-right: 10px;
+// background-color: rgb(60, 11, 182);
+}
 .home-typeBook {
-  max-width: 996px;
+  // max-width: 1200px;//Aga 996px
+ width: 100%; //Aga
+  // background-color: #94e60f;
 }
 .home-heading {
   color: #111;
@@ -66,8 +77,12 @@
   letter-spacing: -1.92px;
   margin-bottom: 40px;
   &_custom {
-    color: #4f2ee8;
+    // color: #4f2ee8;//aga
   }
+}
+.books-container{//aga
+  width: 100%;
+  // background-color: rgb(88, 88, 176);
 }
 .category-name {
   color: #b4afaf;
@@ -81,9 +96,12 @@
   text-transform: uppercase;
 }
 .category-books {
+  width: 100%;//Aga
+  justify-content: space-between;
   display: flex;
   flex-wrap: wrap;
   gap: 24px;
+  // background-color: #a83845;
 }
 .book-item {
   display: flex;

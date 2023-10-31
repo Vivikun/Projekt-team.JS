@@ -14,7 +14,7 @@ import bookshopImage2 from '../images/shoppingList/bookshop-2x.png';
 const shoppingListEl = document.querySelector('.shopping__cards');
 const notificationContainerEl = document.querySelector('.shopping__storage');
 const shoppingHeadingEl = document.querySelector('.shopping__heading');
-
+const shoppingBtnTrash=document.querySelector('.shopping__btn');
 // logoTrashPath: new URL('/src/images/icons.svg#icon-dump', import.meta.url);
 // const logoTrashPath = '/src/images/icons.svg#icon-dump';
 const logoTrashPath = new URL('/src/images/icons.svg', import.meta.url);
@@ -125,6 +125,7 @@ async function loadAndRenderBooks() {
       .join('');
 
     container.innerHTML = markup;
+    shoppingListEl.addEventListener('click', onTrashClick);//Aga
   } catch (error) {
     console.error('Error while loading and rendering books:', error);
   }

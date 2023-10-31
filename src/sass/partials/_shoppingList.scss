@@ -1,4 +1,12 @@
 //markup 3
+.layout-shop{
+  padding-top: 40px;
+  padding-bottom: 10px;
+    display: flex;
+    flex-direction:row;
+    gap: 40px;
+  //  background-color: darkmagenta;
+  }
 .shopping-container {
   padding-top: 40px;
   padding-bottom: 40px;
@@ -10,7 +18,14 @@
   }
 }
 
-.shopping {
+.shopping-layout{
+  width: 100%;
+//  background-color: #74c7ee;
+ justify-content: left;
+}
+.shopping__page {
+  margin-left:0px;
+  // background-color: rgb(210, 30, 162);
   @include desktop {
     flex-grow: 1;
   }
@@ -18,13 +33,11 @@
 
 .shopping__heading {
   margin-bottom: 40px;
-
   font-family: 'DM Sans';
   font-weight: 700;
-  font-size: 32px;
+  font-size: 48px;//Aga 32px
   line-height: 1.19;
   letter-spacing: -0.04em;
-
   color: #111111;
 
   &--color {
@@ -253,7 +266,8 @@
 .shopping__storage {
   // display: none;
   display: block;
-  margin: 0 auto;
+   margin: 0 auto;
+
   width: 265px;
 }
 
@@ -267,7 +281,14 @@
 
   color: rgba(0, 0, 0, 0.6);
 }
-
+.image{
+  margin:auto;
+}
+.aside {
+  width: 360px; //356px Aga
+  margin-left: 24px;
+  // background-color: red;//Aga
+}
 //first, basic markup
 // V2
 // .book {
