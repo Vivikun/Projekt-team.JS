@@ -14,7 +14,7 @@ import bookshopImage2 from '../images/shoppingList/bookshop-2x.png';
 const shoppingListEl = document.querySelector('.shopping__cards');
 const notificationContainerEl = document.querySelector('.shopping__storage');
 const shoppingHeadingEl = document.querySelector('.shopping__heading');
-const shoppingBtnTrash=document.querySelector('.shopping__btn');
+const shoppingBtnTrash = document.querySelector('.shopping__btn');
 // logoTrashPath: new URL('/src/images/icons.svg#icon-dump', import.meta.url);
 // const logoTrashPath = '/src/images/icons.svg#icon-dump';
 const logoTrashPath = new URL('/src/images/icons.svg', import.meta.url);
@@ -62,7 +62,7 @@ async function loadAndRenderBooks() {
       return;
     }
 
-    // notificationContainerEl.style.display = 'none';
+    notificationContainerEl.style.display = 'none';
 
     const booksDetails = await Promise.all(storedBookIds.map(id => getBooksId(id)));
 
@@ -106,7 +106,7 @@ async function loadAndRenderBooks() {
                 <img srcset="${appleImage1} 1x, ${appleImage2} 2x" src="${appleImage1}" alt="${apple.name}" class="shopping__shop-img" width="28" height="27"/>
               </a>
             </li>
-            <li class="shopping__shop">
+            <li class="shopping__shop no-icon">
               <a href="${bookshop.url}" class="shopping__shop-link" target="_blank" crossorigin="anonymous"  rel="noopener noreferrer" aria-label="Book-shop site">
                 <img srcset="${bookshopImage1} 1x, ${bookshopImage2} 2x" src="${bookshopImage1}" alt="${bookshop.name}" class="shopping__shop-img" width="32" height="30"/>
               </a>
@@ -125,7 +125,7 @@ async function loadAndRenderBooks() {
       .join('');
 
     container.innerHTML = markup;
-    shoppingListEl.addEventListener('click', onTrashClick);//Aga
+    shoppingListEl.addEventListener('click', onTrashClick); //Aga
   } catch (error) {
     console.error('Error while loading and rendering books:', error);
   }

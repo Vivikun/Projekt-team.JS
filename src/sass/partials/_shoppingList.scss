@@ -1,15 +1,16 @@
 //markup 3
-.layout-shop{
+.layout-shop {
   padding-top: 40px;
   padding-bottom: 10px;
-    display: flex;
-    flex-direction:row;
-    gap: 40px;
+  display: flex;
+  flex-direction: row;
+  gap: 40px;
   //  background-color: darkmagenta;
-  }
+}
 .shopping-container {
   padding-top: 40px;
   padding-bottom: 40px;
+  padding-right: 23;
 
   @include desktop {
     display: flex;
@@ -18,13 +19,14 @@
   }
 }
 
-.shopping-layout{
+.shopping-layout {
   width: 100%;
-//  background-color: #74c7ee;
- justify-content: left;
+  //  background-color: #74c7ee;
+  justify-content: left;
+  padding-right: 24;
 }
 .shopping__page {
-  margin-left:0px;
+  margin-left: 0px;
   // background-color: rgb(210, 30, 162);
   @include desktop {
     flex-grow: 1;
@@ -35,7 +37,7 @@
   margin-bottom: 40px;
   font-family: 'DM Sans';
   font-weight: 700;
-  font-size: 48px;//Aga 32px
+  font-size: 48px; //Aga 32px
   line-height: 1.19;
   letter-spacing: -0.04em;
   color: #111111;
@@ -186,7 +188,7 @@
   line-height: 1.17;
   letter-spacing: -0.04em;
   max-width: 98px;
-  color: #B4AFAF;
+  color: #b4afaf;
   align-items: end;
   @include tablet {
     max-width: 116px;
@@ -244,18 +246,11 @@
     display: block;
   }
 }
-.shopping__shop-img {
-  filter: invert(0);
-  transition: 0.5s;
-}
-
-.shopping__shop-img:hover {
-  transform: translateY(-7);
-}
 
 .shopping__shop-img {
   filter: invert(0);
   transition: 0.5s;
+  filter: grayscale(1);
 }
 .shopping__shop-img:hover {
   transform: translateY(-7);
@@ -266,7 +261,7 @@
 .shopping__storage {
   // display: none;
   display: block;
-   margin: 0 auto;
+  margin: 0 auto;
 
   width: 265px;
 }
@@ -281,13 +276,16 @@
 
   color: rgba(0, 0, 0, 0.6);
 }
-.image{
-  margin:auto;
+.image {
+  margin: auto;
 }
 .aside {
   width: 360px; //356px Aga
   margin-left: 24px;
   // background-color: red;//Aga
+}
+.no-icon {
+  display: none;
 }
 //first, basic markup
 // V2
