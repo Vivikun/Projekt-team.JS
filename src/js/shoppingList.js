@@ -7,19 +7,11 @@ import appleImage1 from '../images/shoppingList/apple-shop-1x.png';
 import appleImage2 from '../images/shoppingList/apple-shop-2x.png';
 import bookshopImage1 from '../images/shoppingList/bookshop-1x.png';
 import bookshopImage2 from '../images/shoppingList/bookshop-2x.png';
-
-// shoppingListEl: document.querySelector('.shopping__cards');
-// notificationContainerEl: document.querySelector('.shopping__storage');
-// shoppingHeadingEl: document.querySelector('.shopping__heading');
 const shoppingListEl = document.querySelector('.shopping__cards');
 const notificationContainerEl = document.querySelector('.shopping__storage');
 const shoppingHeadingEl = document.querySelector('.shopping__heading');
-const shoppingBtnTrash=document.querySelector('.shopping__btn');
-// logoTrashPath: new URL('/src/images/icons.svg#icon-dump', import.meta.url);
-// const logoTrashPath = '/src/images/icons.svg#icon-dump';
+const shoppingBtnTrash = document.querySelector('.shopping__btn');
 const logoTrashPath = new URL('/src/images/icons.svg', import.meta.url);
-//------------------
-//pobierz i zapisz ID wszystkich ksiazek do local storage
 
 function saveTopBooks() {
   getTopBooks()
@@ -47,9 +39,6 @@ function saveTopBooks() {
     });
 }
 
-// document.getElementById('save-books-button').addEventListener('click', saveTopBooks);//Aga
-
-//ON LOAD FUNCTION loadAndRenderBooks
 window.addEventListener('load', loadAndRenderBooks);
 
 async function loadAndRenderBooks() {
@@ -61,9 +50,8 @@ async function loadAndRenderBooks() {
       notificationContainerEl.style.display = 'block';
       return;
     }
-
+    notificationContainerEl.style.display = 'none';
     notificationContainerEl.style.display = 'none';//Aga
-
     const booksDetails = await Promise.all(storedBookIds.map(id => getBooksId(id)));
 
     console.log('Fetched book details:', booksDetails);
@@ -106,7 +94,7 @@ async function loadAndRenderBooks() {
                 <img srcset="${appleImage1} 1x, ${appleImage2} 2x" src="${appleImage1}" alt="${apple.name}" class="shopping__shop-img" width="28" height="27"/>
               </a>
             </li>
-            <li class="shopping__shop">
+            <li class="shopping__shop no-icon">
               <a href="${bookshop.url}" class="shopping__shop-link" target="_blank" crossorigin="anonymous"  rel="noopener noreferrer" aria-label="Book-shop site">
                 <img srcset="${bookshopImage1} 1x, ${bookshopImage2} 2x" src="${bookshopImage1}" alt="${bookshop.name}" class="shopping__shop-img" width="32" height="30"/>
               </a>
@@ -125,13 +113,11 @@ async function loadAndRenderBooks() {
       .join('');
 
     container.innerHTML = markup;
-    shoppingListEl.addEventListener('click', onTrashClick);//Aga
+    shoppingListEl.addEventListener('click', onTrashClick); //Aga
   } catch (error) {
     console.error('Error while loading and rendering books:', error);
   }
 }
-// // ONTRASHCLICK
-// document.querySelector('.shopping__cards').addEventListener('click', onTrashClick);
 
 function onTrashClick(e) {
   const target = e.target.closest('.shopping__btn');
@@ -142,22 +128,11 @@ function onTrashClick(e) {
 
   const bookEl = target.closest('.shopping__card');
   const seekedId = bookEl.dataset.id.trim();
-
-  // Retrieve stored book IDs from local storage
   const storedBookIds = storageMethods.load('selected-books');
-
-  // Find the index of the book to be removed
   const removedElIndexFromStorage = storedBookIds.findIndex(id => id === seekedId);
-
-  // Check if the book ID was found in local storage
   if (removedElIndexFromStorage !== -1) {
-    // Remove the book from the array
     storedBookIds.splice(removedElIndexFromStorage, 1);
-
-    // Save the updated array to local storage
     storageMethods.save('selected-books', storedBookIds);
-
-    // Remove the book element from the DOM
     bookEl.remove();
   } else {
     console.error('Book ID not found in local storage.');
