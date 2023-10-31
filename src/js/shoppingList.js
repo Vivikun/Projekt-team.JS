@@ -1,5 +1,5 @@
 import { getTopBooks, getBooksId } from './book-api';
-import axios from 'axios';
+
 import storageMethods from './storage-methods';
 import amazonImage1 from '../images/shoppingList/amazon-shop-1x.png';
 import amazonImage2 from '../images/shoppingList/amazon-shop-2x.png';
