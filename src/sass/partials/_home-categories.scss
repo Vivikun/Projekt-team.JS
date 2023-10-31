@@ -7,7 +7,7 @@
       grid-template-areas: 'sidebar content';
     }
   }
-
+  
   .books__item {
     @media screen and (max-width: 768px) {
       margin-bottom: 40px;
@@ -93,5 +93,7 @@
     background-color:  #b4afaf;
   }
   .aside {
+    width: 360px; //356px Aga
     margin-left: 24px;
+    // background-color: rgb(232, 175, 175);//Aga
   }
