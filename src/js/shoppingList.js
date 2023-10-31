@@ -1,5 +1,5 @@
 import { getTopBooks, getBooksId } from './book-api';
-import axios from 'axios';
+
 import storageMethods from './storage-methods';
 import amazonImage1 from '../images/shoppingList/amazon-shop-1x.png';
 import amazonImage2 from '../images/shoppingList/amazon-shop-2x.png';
@@ -51,7 +51,7 @@ async function loadAndRenderBooks() {
       return;
     }
     notificationContainerEl.style.display = 'none';
-    notificationContainerEl.style.display = 'none';//Aga
+    // notificationContainerEl.style.display = 'none'; //Aga
     const booksDetails = await Promise.all(storedBookIds.map(id => getBooksId(id)));
 
     console.log('Fetched book details:', booksDetails);
