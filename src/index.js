@@ -8,3 +8,4 @@ import './js/home-books.js';
 import './js/signup-modal.js';
 import './js/darkmode';
 import './js/pop-up';
+import './js/loader';
