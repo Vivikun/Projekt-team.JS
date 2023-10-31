@@ -173,25 +173,24 @@
   line-height: 1.17;
   letter-spacing: -0.04em;
   max-width: 98px;
-
+  color: #B4AFAF;
+  align-items: end;
   @include tablet {
     max-width: 116px;
     display: block;
   }
 }
-
 .shopping__btn {
   display: flex;
   justify-content: center;
   align-items: center;
-
   position: absolute;
   top: 13px;
   right: 13px;
   width: 28px;
   height: 28px;
 
-  // background-color: #4f2ee8;
+  background-color: #4f2ee8;
   border-radius: 50%;
   border: none;
 
@@ -204,7 +203,7 @@
 }
 
 .shopping__btn-icon {
-  // stroke: white;
+  stroke: white;
   fill: transparent;
   @include tablet {
     width: 18px;
@@ -236,6 +235,7 @@
   filter: invert(0);
   transition: 0.5s;
 }
+
 .shopping__shop-img:hover {
   transform: translateY(-7);
 }
