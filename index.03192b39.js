@@ -494,13 +494,14 @@ let t=await getTopBooks();t=t.map(t=>({...t,books:t.books}))},eU=async()=>{try{l
         ${t.map(t=>`<li class="category-item" data-id="${t.list_name}">
         ${t.list_name}
         </li>`).join("")}`;let e=document.querySelectorAll(".category-item");e.forEach(t=>{t.addEventListener("click",t=>{let e=document.querySelector(".category-item.active");e&&e.classList.remove("active"),t.target.classList.add("active"),"all-categories"===t.target.dataset.id?ej():eD(t.target.dataset.id)})})}catch(t){/*@__PURE__*/c(eI).Notify.failure("Oops! Something went wrong.")}};eU();const eD=async t=>{let e=await eO(t);eM.classList.remove("container_active"),eF.classList.add("container_active"),eF.innerHTML=function(t,e){if(t.length>0)return`<h3>${e.substring(0,e.lastIndexOf(" "))}<span> ${e.split(" ").pop()}</span></h3>
-        <ul>
-        ${t.map(t=>`<li>
+        <ul class="book-item__list">
+        ${t.map(t=>`<li class="book-item">
             <a href="#" rel="noopener noreferrer" data-id='${t._id}'>
             <div>
             <img
                 src="${t.book_image}"
                 alt="${t.title}"
+                class="book-item_image"
                 width="180"
                 height="256"
                 loading="lazy"               
@@ -510,8 +511,8 @@ let t=await getTopBooks();t=t.map(t=>({...t,books:t.books}))},eU=async()=>{try{l
             </div> 
             </div>
             <div>
-            <h3">${t.title}</h3>
-            <p class="books__card-author">
+            <h3 class="book-item_title">${t.title}</h3>
+            <p class="book-item_author">
             ${t.author}
             </p>
             </div>
@@ -586,6 +587,6 @@ im.src=e.book_image,iu.href=e.amazon_product_url;let i=`<h2 class="popup__title"
 //  )
 //  .join('');
 // shopsList.innerHTML = shopsBooks;
-},iN=()=>{ix.classList.add("popup-is-hidden"),iy.removeEventListener("click",iN),ix.removeEventListener("click",iS),document.removeEventListener("keydown",iC)},iS=t=>{t.target===ix&&iN()};ib.addEventListener("click",t=>{t.stopPropagation()});const iC=t=>{"Escape"===t.code&&iN()},iE=t=>{if(t.target.closest("li")){let e=t.target.closest("li").dataset.id;ik(e),iy.addEventListener("click",iN),ix.addEventListener("click",iS),document.addEventListener("keydown",iC),ix.classList.remove("popup-is-hidden")}};iw.addEventListener("click",iE),iv.addEventListener("click",iE),ig.addEventListener("click",removeFromLocalStorage),ih.addEventListener("click",addToLocalStorage),setTimeout(()=>{document.getElementById("loader").classList.add("hide-loader")},3e3);//# sourceMappingURL=index.0924834c.js.map
+},iN=()=>{ix.classList.add("popup-is-hidden"),iy.removeEventListener("click",iN),ix.removeEventListener("click",iS),document.removeEventListener("keydown",iC)},iS=t=>{t.target===ix&&iN()};ib.addEventListener("click",t=>{t.stopPropagation()});const iC=t=>{"Escape"===t.code&&iN()},iE=t=>{if(t.target.closest("li")){let e=t.target.closest("li").dataset.id;ik(e),iy.addEventListener("click",iN),ix.addEventListener("click",iS),document.addEventListener("keydown",iC),ix.classList.remove("popup-is-hidden")}};iw.addEventListener("click",iE),iv.addEventListener("click",iE),ig.addEventListener("click",removeFromLocalStorage),ih.addEventListener("click",addToLocalStorage),setTimeout(()=>{document.getElementById("loader").classList.add("hide-loader")},3e3);//# sourceMappingURL=index.03192b39.js.map
 
-//# sourceMappingURL=index.0924834c.js.map
+//# sourceMappingURL=index.03192b39.js.map
