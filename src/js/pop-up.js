@@ -15,7 +15,7 @@ const popUp = document.querySelector('.popup');
 const comment = document.querySelector('.popup__comment');
 //const shopsList = document.querySelector('.popup__shops-list');
 
-const listBooks = document.querySelector('.categories-list');
+const listBooks = document.querySelector('.books-container');
 const listBooksInCategories = document.querySelector('.home-typeBook');
 
 //let isBookAlreadyInShoppingList = false;
