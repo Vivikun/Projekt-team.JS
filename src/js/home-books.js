@@ -51,6 +51,9 @@ document.addEventListener('DOMContentLoaded', async () => {
       const selectedCategoryTitle = document.createElement('h1');
       selectedCategoryTitle.textContent = selectedCategoryData[0].list_name;
       selectedCategorySection.appendChild(selectedCategoryTitle);
+      const selectedBookList = document.createElement('ul');
+      selectedBookList.classList.add('book-item__list');
+      selectedCategorySection.appendChild(selectedBookList);
       selectedCategoryData.forEach(book => {
         const bookItem = document.createElement('li');
         bookItem.classList.add('book-item');
@@ -59,7 +62,7 @@ document.addEventListener('DOMContentLoaded', async () => {
           <h3 class="book-item_title">${book.title}</h3>
           <p class="book-item_author">${book.author}</p>
         `;
-        selectedCategorySection.appendChild(bookItem);
+        selectedBookList.appendChild(bookItem);
       });
       layout.appendChild(selectedCategorySection);
     }
