@@ -67,15 +67,16 @@ function markupTopBooksByType(data, typeBooks) {
     return `<h3>${typeBooks.substring(0, typeBooks.lastIndexOf(' '))}<span> ${typeBooks
       .split(' ')
       .pop()}</span></h3>
-        <ul>
+        <ul class="book-item__list">
         ${data
           .map(
-            book => `<li>
+            book => `<li class="book-item">
             <a href="#" rel="noopener noreferrer" data-id='${book._id}'>
             <div>
             <img
                 src="${book.book_image}"
                 alt="${book.title}"
+                class="book-item_image"
                 width="180"
                 height="256"
                 loading="lazy"               
@@ -85,8 +86,8 @@ function markupTopBooksByType(data, typeBooks) {
             </div> 
             </div>
             <div>
-            <h3">${book.title}</h3>
-            <p class="books__card-author">
+            <h3 class="book-item_title">${book.title}</h3>
+            <p class="book-item_author">
             ${book.author}
             </p>
             </div>
