@@ -1,7 +1,7 @@
 .layout {
     padding-top: 40px;
     padding-bottom: 10px;
-    @media screen and (min-width: 1200px) {
+    @include desktop {
       display: grid;
       gap: 40px;
       grid-template-areas: 'sidebar content';
@@ -9,7 +9,7 @@
   }
   
   .books__item {
-    @media screen and (max-width: 768px) {
+    @include tablet {
       margin-bottom: 40px;
     }
   }
@@ -18,6 +18,9 @@
   }
   .home__category-container.container_active {
     display: block;
+    @include tablet {
+      max-height: 472px;
+    }
   }
   .home-typeBook.container_active {
     display: block;
@@ -30,11 +33,11 @@
           }
     .category-item:not(:last-child) {
     margin-bottom: 24px;
-    @media screen and (min-width: 768px) {
+    @include tablet {
       margin-bottom: 32px;
     }
   
-    @media screen and (min-width: 1200px) {
+    @include desktop {
       margin-bottom: 24px;
     }
   }
@@ -48,15 +51,15 @@
     transform: scale(1);
   }
   .books__card-author {
-    @media screen and (min-width: 768px) {
-      max-width: 218px;
+    @include tablet {
+      width: 218px;
     }
-    @media screen and (min-width: 1200px) {
-      max-width: 180px;
+    @include desktop {
+      width: 180px;
     }
   }
   .category__item {
-    @media screen and (min-width: 1200px) {
+    @include desktop {
       flex-basis: calc((100% - 100px) / 5);
     }
   }
@@ -71,6 +74,9 @@
   line-height: 1.125;
   display: block;
   overflow: auto;
+  @include tablet {
+    width: 337px;
+  }
   }
   .categories-list::-webkit-scrollbar {
     width: 8px;
@@ -86,6 +92,16 @@
     background-color:  #b4afaf;
   }
   .aside {
+    display: flex;
+    flex-direction: column;
     width: 360px; //356px Aga
     margin-left: 24px;
+     @include tablet {
+      flex-direction: row;
+    gap: 32px;
+    margin-left: 32px;
+    width: 100%;
       }
+      @include desktop {
+        flex-direction: column;
+    }}

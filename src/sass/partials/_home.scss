@@ -55,8 +55,16 @@
 // }
 .layout{
     display: flex;
+    @include tablet {
+      flex-direction: column;
+      max-width: 768px;
+    }
+    @include desktop {
+      min-width: 1280px;
+      max-width: 1440px;
   flex-direction:row;
-  gap: 40px;
+  gap: 40px;}
+
 //   margin-bottom: 40px;
 //   padding-left: 10px;
 //   padding-right: 10px;
@@ -66,7 +74,13 @@
   // max-width: 1200px;//Aga 996px
  width: 100%; //Aga
   // background-color: #94e60f;
-}
+  @include tablet {
+    padding-top: 100px;
+  }
+  @include desktop {
+    padding-top: 40px;
+  }
+  }
 .home-heading {
   color: #111;
   font-family: DM Sans;
@@ -76,9 +90,13 @@
   line-height: 52px;
   letter-spacing: -1.92px;
   margin-bottom: 40px;
-  &_custom {
-    // color: #4f2ee8;//aga
+  @include tablet {
+    margin-left: 32px;
   }
+  @include desktop {
+    margin-left: 0px;
+  }
+  
 }
 .books-container{//aga
   width: 100%;
@@ -94,6 +112,13 @@
   line-height: 24px;
   letter-spacing: 0.42px;
   text-transform: uppercase;
+  @include tablet {
+    margin-left: 32px;
+  }
+  @include desktop {
+    margin-left: 0px;
+  }
+  
 }
 .category-books {
   width: 100%;//Aga
@@ -102,6 +127,15 @@
   flex-wrap: wrap;
   gap: 24px;
   // background-color: #a83845;
+  @include tablet {
+    justify-content: center;
+    gap: 32px;
+   
+  }
+  @include desktop {
+    flex-wrap: nowrap;
+    flex-direction: row;
+  }
 }
 .book-item {
   display: flex;
@@ -110,11 +144,24 @@
   width: 180px;
   flex-wrap: wrap;
   gap: 4px;
+  @include tablet {
+    width: 218px;
+    
+  }
+  @include desktop {
+    width: 180px;
+  }
   &_image {
     height: 256px;
     border-radius: 8px;
     background: lightgray 50% / cover no-repeat;
-  }
+    @include tablet {
+      height: 316px;
+    }
+    @include desktop { 
+    height: 256px;
+    }
+     }
   &_title {
     overflow: hidden;
     color: #111;
@@ -144,6 +191,7 @@
     flex-wrap: wrap;
     gap: 24px;
   }
+ 
 }
 .see-more-button {
   display: block;
