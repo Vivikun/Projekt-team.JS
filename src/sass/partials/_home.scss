@@ -146,10 +146,12 @@
   gap: 4px;
   @include tablet {
     width: 218px;
-    
+    gap: 32px;
+    margin-bottom: 40px;
   }
   @include desktop {
     width: 180px;
+    margin-bottom: 40px;
   }
   &_image {
     height: 256px;
@@ -157,6 +159,7 @@
     background: lightgray 50% / cover no-repeat;
     @include tablet {
       height: 316px;
+      width: 218px;
     }
     @include desktop { 
     height: 256px;
@@ -190,6 +193,16 @@
     display: flex;
     flex-wrap: wrap;
     gap: 24px;
+    @include tablet {
+      justify-content: center;
+      gap: 32px;
+      margin: 0px;
+    }
+   @include desktop {
+    justify-content: space-between;
+    gap: 0;
+    margin: 0px;
+   }
   }
  
 }

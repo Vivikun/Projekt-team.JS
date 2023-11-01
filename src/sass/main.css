@@ -120,10 +120,6 @@ img {
   }
 }
 
-.home__category-container {
-  display: none;
-}
-
 .home__category-container.container_active {
   display: block;
 }

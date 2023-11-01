@@ -13,13 +13,14 @@
       margin-bottom: 40px;
     }
   }
-  .home__category-container {
-    display: none;
-  }
+ 
   .home__category-container.container_active {
     display: block;
     @include tablet {
       max-height: 472px;
+    }
+    @include desktop {
+      margin-bottom: 86px;
     }
   }
   .home-typeBook.container_active {
@@ -104,4 +105,5 @@
       }
       @include desktop {
         flex-direction: column;
+        max-width: 356px;
     }}
