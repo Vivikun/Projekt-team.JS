@@ -64,6 +64,9 @@
       max-width: 1440px;
   flex-direction:row;
   gap: 40px;}
+  @include mobile {
+    flex-direction: column;
+  }
 
 //   margin-bottom: 40px;
 //   padding-left: 10px;
@@ -75,10 +78,10 @@
  width: 100%; //Aga
   // background-color: #94e60f;
   @include tablet {
-    padding-top: 100px;
+    padding-top: 0px;
   }
   @include desktop {
-    padding-top: 40px;
+   
   }
   }
 .home-heading {
@@ -92,11 +95,16 @@
   margin-bottom: 40px;
   @include tablet {
     margin-left: 32px;
+    padding-top: 40px;
   }
   @include desktop {
     margin-left: 0px;
   }
-  
+  @include mobile {
+    margin-top: 40px;
+    margin-left: 20px;
+    font-size: 32px;
+      }
 }
 .books-container{//aga
   width: 100%;
@@ -118,6 +126,9 @@
   @include desktop {
     margin-left: 0px;
   }
+  @include mobile {
+    margin-left: 20px;
+  }
   
 }
 .category-books {
@@ -136,6 +147,9 @@
     flex-wrap: nowrap;
     flex-direction: row;
   }
+  @include mobile {
+    justify-content: center;
+  }
 }
 .book-item {
   display: flex;
@@ -153,6 +167,9 @@
     width: 180px;
     margin-bottom: 40px;
   }
+  @include mobile {
+    width: 335px;
+  }
   &_image {
     height: 256px;
     border-radius: 8px;
@@ -163,6 +180,9 @@
     }
     @include desktop { 
     height: 256px;
+    }
+    @include mobile {
+      height: 485px;
     }
      }
   &_title {
