@@ -8,6 +8,10 @@
   @include tablet {
     width: 335px;
   }
+  @include mobile {
+    width: 335px;
+    height: 460px;
+  }
 }
 .ukraine-tittle {
   color: #fff;
