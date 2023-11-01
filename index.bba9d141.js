@@ -505,9 +505,6 @@ const eM=document.querySelector(".home__category-container"),eW=document.querySe
                 height="256"
                 loading="lazy"               
             />
-            <div>
-            <p>Quick view</p>
-            </div> 
             </div>
             <div>
             <h3 class="book-item_title">${t.title}</h3>
@@ -604,6 +601,6 @@ e.scrollIntoView({behavior:"smooth"})}}()}catch(t){console.error("Błąd podczas
                 <p class="popup__text">${a.description}</p>`;n.innerHTML=s},h=()=>{s.classList.add("popup-is-hidden"),r.removeEventListener("click",h),s.removeEventListener("click",g),document.removeEventListener("keydown",y)},g=t=>{t.target===s&&h()};l.addEventListener("click",t=>{t.stopPropagation()});let y=t=>{"Escape"===t.code&&h()},x=t=>{if(t.target.closest("li")){let e=t.target.closest("li").dataset.id;d(e),r.addEventListener("click",h),s.addEventListener("click",g),document.addEventListener("keydown",y),s.classList.remove("popup-is-hidden")}};f.addEventListener("click",x),p.addEventListener("click",x),a.addEventListener("click",()=>{if(!t)return;let e=JSON.parse(localStorage.getItem("books"))||[],i=e.filter(e=>e._id!==t._id);localStorage.setItem("books",JSON.stringify(i)),m=!1,u()}),o.addEventListener("click",()=>{if(!t)return;let e=JSON.parse(localStorage.getItem("books"))||[],i=e.some(e=>e._id===t._id);i||(e.push(t),localStorage.setItem("books",JSON.stringify(e))),m=!0,u()})});// setTimeout(() => {
 //     document.getElementById('loader').classList.add('hide-loader');
 //   }, 3000);
-//# sourceMappingURL=index.3c8a76d7.js.map
+//# sourceMappingURL=index.bba9d141.js.map
 
-//# sourceMappingURL=index.3c8a76d7.js.map
+//# sourceMappingURL=index.bba9d141.js.map
