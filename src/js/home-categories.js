@@ -8,12 +8,17 @@ const categoriesList = document.querySelector('.categories-list');
 const homeBooksByType = document.querySelector('.home-typeBook');
 //------------------------------------------------
 const createTopBooksMarkup = async () => {
-  //do BEST SELLERS BOOKS
-  let markup = await getTopBooks();
-  markup = markup.map(el => {
-    return { ...el, books: el.books };
-  });
+  try {
+    const data = await getTopBooks();
+    if (data.length === 0) {
+      console.error('Brak dostępnych danych.');
+      return;
+    }
+  } catch (error) {
+    console.error('Błąd podczas pobierania danych:', error);
+  }
 };
+
 //----------------------------------------
 const renderCategories = async () => {
   try {
