@@ -1,21 +1,21 @@
 .modal__container {
-    position: fixed;
-  top: 0;
-  right: 0;
-  bottom: 0;
-  left: 0;
-  z-index: 1000;
-  background-color: #4F2EE8;
-  display: flex;
-  }
-
-
-
-.modal {
     display: flex;
-    position: absolute;
-    left: 0;
+    justify-content: center;
+    align-items: center;
     top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    z-index: 1000;
+    background-color: #4F2EE8;
+    position: fixed; 
+  }
+  
+  .modal {
+    display: flex;
+    flex-direction: column; 
+    justify-content: center;
+    align-items: center;
     width: 579px;
     height: 516px;
     background-color: white;
@@ -28,9 +28,25 @@
     text-align: center;
     padding: 20px;
     border: 2px solid #111;
+    position: relative; 
+  }
+  
+.dark-theme .modal {
+    background-color: rgba(32, 32, 36, 1);
+    border: 2px solid #fff;
+
+    a {
+        color:#fff
+    }
 }
 
+.link:hover { 
+ color: #4F2EE8;  
+}
 
+.dark-theme .link:hover {
+    color: #4F2EE8;
+}
 
 .form {
     display: flex;
@@ -49,6 +65,10 @@
     border-radius: 40px;
     border: 2px solid #111;
     margin-bottom: 28px;
+}
+
+.dark-theme .modal__input-group {
+    border: 2px solid white;
 }
 
 .modal__input-group input {
@@ -102,4 +122,17 @@
 
 .hidden {
     display: none;
+}
+
+.dark-theme .modal__close-button {
+    color: #fff;
+}
+
+.dark-theme ::placeholder {
+    color: #fff;
+}
+
+.dark-theme .modal__sign-up {
+    background-color: #fff;
+    color: black;
 }
