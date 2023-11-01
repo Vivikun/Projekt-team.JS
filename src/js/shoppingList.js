@@ -80,24 +80,36 @@ async function loadAndRenderBooks() {
           </div>
           </div>
           <div class="shopping__wrap">
-          <h2 class="shopping__title">${title}</h2>
+          <h2 class="shopping__title">${cutTitle(title)}</h2>
           <p class="shopping__category">${list_name}</p>
           <p class="shopping__book-description">${description}</p>
           <p class="shopping__book-author">${author}</p>
           <ul class="shopping__shops">
             <li class="shopping__shop">
-              <a href="${amazon.url}" class="shopping__shop-link" target="_blank" crossorigin="anonymous"  rel="noopener noreferrer" aria-label="Amazon-book site">
-                <img srcset="${amazonImage1} 1x, ${amazonImage2} 2x" src="${amazonImage1}" alt="${amazon.name}" class="shopping__shop-img" width="48" height="15"/>
+              <a href="${
+                amazon.url
+              }" class="shopping__shop-link" target="_blank" crossorigin="anonymous"  rel="noopener noreferrer" aria-label="Amazon-book site">
+                <img srcset="${amazonImage1} 1x, ${amazonImage2} 2x" src="${amazonImage1}" alt="${
+            amazon.name
+          }" class="shopping__shop-img" width="48" height="15"/>
               </a>
             </li>
             <li class="shopping__shop">
-              <a href="${apple.url}" class="shopping__shop-link" target="_blank" crossorigin="anonymous"  rel="noopener noreferrer" aria-label="Apple-book site">
-                <img srcset="${appleImage1} 1x, ${appleImage2} 2x" src="${appleImage1}" alt="${apple.name}" class="shopping__shop-img" width="28" height="27"/>
+              <a href="${
+                apple.url
+              }" class="shopping__shop-link" target="_blank" crossorigin="anonymous"  rel="noopener noreferrer" aria-label="Apple-book site">
+                <img srcset="${appleImage1} 1x, ${appleImage2} 2x" src="${appleImage1}" alt="${
+            apple.name
+          }" class="shopping__shop-img" width="28" height="27"/>
               </a>
             </li>
             <li class="shopping__shop no-icon">
-              <a href="${bookshop.url}" class="shopping__shop-link" target="_blank" crossorigin="anonymous"  rel="noopener noreferrer" aria-label="Book-shop site">
-                <img srcset="${bookshopImage1} 1x, ${bookshopImage2} 2x" src="${bookshopImage1}" alt="${bookshop.name}" class="shopping__shop-img" width="32" height="30"/>
+              <a href="${
+                bookshop.url
+              }" class="shopping__shop-link" target="_blank" crossorigin="anonymous"  rel="noopener noreferrer" aria-label="Book-shop site">
+                <img srcset="${bookshopImage1} 1x, ${bookshopImage2} 2x" src="${bookshopImage1}" alt="${
+            bookshop.name
+          }" class="shopping__shop-img" width="32" height="30"/>
               </a>
             </li>
           </ul>
@@ -114,7 +126,7 @@ async function loadAndRenderBooks() {
       .join('');
 
     container.innerHTML = markup;
-    shoppingListEl.addEventListener('click', onTrashClick); //Aga
+    shoppingListEl.addEventListener('click', onTrashClick);
   } catch (error) {
     console.error('Error while loading and rendering books:', error);
   }
@@ -139,3 +151,51 @@ function onTrashClick(e) {
     console.error('Book ID not found in local storage.');
   }
 }
+
+function cutTitle(title) {
+  if (window.innerWidth <= 768) {
+    if (title.length > 17) {
+      const shortenedTitle = title.substring(0, 17) + '...';
+      // console.log(`Original title: ${title}, Shortened title: ${shortenedTitle}`);
+      return shortenedTitle;
+    }
+    return title;
+  }
+  return title;
+}
+
+window.addEventListener('resize', function () {
+  // console.log('Window resized');
+  const titleElements = document.querySelectorAll('.shopping__title');
+  // console.log('titleElements:', titleElements);
+  titleElements.forEach(titleElement => {
+    const fullTitle = titleElement.dataset.fullTitle || titleElement.textContent;
+    // console.log(`fullTitle: ${fullTitle}`);
+    const shortenedTitle = cutTitle(fullTitle);
+    // console.log(`Applying shortened title: ${shortenedTitle}`);
+    titleElement.textContent = shortenedTitle;
+    if (!titleElement.dataset.fullTitle) {
+      titleElement.dataset.fullTitle = fullTitle;
+    }
+  });
+});
+
+//----------------
+// function cutTitle(title) {
+//   if (window.innerWidth <= 768) {
+//     if (title.length > 17) {
+//       return title.substring(0, 17) + '...';
+//     }
+//     return title;
+//   }
+//   return title;
+// }
+
+// window.addEventListener('resize', function () {
+//   const titleElements = document.querySelectorAll('.shopping__title');
+//   titleElements.forEach(titleElement => {
+//     const fullTitle = titleElement.textContent;
+//     const shortenedTitle = cutTitle(fullTitle);
+//     titleElement.textContent = shortenedTitle;
+//   });
+// });
