@@ -36,7 +36,7 @@ const renderCategories = async () => {
       });
     });
   } catch (error) {
-    Notiflix.Notify.failure(`Oops! Something went wrong.`);
+    Notiflix.Notify.failure(`Oops! Something went wrong.Kurwa!`);
   }
 };
 
@@ -64,10 +64,10 @@ const showTypeBook = async type => {
 
 function markupTopBooksByType(data, typeBooks) {
   if (data.length > 0) {
-    return `<h3>${typeBooks.substring(0, typeBooks.lastIndexOf(' '))}<span> ${typeBooks
+    return `<h2 class="home-heading">${typeBooks.substring(0, typeBooks.lastIndexOf(' '))}<span class="home-heading_custom"> ${typeBooks
       .split(' ')
-      .pop()}</span></h3>
-        <ul>
+      .pop()}</span></h2>
+        <ul class="listByCategories">
         ${data
           .map(
             book => `<li>

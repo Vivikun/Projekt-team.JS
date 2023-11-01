@@ -29,16 +29,13 @@ function saveTopBooks() {
         console.error('Nie znaleziono listy książek.');
         return;
       }
-
       const allBookIds = [];
-
       response.forEach(list => {
         if (list.books && list.books.length > 0) {
           const bookIds = list.books.map(book => book._id);
           allBookIds.push(...bookIds);
         }
       });
-
       console.log('ID wszystkich książek z listy:', allBookIds);
       storageMethods.save('selected-books', allBookIds);
     })
@@ -58,11 +55,11 @@ async function loadAndRenderBooks() {
 
     if (!storedBookIds || storedBookIds.length === 0) {
       console.error('No book IDs found in local storage.');
-      notificationContainerEl.style.display = 'block';
+      // notificationContainerEl.style.display = 'block';
       return;
     }
 
-    notificationContainerEl.style.display = 'none';//Aga
+    // notificationContainerEl.style.display = 'none';//Aga
 
     const booksDetails = await Promise.all(storedBookIds.map(id => getBooksId(id)));
 

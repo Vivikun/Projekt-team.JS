@@ -21,7 +21,7 @@ async function getTopBooks() {
   const { data } = await axios.get(TOP_BOOKS);
   return data;
 }
-
+console.log(getTopBooks())
 //---------(3)--getSelectedCategory()-----------------------
 
 async function getSelectedCategory(category) {
@@ -39,6 +39,7 @@ async function getBooksId(id) {
   const { data } = await axios.get(`${BOOKS_ID}/${id}`);
   return data;
 };
+// console.log(getBooksId('id: ', 643282));
 
 
 
