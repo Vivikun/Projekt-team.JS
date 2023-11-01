@@ -160,15 +160,13 @@
   gap: 4px;
   @include tablet {
     width: 218px;
-    gap: 32px;
     margin-bottom: 40px;
   }
   @include desktop {
     width: 180px;
-    margin-bottom: 40px;
-  }
+      }
   @include mobile {
-    width: 335px;
+    width: 375px;
   }
   &_image {
     height: 256px;
@@ -183,7 +181,9 @@
     }
     @include mobile {
       height: 485px;
-    }
+      width: 335px;
+      margin-left: 20px;
+      }
      }
   &_title {
     overflow: hidden;
@@ -196,6 +196,10 @@
     font-weight: 700;
     line-height: 18px;
     letter-spacing: -0.64px;
+    margin-top: 14px;
+    @include mobile {
+      margin-left: 20px;
+    }
   }
   &_author {
     color: #b4afaf;
@@ -208,6 +212,9 @@
     font-weight: 400;
     line-height: 14px;
     letter-spacing: -0.48px;
+    @include mobile {
+      margin-left: 20px;
+    }
   }
   &__list {
     display: flex;

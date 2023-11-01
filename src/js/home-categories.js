@@ -81,9 +81,6 @@ function markupTopBooksByType(data, typeBooks) {
                 height="256"
                 loading="lazy"               
             />
-            <div>
-            <p>Quick view</p>
-            </div> 
             </div>
             <div>
             <h3 class="book-item_title">${book.title}</h3>
