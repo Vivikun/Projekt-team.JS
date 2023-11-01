@@ -121,6 +121,20 @@
       @include desktop {
         flex-direction: column;
         max-width: 356px;
+
+    }}
+
+    .dark-theme .category-item {
+      color: white;
+    }
+    .dark-theme .category-item.active,
+    .dark-theme .category-item:hover,
+    .dark-theme .category-item:focus {
+    text-transform: uppercase;
+    font-weight: 700;
+    color: #4f2ee8;
+    transform: scale(1);
+  }
     }
   @include mobile{
     margin-left: 20px;
