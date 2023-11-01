@@ -492,7 +492,7 @@ const eM=document.querySelector(".home__category-container"),eW=document.querySe
         All categories</li>
         ${t.map(t=>`<li class="category-item" data-id="${t.list_name}">
         ${t.list_name}
-        </li>`).join("")}`;let e=document.querySelectorAll(".category-item");e.forEach(t=>{t.addEventListener("click",t=>{let e=document.querySelector(".category-item.active");e&&e.classList.remove("active"),t.target.classList.add("active"),"all-categories"===t.target.dataset.id?eF():eD(t.target.dataset.id)})})}catch(t){/*@__PURE__*/c(e_).Notify.failure("Oops! Something went wrong.")}};eU();const eD=async t=>{let e=await eO(t);eM.classList.remove("container_active"),ej.classList.add("container_active"),ej.innerHTML=function(t,e){if(t.length>0)return`<h3>${e.substring(0,e.lastIndexOf(" "))}<span> ${e.split(" ").pop()}</span></h3>
+        </li>`).join("")}`;let e=document.querySelectorAll(".category-item");e.forEach(t=>{t.addEventListener("click",t=>{let e=document.querySelector(".category-item.active");e&&e.classList.remove("active"),t.target.classList.add("active"),"all-categories"===t.target.dataset.id?eF():eD(t.target.dataset.id)})})}catch(t){/*@__PURE__*/c(e_).Notify.failure("Oops! Something went wrong.")}};eU();const eD=async t=>{let e=await eO(t);eM.classList.remove("container_active"),ej.classList.add("container_active"),ej.innerHTML=function(t,e){if(t.length>0)return`<h3 class="home-heading">${e.substring(0,e.lastIndexOf(" "))}<span class="home-heading_custom"> ${e.split(" ").pop()}</span></h3>
         <ul class="book-item__list">
         ${t.map(t=>`<li class="book-item">
             <a href="#" rel="noopener noreferrer" data-id='${t._id}'>
@@ -604,6 +604,6 @@ e.scrollIntoView({behavior:"smooth"})}}()}catch(t){console.error("Błąd podczas
                 <p class="popup__text">${a.description}</p>`;n.innerHTML=s},h=()=>{s.classList.add("popup-is-hidden"),r.removeEventListener("click",h),s.removeEventListener("click",g),document.removeEventListener("keydown",y)},g=t=>{t.target===s&&h()};l.addEventListener("click",t=>{t.stopPropagation()});let y=t=>{"Escape"===t.code&&h()},x=t=>{if(t.target.closest("li")){let e=t.target.closest("li").dataset.id;d(e),r.addEventListener("click",h),s.addEventListener("click",g),document.addEventListener("keydown",y),s.classList.remove("popup-is-hidden")}};f.addEventListener("click",x),p.addEventListener("click",x),a.addEventListener("click",()=>{if(!t)return;let e=JSON.parse(localStorage.getItem("books"))||[],i=e.filter(e=>e._id!==t._id);localStorage.setItem("books",JSON.stringify(i)),m=!1,u()}),o.addEventListener("click",()=>{if(!t)return;let e=JSON.parse(localStorage.getItem("books"))||[],i=e.some(e=>e._id===t._id);i||(e.push(t),localStorage.setItem("books",JSON.stringify(e))),m=!0,u()})});// setTimeout(() => {
 //     document.getElementById('loader').classList.add('hide-loader');
 //   }, 3000);
-//# sourceMappingURL=index.7848f869.js.map
+//# sourceMappingURL=index.3c8a76d7.js.map
 
-//# sourceMappingURL=index.7848f869.js.map
+//# sourceMappingURL=index.3c8a76d7.js.map
