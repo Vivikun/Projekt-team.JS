@@ -540,6 +540,7 @@ try{let e=await eI(t);eX.save("active-book",e),eX.load("selected-books")?.find(t
        <h2 class="popup__title">${a}</h2>
        <p class="popup__author">${o}</p>
        <p class="popup__text">${r}</p>
+       <div  class="modal-info__icons >
        <ul>
        <li>
        <a class="modal-info__link" href="${s.url}" target="_blank" crossorigin="anonymous"  rel="noopener noreferrer" aria-label="Amazon">
@@ -556,6 +557,7 @@ try{let e=await eI(t);eX.save("active-book",e),eX.load("selected-books")?.find(t
        </ul>
        </div>
        </div>
+       </div>
        <button class="modal-info__button" type="button" href="#">
        ${p?"remove from the shopping list":"add to shopping list"}
        </button>`;ig.innerHTML=m;let u=document.querySelectorAll(".modal-info__link");!function(t){for(let e=0;e<t.length;e++)t[e].addEventListener("click",function(t){t.preventDefault(),window.open(this.href)})}(u)}catch(t){console.log(t),/*@__PURE__*/c(e_).Notify.failure(`Oops! Something went wrong. You caught the following error: ${t.message}.`)}}const ix=()=>{im.classList.add("popup-is-hidden"),ip.removeEventListener("click",ix),im.removeEventListener("click",ib),document.removeEventListener("keydown",iw)},ib=t=>{t.target===im&&ix()};iu.addEventListener("click",t=>{t.stopPropagation()});const iw=t=>{"Escape"===t.code&&ix()},iv=t=>{if(t.preventDefault(),!t.target.closest("li"))return;let e=t.target.dataset.id;ip.addEventListener("click",ix),im.addEventListener("click",ib),document.addEventListener("keydown",iw),im.classList.remove("popup-is-hidden"),iy(e)};id.addEventListener("click",iv),ih.addEventListener("click",iv);// btnAddToShoppingList.addEventListener('click', addToLocalStorage);
@@ -563,6 +565,6 @@ const ik="selected-books",iN=eX.load(ik),iS=document.querySelector(".modal-info_
 return}iN.push(t),eX.save("selected-books",iN),/*@__PURE__*/c(e_).Notify.success("This book was added to your Shopping list!"),e.textContent="remove from the shopping list"}// setTimeout(() => {
 //     document.getElementById('loader').classList.add('hide-loader');
 //   }, 3000);
-//# sourceMappingURL=index.88d5f2b8.js.map
+//# sourceMappingURL=index.5909e687.js.map
 ():"remove from the shopping list"===t.target.textContent?iS.innerHTML='Congratulations! You have added the book to the shopping list. To delete, press the button "Remove from the shopping list.':"add to shopping list"===t.target.textContent&&(iS.innerHTML="")});
-//# sourceMappingURL=index.88d5f2b8.js.map
+//# sourceMappingURL=index.5909e687.js.map
