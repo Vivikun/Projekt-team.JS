@@ -255,6 +255,9 @@
     background-color: #4f2ee8;
     color: #ffffff;
   }
+  @include mobile {
+    margin-right: 20px;
+  }
 }
 
 .dark-theme {

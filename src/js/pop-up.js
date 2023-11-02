@@ -59,6 +59,7 @@ async function createPopUp(id) {
        <h2 class="popup__title">${title}</h2>
        <p class="popup__author">${author}</p>
        <p class="popup__text">${description}</p>
+       <div  class="modal-info__icons >
        <ul>
        <li>
        <a class="modal-info__link" href="${amazon.url}" target="_blank" crossorigin="anonymous"  rel="noopener noreferrer" aria-label="Amazon">
@@ -78,7 +79,7 @@ async function createPopUp(id) {
        </ul>
        </div>
        </div>
-       <button class="modal-info__button">
+            <button class="modal-info__button">
        ${isActivBook ? 'remove from the shopping list' : 'add to shopping list'}
        </button>`;
 
