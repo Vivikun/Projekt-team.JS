@@ -23,7 +23,6 @@
 }
 
 .popup {
-
   width: 579px;
   height: 465px;
   border-radius: 18px;
@@ -37,6 +36,11 @@
   flex-direction: column;
   max-height: 100vh;
   overflow-y: auto;
+  
+@include mobile {
+  width: 335px;
+  height: 762px;
+}
 
   &__btn-close {
     background-color: transparent;
@@ -191,12 +195,25 @@
 
 .modal-info{
   display: flex;
+  
+@include mobile {
+  flex-direction: column;
+}
   &__image {
 width: 192px;
 height: 281px;
+
+@include mobile {
+  width: 287px;
+  height: 408px;
+}
 }
 &__box {
   margin-left: 24px;
+  
+@include mobile {
+margin-left: 0;
+}
 }
 &__icons {
   display: flex;
@@ -229,7 +246,14 @@ height: 281px;
     background-color: rgba(79, 46, 232, 1);
     color: rgba(255, 255, 255, 1);
     cursor: pointer;
-}}}
+}
+
+@include mobile {
+  width: 211px;
+  height: 46px;
+}}
+
+}
 
 .dark-theme .popup {
   background-color: rgba(32, 32, 36, 1);
@@ -238,5 +262,6 @@ height: 281px;
 }
 .dark-theme .modal-info__button {
   color: white;
+
 }
 
