@@ -23,24 +23,25 @@ document.addEventListener('DOMContentLoaded', async () => {
     seeMoreButton.dataset.categoryId = category.list_name;
     //obsluga przycisku 'see more'
 
+
+      category.books.forEach(book => {
+        const bookItem = document.createElement('li');
+        bookItem.classList.add('book-item');
+        bookItem.innerHTML = `
+          <img class="book-item_image" src="${book.book_image}" alt="${book.title}" data-id="${book._id}">
+          <h3 class="book-item_title">${book.title}</h3>
+          <p class="book-item_author">${book.author}</p>
+        `;
+        categoryBooks.appendChild(bookItem);
+      });
+
     seeMoreButton.addEventListener('click', async event => {
       const categoryId = event.target.dataset.categoryId;
       homeBooksByType.style.display = 'none';
       selectedCategoryData = await getSelectedCategory(categoryId);
       renderSelectedCategory();
     });
-
-    category.books.forEach(book => {
-      const bookItem = document.createElement('li');
-      bookItem.classList.add('book-item');
-      bookItem.innerHTML = `
-        <img class="book-item_image" src="${book.book_image}" alt="${book.title}">
-        <h3 class="book-item_title">${book.title}</h3>
-        <p class="book-item_author"> ${book.author}</p>
-      `;
-      categoryBooks.appendChild(bookItem);
-    });
-
+  
     booksContainer.appendChild(categoryTitle);
     booksContainer.appendChild(categoryBooks);
     booksContainer.appendChild(seeMoreButton);
@@ -60,10 +61,10 @@ document.addEventListener('DOMContentLoaded', async () => {
         const bookItem = document.createElement('li');
         bookItem.classList.add('book-item');
         bookItem.innerHTML = `
-          <img class="book-item_image" src="${book.book_image}" alt="${book.title}">
-        <h3 class="book-item_title">${book.title}</h3>
-        <p class="book-item_author">${book.author}</p>
-        `;
+
+          <img class="book-item_image" src="${book.book_image}" alt="${book.title}" data-id="${book._id}">
+          <h3 class="book-item_title">${book.title}</h3>
+          <p class="book-item_author">${book.author}</p>`;
         selectedBookList.appendChild(bookItem);
       });
       layout.appendChild(selectedCategorySection);
