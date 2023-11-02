@@ -51,7 +51,7 @@ async function createPopUp(id) {
     //   popupText.innerHTML = '';
     // }
 
-    const isActivBook = Boolean(LsService.load('selected-books')?.find(el => el._id === book._id));
+    const isActivBook = Boolean(LsService.load('selected-books')?.find(el => el._id === booksDetails1._id));
 
     const markup = `<div class="modal-info" data-id="${_id}">
      <img class="modal-info__image" src="${book_image}" alt="${title}" />
