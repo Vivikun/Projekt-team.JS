@@ -1,91 +1,141 @@
 .layout {
-    padding-top: 40px;
-    padding-bottom: 10px;
-    @media screen and (min-width: 1200px) {
-      display: grid;
-      gap: 40px;
-      grid-template-areas: 'sidebar content';
-    }
+  padding-top: 40px;
+  padding-bottom: 10px;
+  @include desktop {
+    display: grid;
+    gap: 40px;
+    grid-template-areas: 'sidebar content';
   }
-  
-  .books__item {
-    @media screen and (max-width: 768px) {
-      margin-bottom: 40px;
-    }
+  @include mobile {
+    max-width: 375px;
   }
-  .home__category-container {
-    display: none;
+}
+
+.books__item {
+  @include tablet {
+    margin-bottom: 40px;
   }
-  .home__category-container.container_active {
-    display: block;
+}
+
+.home__category-container.container_active {
+  display: block;
+  @include tablet {
+    max-height: 472px;
   }
-  .home-typeBook.container_active {
-    display: block;
-      }
-    .category-item {
-    color: rgba(17, 17, 17, 0.6);
-    cursor: pointer;
-    transform: scale(0.97);
-    transform-origin: center left;
-          }
-    .category-item:not(:last-child) {
+  @include desktop {
+    max-height: 472px;
+    margin-bottom: 86px;
+  }
+}
+.home-typeBook.container_active {
+  display: block;
+}
+.category-item {
+  color: rgba(17, 17, 17, 0.6);
+  cursor: pointer;
+  transform: scale(0.97);
+  transform-origin: center left;
+}
+.category-item:not(:last-child) {
+  margin-bottom: 24px;
+  @include tablet {
+    margin-bottom: 32px;
+  }
+
+  @include desktop {
+    margin-bottom: 32px;
+  }
+  @include mobile {
     margin-bottom: 24px;
-    @media screen and (min-width: 768px) {
-      margin-bottom: 32px;
-    }
-  
-    @media screen and (min-width: 1200px) {
-      margin-bottom: 24px;
-    }
   }
-  
-  .category-item.active,
-  .category-item:hover,
-  .category-item:focus {
+}
+
+.category-item.active,
+.category-item:hover,
+.category-item:focus {
+  text-transform: uppercase;
+  font-weight: 700;
+  color: #4f2ee8;
+  transform: scale(1);
+}
+.books__card-author {
+  @include tablet {
+    width: 218px;
+  }
+  @include desktop {
+    width: 180px;
+  }
+}
+.category__item {
+  @include desktop {
+    flex-basis: calc((100% - 100px) / 5);
+  }
+}
+.categories-list {
+  margin-bottom: 86px;
+  width: 356px;
+  height: 472px;
+  gap: 20px;
+  font-size: 18px;
+  line-height: 1.33333;
+  font-weight: 400;
+  line-height: 1.125;
+  display: block;
+  overflow: auto;
+  @include tablet {
+    width: 337px;
+  }
+  @include mobile {
+    height: 228px;
+    width: 335px;
+    font-size: 16px;
+    margin-bottom: 40px;
+  }
+}
+.categories-list::-webkit-scrollbar {
+  width: 8px;
+}
+.categories-list::-webkit-scrollbar-track {
+  background-color: transparent;
+}
+.categories-list::-webkit-scrollbar-thumb {
+  background-color: #e0e0e0;
+  border-radius: 4px;
+}
+.scategories-list::-webkit-scrollbar-thumb:hover {
+  background-color: #b4afaf;
+}
+.aside {
+  display: flex;
+  flex-direction: column;
+  width: 360px; //356px Aga
+  margin-left: 24px;
+  @include tablet {
+    flex-direction: row;
+    gap: 32px;
+    margin-left: 32px;
+    margin-bottom: 40px;
+    width: 100%;
+    max-height: 472px;
+  }
+  @include desktop {
+    flex-direction: column;
+    max-width: 356px;
+  }
+
+  .dark-theme .category-item {
+    color: white;
+  }
+  .dark-theme .category-item.active,
+  .dark-theme .category-item:hover,
+  .dark-theme .category-item:focus {
     text-transform: uppercase;
     font-weight: 700;
     color: #4f2ee8;
     transform: scale(1);
   }
-  .books__card-author {
-    @media screen and (min-width: 768px) {
-      max-width: 218px;
-    }
-    @media screen and (min-width: 1200px) {
-      max-width: 180px;
-    }
+
+  @include mobile {
+    margin-left: 20px;
   }
-  .category__item {
-    @media screen and (min-width: 1200px) {
-      flex-basis: calc((100% - 100px) / 5);
-    }
-  }
-  .categories-list{
-    margin-bottom:86px; 
-    width: 356px;
-    height: 472px;
-    gap: 20px;
-    font-size: 18px;
-    line-height: 1.33333;
-   font-weight: 400;
-  line-height: 1.125;
-  display: block;
-  overflow: auto;
-  }
-  .categories-list::-webkit-scrollbar {
-    width: 8px;
-  }
-  .categories-list::-webkit-scrollbar-track {
-    background-color: transparent;
-  }
-  .categories-list::-webkit-scrollbar-thumb {
-    background-color: #e0e0e0;
-    border-radius: 4px;
-  }
-  .scategories-list::-webkit-scrollbar-thumb:hover {
-    background-color:  #b4afaf;
-  }
-  .aside {
-    width: 360px; //356px Aga
-    margin-left: 24px;
-      }
+}

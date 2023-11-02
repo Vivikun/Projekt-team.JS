@@ -15,7 +15,7 @@ a,ul  {
   border: 1.5px solid #111;
   background: #FFF;
   z-index: 1;
-
+ 
   &__navigation {
     display: flex;
     align-items: center;
@@ -334,3 +334,23 @@ input:checked + .slider:before {
   stroke-dashoffset: -134;
   stroke-width: 6;
 }
+
+.dark-theme .main-header {
+  background-color: rgba(17, 17, 17, 1); 
+  color: white; 
+  border: 1.5px solid white;
+  a {
+    color: white;
+  }
+  
+}
+.dark-theme .main-menu__icon {
+  fill: #FFF;
+}
+
+
+.dark-theme  {
+  background-color: rgba(32, 32, 36, 1); 
+  color: white; 
+}
+

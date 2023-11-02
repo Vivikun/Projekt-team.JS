@@ -55,8 +55,19 @@
 // }
 .layout{
     display: flex;
+    @include tablet {
+      flex-direction: column;
+      max-width: 768px;
+    }
+    @include desktop {
+      min-width: 1280px;
+      max-width: 1440px;
   flex-direction:row;
-  gap: 40px;
+  gap: 40px;}
+  @include mobile {
+    flex-direction: column;
+  }
+
 //   margin-bottom: 40px;
 //   padding-left: 10px;
 //   padding-right: 10px;
@@ -66,7 +77,13 @@
   // max-width: 1200px;//Aga 996px
  width: 100%; //Aga
   // background-color: #94e60f;
-}
+  @include tablet {
+    padding-top: 0px;
+  }
+  @include desktop {
+   
+  }
+  }
 .home-heading {
   color: #111;
   font-family: DM Sans;
@@ -76,9 +93,18 @@
   line-height: 52px;
   letter-spacing: -1.92px;
   margin-bottom: 40px;
-  &_custom {
-    // color: #4f2ee8;//aga
+  @include tablet {
+    margin-left: 32px;
+    padding-top: 40px;
   }
+  @include desktop {
+    margin-left: 0px;
+  }
+  @include mobile {
+    margin-top: 40px;
+    margin-left: 20px;
+    font-size: 32px;
+      }
 }
 .books-container{//aga
   width: 100%;
@@ -94,6 +120,16 @@
   line-height: 24px;
   letter-spacing: 0.42px;
   text-transform: uppercase;
+  @include tablet {
+    margin-left: 32px;
+  }
+  @include desktop {
+    margin-left: 0px;
+  }
+  @include mobile {
+    margin-left: 20px;
+  }
+  
 }
 .category-books {
   width: 100%;//Aga
@@ -102,6 +138,18 @@
   flex-wrap: wrap;
   gap: 24px;
   // background-color: #a83845;
+  @include tablet {
+    justify-content: center;
+    gap: 32px;
+   
+  }
+  @include desktop {
+    flex-wrap: nowrap;
+    flex-direction: row;
+  }
+  @include mobile {
+    justify-content: center;
+  }
 }
 .book-item {
   display: flex;
@@ -110,11 +158,33 @@
   width: 180px;
   flex-wrap: wrap;
   gap: 4px;
+  @include tablet {
+    width: 218px;
+    margin-bottom: 40px;
+  }
+  @include desktop {
+    width: 180px;
+      }
+  @include mobile {
+    width: 375px;
+  }
   &_image {
     height: 256px;
     border-radius: 8px;
     background: lightgray 50% / cover no-repeat;
-  }
+    @include tablet {
+      height: 316px;
+      width: 218px;
+    }
+    @include desktop { 
+    height: 256px;
+    }
+    @include mobile {
+      height: 485px;
+      width: 335px;
+      margin-left: 20px;
+      }
+     }
   &_title {
     overflow: hidden;
     color: #111;
@@ -126,6 +196,10 @@
     font-weight: 700;
     line-height: 18px;
     letter-spacing: -0.64px;
+    margin-top: 14px;
+    @include mobile {
+      margin-left: 20px;
+    }
   }
   &_author {
     color: #b4afaf;
@@ -138,12 +212,26 @@
     font-weight: 400;
     line-height: 14px;
     letter-spacing: -0.48px;
+    @include mobile {
+      margin-left: 20px;
+    }
   }
   &__list {
     display: flex;
     flex-wrap: wrap;
     gap: 24px;
+    @include tablet {
+      justify-content: center;
+      gap: 32px;
+      margin: 0px;
+    }
+   @include desktop {
+    justify-content: space-between;
+    gap: 0;
+    margin: 0px;
+   }
   }
+ 
 }
 .see-more-button {
   display: block;
@@ -167,4 +255,19 @@
     background-color: #4f2ee8;
     color: #ffffff;
   }
+}
+
+.dark-theme {
+  h2 {
+    color:#ffffff
+  }
+  h3 {
+    color: #ffffff;
+  }
+}
+.dark-theme .see-more-button {
+  color: #ffffff;
+}
+.dark-theme .shopping__heading {
+  color: #ffffff;
 }

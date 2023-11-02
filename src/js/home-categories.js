@@ -8,12 +8,17 @@ const categoriesList = document.querySelector('.categories-list');
 const homeBooksByType = document.querySelector('.home-typeBook');
 //------------------------------------------------
 const createTopBooksMarkup = async () => {
-  //do BEST SELLERS BOOKS
-  let markup = await getTopBooks();
-  markup = markup.map(el => {
-    return { ...el, books: el.books };
-  });
+  try {
+    const data = await getTopBooks();
+    if (data.length === 0) {
+      console.error('Brak dostępnych danych.');
+      return;
+    }
+  } catch (error) {
+    console.error('Błąd podczas pobierania danych:', error);
+  }
 };
+
 //----------------------------------------
 const renderCategories = async () => {
   try {
@@ -64,7 +69,7 @@ const showTypeBook = async type => {
 
 function markupTopBooksByType(data, typeBooks) {
   if (data.length > 0) {
-    return `<h3>${typeBooks.substring(0, typeBooks.lastIndexOf(' '))}<span> ${typeBooks
+    return `<h3 class="home-heading">${typeBooks.substring(0, typeBooks.lastIndexOf(' '))}<span class="home-heading_custom"> ${typeBooks
       .split(' ')
       .pop()}</span></h3>
         <ul class="book-item__list">
@@ -81,9 +86,6 @@ function markupTopBooksByType(data, typeBooks) {
                 height="256"
                 loading="lazy"               
             />
-            <div>
-            <p>Quick view</p>
-            </div> 
             </div>
             <div>
             <h3 class="book-item_title">${book.title}</h3>
