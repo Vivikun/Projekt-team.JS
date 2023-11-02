@@ -16,7 +16,7 @@ document.addEventListener('DOMContentLoaded', async () => {
     const categoryBooks = document.createElement('ul');
     categoryBooks.classList.add('category-books');
 
-    //UUdodanie przycisku "see more"//
+    // Dodanie przycisku "See More"
     const seeMoreButton = document.createElement('button');
     seeMoreButton.textContent = 'See More';
     seeMoreButton.classList.add('see-more-button');
@@ -29,7 +29,7 @@ document.addEventListener('DOMContentLoaded', async () => {
       selectedCategoryData = await getSelectedCategory(categoryId);
       renderSelectedCategory();
     });
-    //
+
     category.books.forEach(book => {
       const bookItem = document.createElement('li');
       bookItem.classList.add('book-item');
@@ -40,10 +40,12 @@ document.addEventListener('DOMContentLoaded', async () => {
       `;
       categoryBooks.appendChild(bookItem);
     });
+
     booksContainer.appendChild(categoryTitle);
     booksContainer.appendChild(categoryBooks);
     booksContainer.appendChild(seeMoreButton);
   });
+
   function renderSelectedCategory() {
     if (selectedCategoryData) {
       const selectedCategorySection = document.createElement('div');
@@ -52,19 +54,49 @@ document.addEventListener('DOMContentLoaded', async () => {
       selectedCategoryTitle.textContent = selectedCategoryData[0].list_name;
       selectedCategorySection.appendChild(selectedCategoryTitle);
       const selectedBookList = document.createElement('ul');
-      selectedBookList.classList.add('book-item__list');
+      selectedBookList.classList.add('book-item_list');
       selectedCategorySection.appendChild(selectedBookList);
       selectedCategoryData.forEach(book => {
         const bookItem = document.createElement('li');
         bookItem.classList.add('book-item');
         bookItem.innerHTML = `
           <img class="book-item_image" src="${book.book_image}" alt="${book.title}">
-          <h3 class="book-item_title">${book.title}</h3>
-          <p class="book-item_author">${book.author}</p>
+        <h3 class="book-item_title">${book.title}</h3>
+        <p class="book-item_author">${book.author}</p>
         `;
         selectedBookList.appendChild(bookItem);
       });
       layout.appendChild(selectedCategorySection);
     }
   }
+
+  function handleScreenSizeChange() {
+    const screenWidth = window.innerWidth;
+
+    const categoryItems = document.querySelectorAll('.category-books');
+    categoryItems.forEach(category => {
+      const books = category.querySelectorAll('.book-item');
+
+      if (screenWidth <= 767) {
+        books.forEach((book, index) => {
+          if (index > 0) {
+            book.style.display = 'none';
+          }
+        });
+      } else if ((screenWidth >= 768) & (screenWidth <= 1199)) {
+        books.forEach((book, index) => {
+          if (index > 2) {
+            book.style.display = 'none';
+          }
+        });
+      } else {
+        books.forEach(book => {
+          book.style.display = 'block';
+        });
+      }
+    });
+  }
+
+  handleScreenSizeChange();
+  window.addEventListener('resize', handleScreenSizeChange);
 });
