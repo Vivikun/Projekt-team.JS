@@ -59,6 +59,7 @@ async function createPopUp(id) {
        <h2 class="popup__title">${title}</h2>
        <p class="popup__author">${author}</p>
        <p class="popup__text">${description}</p>
+       
        <div  class="modal-info__icons >
        <ul>
        <li>
@@ -75,16 +76,20 @@ async function createPopUp(id) {
        <a class="modal-info__link" href="${bookshop.url}" target="_blank" crossorigin="anonymous"  rel="noopener noreferrer" aria-label="Bookshop">         
        <img srcset="${bookshopImage1} 1x, ${bookshopImage2} 2x" src="${bookshopImage1}" alt="bookshop" />
        </a>
+       
        </li>
        </ul>
        </div>
        </div>
+       </div>
+       
+       
             <button class="modal-info__button">
        ${isActivBook ? 'remove from the shopping list' : 'add to shopping list'}
        </button>`;
-
+     
     modalPopEl.innerHTML = markup;
-
+   
     const linksShops = document.querySelectorAll('.modal-info__link');
     onLinksClick(linksShops);
   } catch (error) {
