@@ -34,7 +34,7 @@ document.addEventListener('DOMContentLoaded', async () => {
       const bookItem = document.createElement('li');
       bookItem.classList.add('book-item');
       bookItem.innerHTML = `
-        <img class="book-item_image" src="${book.book_image}" alt="${book.title} data-id='${book._id}">
+        <img class="book-item_image" src="${book.book_image}" alt="${book.title}" data-id="${book._id}">
         <h3 class="book-item_title">${book.title}</h3>
         <p class="book-item_author"> ${book.author}</p>
       `;
@@ -58,7 +58,7 @@ document.addEventListener('DOMContentLoaded', async () => {
         const bookItem = document.createElement('li');
         bookItem.classList.add('book-item');
         bookItem.innerHTML = `
-          <img class="book-item_image" src="${book.book_image}" alt="${book.title} data-id='${book._id}">
+          <img class="book-item_image" src="${book.book_image}" alt="${book.title}" data-id="${book._id}">
           <h3 class="book-item_title">${book.title}</h3>
           <p class="book-item_author">${book.author}</p>
         `;

@@ -8,8 +8,7 @@ const categoriesList = document.querySelector('.categories-list');
 const homeBooksByType = document.querySelector('.home-typeBook');
 //------------------------------------------------
 const createTopBooksMarkup = async () => {
-  //do BEST SELLERS BOOKS
-  let markup = await getTopBooks();
+   let markup = await getTopBooks();
   markup = markup.map(el => {
     return { ...el, books: el.books };
   });
@@ -36,7 +35,7 @@ const renderCategories = async () => {
       });
     });
   } catch (error) {
-    Notiflix.Notify.failure(`Oops! Something went wrong.Kurwa!`);
+    Notiflix.Notify.failure(`Oops! Something went wrong. You caught the following error: ${error.message}.`);
   }
 };
 

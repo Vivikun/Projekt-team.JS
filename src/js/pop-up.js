@@ -2,7 +2,7 @@
 import { getBooksId } from './book-api';
 import Notiflix from 'notiflix';
 import LsService from './storage-methods';
-
+// console.log('pop-up.js');
 
 import amazonImage1 from '/src/images/shoppingList/amazon-shop-1x.png';
 import amazonImage2 from '/src/images/shoppingList/amazon-shop-2x.png';
@@ -23,33 +23,42 @@ const btnClosePopUp = document.querySelector('.popup__btn-close');
 const backdrop = document.querySelector('.backdrop-popup');
 const popUp = document.querySelector('.popup');
 const comment = document.querySelector('.popup__comment');
+const popupText = document.querySelector('.description-non');
 
 const listBooks = document.querySelector('.books-container');
 const listBooksInCategories = document.querySelector('.home-typeBook');
 
-
-
 const modalPopEl = document.querySelector('[data-modal]');
 
 async function createPopUp(id) {
-  
+  modalPopEl.innerHTML = ''; 
   try {
-  const booksDetails1 = await getBooksId(id);
-  LsService.save('active-book', booksDetails1);//nie działa
-    
-  LsService.load('selected-books')?.find(el => el._id === booksDetails1._id);
-  
-  const markup = booksDetails1
-    .map(
-      ({
-        _id,
-        book_image,
-        author,
-        title,
-        description,
-        buy_links: [amazon, apple, , , bookshop],
-      }) => {
-        return `
+    const booksDetails1 = await getBooksId(id);
+    LsService.save('active-book', booksDetails1); 
+    console.log(booksDetails1);
+
+    const {
+      _id,
+      book_image,
+      author,
+      title,
+      description,
+      buy_links: [amazon, apple, , , bookshop],
+    } = booksDetails1;
+
+
+    if (description === '') {
+      popupText.innerHTML = 'there is no description of this book';//descriptionBookEl - gdzie to jest?
+    } else {
+     popupText.innerHTML = '';
+    }
+
+
+    const isActivBook = Boolean(
+      LsService.load('selected-books')?.find(el => el._id === book._id)
+    );
+console.log("isActivBook: ", isActivBook);
+    const markup = `
  <div class="modal-info" data-id="${_id}">
      <img class="modal-info__image" src="${book_image}" alt="${title}" />
       <div class="modal-info__box">
@@ -58,40 +67,40 @@ async function createPopUp(id) {
        <p class="popup__text">${description}</p>
        <ul>
        <li>
-       <a class="modal-info__link" href="${amazon.url}" target="_blank" crossorigin="anonymous"  rel="noopener noreferrer" aria-label="Amazon">
+       <a class="modal-info__link" href="${
+         amazon.url
+       }" target="_blank" crossorigin="anonymous"  rel="noopener noreferrer" aria-label="Amazon">
        <img srcset="${amazonImage1} 1x, ${amazonImage2} 2x" src="${amazonImage1}" alt="amazon" />
        </li> 
        <li>
-       <a class="modal-info__link" href="${apple.url}" target="_blank" crossorigin="anonymous"  rel="noopener noreferrer" aria-label="Apple-books">      
+       <a class="modal-info__link" href="${
+         apple.url
+       }" target="_blank" crossorigin="anonymous"  rel="noopener noreferrer" aria-label="Apple-books">      
        <img srcset="${appleImage1} 1x, ${appleImage2} 2x" src="${appleImage1}" alt="apple-books" />
        </li>
        <li>
-       <a class="modal-info__link" href="${bookshop.url}" target="_blank" crossorigin="anonymous"  rel="noopener noreferrer" aria-label="Bookshop">         
+       <a class="modal-info__link" href="${
+         bookshop.url
+       }" target="_blank" crossorigin="anonymous"  rel="noopener noreferrer" aria-label="Bookshop">         
        <img srcset="${bookshopImage1} 1x, ${bookshopImage2} 2x" src="${bookshopImage1}" alt="bookshop" />
        </li>
        </ul>
        </div>
        </div>
-       <button class="modal-info__button" type="button">
+       <button class="modal-info__button" type="button" href="#">
        ${isActivBook ? 'remove from the shopping list' : 'add to shopping list'}
        </button>`;
-      },
-    )
-   
-  
-  modalPopEl.innerHTML = markup;
-console.log('markup: ', markup);
 
-  const linksShops = document.querySelectorAll('.modal-info__link');
-  onLinksClick(linksShops);
-  
-} 
-catch (error) {
-  console.log(error);
-  Notiflix.Notify.failure(
-    `Oops! Something went wrong. You caught the following error: ${error.message}.`
-  );
-}
+    modalPopEl.innerHTML = markup;
+   
+    const linksShops = document.querySelectorAll('.modal-info__link');
+    onLinksClick(linksShops);
+  } catch (error) {
+    console.log(error);
+    Notiflix.Notify.failure(
+      `Oops! Something went wrong. You caught the following error: ${error.message}.`,
+    );
+  }
 }
 
 function onLinksClick(links) {
@@ -104,7 +113,7 @@ function onLinksClick(links) {
   }
 }
 
-
+//--------DZIAŁA -ZAMYKA X
 const closePopUp = () => {
   backdrop.classList.add('popup-is-hidden');
 
@@ -112,47 +121,45 @@ const closePopUp = () => {
   backdrop.removeEventListener('click', backdropClickHandler);
   document.removeEventListener('keydown', keydownHandler);
 };
+//---------------^^^^^^^^^^^^^^
 
-
+//----------DZIAŁA ZAMYKANIE OKNA by CLICK POZA OKNEM
 const backdropClickHandler = event => {
   if (event.target === backdrop) {
     closePopUp();
   }
 };
-
+//----------^^^^^^^^^^^^^^^^^^^^^^
+// ------------- ZATRZYMANIE BABELKOWANIA NA MODALU - DZIAŁA???? :)
 popUp.addEventListener('click', event => {
   event.stopPropagation();
 });
-
+//---------^^^^^^^^^^^^^^^^^^^
+//-----------DZIAŁA-WYCHODZI ESC`pem
 const keydownHandler = e => {
   if (e.code === 'Escape') {
     closePopUp();
   }
 };
-
+//-----------^^^^^^^^^^^^^^^
+//----------DZIAŁA -OTWIERA
 const openPopUp = e => {
   e.preventDefault();
-  if (!e.target.closest('li')) return; 
-    // const bookId = e.target.closest('li').getAttribute('data-id');
-    
-    const bookId = e.target.dataset.id;
+  if (!e.target.closest('li')) return;
 
-console.log('bookId: ', bookId);//null ???o_O
+  const bookId = e.target.dataset.id;
 
 
+  btnClosePopUp.addEventListener('click', closePopUp);
+  backdrop.addEventListener('click', backdropClickHandler);
+  document.addEventListener('keydown', keydownHandler);
 
-btnClosePopUp.addEventListener('click', closePopUp);
-backdrop.addEventListener('click', backdropClickHandler);
-document.addEventListener('keydown', keydownHandler);
+  backdrop.classList.remove('popup-is-hidden');
 
-backdrop.classList.remove('popup-is-hidden');
-
-createPopUp(bookId); 
-  
+  createPopUp(bookId); // PIOTR
 };
-
+//----------------^^^^^^^^^^^^^^^^
 listBooks.addEventListener('click', openPopUp);
 listBooksInCategories.addEventListener('click', openPopUp);
-
 // btnRemoveFromShoppingList.addEventListener('click', removeFromLocalStorage);
 // btnAddToShoppingList.addEventListener('click', addToLocalStorage);
