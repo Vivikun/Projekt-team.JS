@@ -54,7 +54,7 @@ document.addEventListener('DOMContentLoaded', async () => {
       selectedCategoryTitle.textContent = selectedCategoryData[0].list_name;
       selectedCategorySection.appendChild(selectedCategoryTitle);
       const selectedBookList = document.createElement('ul');
-      selectedBookList.classList.add('book-item_list');
+      selectedBookList.classList.add('book-item__list');
       selectedCategorySection.appendChild(selectedBookList);
       selectedCategoryData.forEach(book => {
         const bookItem = document.createElement('li');
