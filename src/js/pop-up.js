@@ -22,7 +22,7 @@ const btnClosePopUp = document.querySelector('.popup__btn-close');
 const backdrop = document.querySelector('.backdrop-popup');
 const popUp = document.querySelector('.popup');
 const comment = document.querySelector('.popup__comment');
-const popupText = document.querySelector('.description-non');
+const popupText = document.querySelector('.popup__text');
 
 const listBooks = document.querySelector('.books-container'); //*
 const listBooksInCategories = document.querySelector('.home-typeBook'); //*
@@ -46,9 +46,9 @@ async function createPopUp(id) {
     } = booksDetails1;
 
     // if (description === '') {
-    //   popupText.innerHTML = 'there is no description of this book'; //descriptionBookEl - gdzie to jest?
+    //   popupText.innerHTML = 'there is no description of this book'; 
     // } else {
-    //   popupText.innerHTML = '';
+    //   popupText.innerHTML = description;
     // }
 
     const isActivBook = Boolean(LsService.load('selected-books')?.find(el => el._id === booksDetails1._id));
@@ -62,28 +62,24 @@ async function createPopUp(id) {
        <div  class="modal-info__icons >
        <ul>
        <li>
-       <a class="modal-info__link" href="${
-         amazon.url
-       }" target="_blank" crossorigin="anonymous"  rel="noopener noreferrer" aria-label="Amazon">
+       <a class="modal-info__link" href="${amazon.url}" target="_blank" crossorigin="anonymous"  rel="noopener noreferrer" aria-label="Amazon">
        <img srcset="${amazonImage1} 1x, ${amazonImage2} 2x" src="${amazonImage1}" alt="amazon" />
+       </a>
        </li> 
        <li>
-       <a class="modal-info__link" href="${
-         apple.url
-       }" target="_blank" crossorigin="anonymous"  rel="noopener noreferrer" aria-label="Apple-books">      
+       <a class="modal-info__link" href="${apple.url}" target="_blank" crossorigin="anonymous"  rel="noopener noreferrer" aria-label="Apple-books">      
        <img srcset="${appleImage1} 1x, ${appleImage2} 2x" src="${appleImage1}" alt="apple-books" />
+       </a>
        </li>
        <li>
-       <a class="modal-info__link" href="${
-         bookshop.url
-       }" target="_blank" crossorigin="anonymous"  rel="noopener noreferrer" aria-label="Bookshop">         
+       <a class="modal-info__link" href="${bookshop.url}" target="_blank" crossorigin="anonymous"  rel="noopener noreferrer" aria-label="Bookshop">         
        <img srcset="${bookshopImage1} 1x, ${bookshopImage2} 2x" src="${bookshopImage1}" alt="bookshop" />
+       </a>
        </li>
        </ul>
        </div>
        </div>
-       </div>
-       <button class="modal-info__button" type="button" href="#">
+            <button class="modal-info__button">
        ${isActivBook ? 'remove from the shopping list' : 'add to shopping list'}
        </button>`;
 
