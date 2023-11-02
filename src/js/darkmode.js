@@ -1,16 +1,19 @@
+import logoBright from '/src/images/header/logo-bright.png';
+import logoDark from '/src/images/header/logo-dark.png';
+
 const themeButton = document.getElementById('colorSwitch');
 const body = document.querySelector('body');
-//const logoImage = document.getElementById('logoImage');
+const logoImage = document.getElementById('logoImage');
 
 let theme = localStorage.getItem('theme') || 'light-theme';
 
 function setThemeButtonIconPosition() {
   if (theme === 'dark-theme') {
     themeButton.style.transform = 'translateX(21px)';
-    //logoImage.src = './images/header/logo-bright.png';
+    logoImage.src = logoBright;
   } else {
     themeButton.style.transform = 'translateX(0)';
-    //logoImage.src = './images/header/logo-dark.png';
+    logoImage.src = logoDark;
   }
 }
 
