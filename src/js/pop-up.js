@@ -59,6 +59,7 @@ async function createPopUp(id) {
        <h2 class="popup__title">${title}</h2>
        <p class="popup__author">${author}</p>
        <p class="popup__text">${description}</p>
+       <div  class="modal-info__icons >
        <ul>
        <li>
        <a class="modal-info__link" href="${
@@ -79,6 +80,7 @@ async function createPopUp(id) {
        <img srcset="${bookshopImage1} 1x, ${bookshopImage2} 2x" src="${bookshopImage1}" alt="bookshop" />
        </li>
        </ul>
+       </div>
        </div>
        </div>
        <button class="modal-info__button" type="button" href="#">
