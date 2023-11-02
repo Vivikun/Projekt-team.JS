@@ -22,7 +22,7 @@ const btnClosePopUp = document.querySelector('.popup__btn-close');
 const backdrop = document.querySelector('.backdrop-popup');
 const popUp = document.querySelector('.popup');
 const comment = document.querySelector('.popup__comment');
-const popupText = document.querySelector('.description-non');
+const popupText = document.querySelector('.popup__text');
 
 const listBooks = document.querySelector('.books-container'); //*
 const listBooksInCategories = document.querySelector('.home-typeBook'); //*
@@ -46,9 +46,9 @@ async function createPopUp(id) {
     } = booksDetails1;
 
     // if (description === '') {
-    //   popupText.innerHTML = 'there is no description of this book'; //descriptionBookEl - gdzie to jest?
+    //   popupText.innerHTML = 'there is no description of this book'; 
     // } else {
-    //   popupText.innerHTML = '';
+    //   popupText.innerHTML = description;
     // }
 
     const isActivBook = Boolean(LsService.load('selected-books')?.find(el => el._id === booksDetails1._id));
@@ -81,7 +81,7 @@ async function createPopUp(id) {
        </ul>
        </div>
        </div>
-       <button class="modal-info__button" type="button" href="#">
+       <button class="modal-info__button" type="submit">
        ${isActivBook ? 'remove from the shopping list' : 'add to shopping list'}
        </button>`;
 
