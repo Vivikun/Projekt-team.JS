@@ -69,9 +69,9 @@ const showTypeBook = async type => {
 
 function markupTopBooksByType(data, typeBooks) {
   if (data.length > 0) {
-    return `<h3 class="home-heading">${typeBooks.substring(0, typeBooks.lastIndexOf(' '))}<span class="home-heading_custom"> ${typeBooks
+    return `<h2 class="home-heading">${typeBooks.substring(0, typeBooks.lastIndexOf(' '))}<span class="home-heading_custom"> ${typeBooks
       .split(' ')
-      .pop()}</span></h3>
+      .pop()}</span></h2>
         <ul class="book-item__list">
         ${data
           .map(
