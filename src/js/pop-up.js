@@ -43,6 +43,7 @@ async function createPopUp(id) {
     );
     const markup = `<div class="modal-info" data-id="${_id}">
      <img class="modal-info__image" src="${book_image}" alt="${title}" />
+     <div>
       <div class="modal-info__box">
        <h2 class="popup__title">${title}</h2>
        <p class="popup__author">${author}</p>
@@ -81,7 +82,7 @@ async function createPopUp(id) {
        </div>
 <button class="modal-info__button">
        ${isActivBook ? 'remove from the shopping list' : 'add to shopping list'}
-       </button>`;
+       </button></div>`;
     modalPopEl.innerHTML = markup;
     const linksShops = document.querySelectorAll('.modal-info__link');
     onLinksClick(linksShops);
