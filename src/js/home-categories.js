@@ -1,21 +1,10 @@
-import { getCategoryList, getSelectedCategory } from './book-api';
+import { getCategoryList, getSelectedCategory, getTopBooks } from './book-api';
 import Notiflix from 'notiflix';
-
 export { showTypeBook, markupTopBooksByType };
 const homeContainer = document.querySelector('.home__category-container');
 const categoriesList = document.querySelector('.categories-list');
 const homeBooksByType = document.querySelector('.home-typeBook');
-const createTopBooksMarkup = async () => {
-  try {
-    const data = await getTopBooks();
-    if (data.length === 0) {
-      console.error('Brak dostępnych danych.');
-      return;
-    }
-  } catch (error) {
-    console.error('Błąd podczas pobierania danych:', error);
-  }
-};
+
 const renderCategories = async () => {
   try {
     const category = await getCategoryList();
@@ -28,12 +17,7 @@ const renderCategories = async () => {
           ActiveCategory.classList.remove('active');
         }
         event.target.classList.add('active');
-
-        if (event.target.dataset.id === 'all-categories') {
-          createTopBooksMarkup();
-        } else {
-          showTypeBook(event.target.dataset.id);
-        }
+        showTypeBook(event.target.dataset.id);
       });
     });
   } catch (error) {
@@ -42,8 +26,8 @@ const renderCategories = async () => {
 };
 renderCategories();
 function markupCategoriesList(categories) {
-  return `<li class="category-item" data-id="all-categories">
-        All categories</li>
+  return `<a href="/src/index.html" class="category-item--all"><li data-id="all-categories">
+        All categories</li></a>
         ${categories
           .map(
             category =>
@@ -68,7 +52,7 @@ function markupTopBooksByType(data, typeBooks) {
         <ul class="book-item__list">
         ${data
           .map(
-            book => `<li class="book-item">
+            book => `<li class="book-item" data-id="${book._id}">
             <a href="#" rel="noopener noreferrer" data-id='${book._id}'>
             <div>
             <img
@@ -77,7 +61,8 @@ function markupTopBooksByType(data, typeBooks) {
                 class="book-item_image"
                 width="180"
                 height="256"
-                loading="lazy"               
+                loading="lazy"
+                data-id="${book._id}"
             />
             </div>
             <div>

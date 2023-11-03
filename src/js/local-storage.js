@@ -19,10 +19,9 @@ function handleModalPopElClick() {
   const activeBook = LsService.load('active-book');
   const watchedBtnRef = modalPopEl.querySelector('.modal-info__button');
   if (shoppingListArray.find(el => el === activeBook._id)) {
-    const idx = shoppingListArray.findIndex(el => el._id === activeBook._id);
+    const idx = shoppingListArray.findIndex(el => el === activeBook._id);
     shoppingListArray.splice(idx, 1);
-    const shoppingListIds = shoppingListArray.map(el => el._id);
-    LsService.save(SHOP_LIST_KEY, shoppingListIds);
+    LsService.save(SHOP_LIST_KEY, shoppingListArray);
     Notiflix.Notify.warning('This book was removed from your Shopping list!');
     watchedBtnRef.textContent = 'add to shopping list';
     return;

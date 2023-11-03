@@ -1,5 +1,4 @@
 import { getTopBooks, getSelectedCategory } from './book-api.js';
-
 document.addEventListener('DOMContentLoaded', async () => {
   const layout = document.querySelector('.layout');
   const booksContainer = document.querySelector('.books-container');
@@ -49,8 +48,8 @@ document.addEventListener('DOMContentLoaded', async () => {
       selectedCategoryData.forEach(book => {
         const bookItem = document.createElement('li');
         bookItem.classList.add('book-item');
+        bookItem.setAttribute('data-id', book._id);
         bookItem.innerHTML = `
-
           <img class="book-item_image" src="${book.book_image}" alt="${book.title}" data-id="${book._id}">
           <h3 class="book-item_title">${book.title}</h3>
           <p class="book-item_author">${book.author}</p>`;
@@ -61,7 +60,6 @@ document.addEventListener('DOMContentLoaded', async () => {
   }
   function handleScreenSizeChange() {
     const screenWidth = window.innerWidth;
-
     const categoryItems = document.querySelectorAll('.category-books');
     categoryItems.forEach(category => {
       const books = category.querySelectorAll('.book-item');
