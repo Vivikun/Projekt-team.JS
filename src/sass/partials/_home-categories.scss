@@ -108,7 +108,7 @@
 .aside {
   display: flex;
   flex-direction: column;
-  width: 360px; //356px Aga
+  width: 360px;
   margin-left: 24px;
   @include tablet {
     flex-direction: row;

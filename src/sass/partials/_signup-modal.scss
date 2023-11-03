@@ -1,138 +1,134 @@
 .modal__container {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    top: 0;
-    right: 0;
-    bottom: 0;
-    left: 0;
-    z-index: 1000;
-    background-color: #4F2EE8;
-    position: fixed; 
-  }
-  
-  .modal {
-    display: flex;
-    flex-direction: column; 
-    justify-content: center;
-    align-items: center;
-    width: 579px;
-    height: 516px;
-    background-color: white;
-    z-index: 100;
-    opacity: 1;
-    transition-property: opacity, visibility, transform;
-    transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
-    transition-duration: 250ms;
-    border-radius: 18px;
-    text-align: center;
-    padding: 20px;
-    border: 2px solid #111;
-    position: relative; 
-  }
-  
-.dark-theme .modal {
-    background-color: rgba(32, 32, 36, 1);
-    border: 2px solid #fff;
-
-    a {
-        color:#fff
-    }
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  z-index: 1000;
+  background-color: #4f2ee8;
+  position: fixed;
 }
 
-.link:hover { 
- color: #4F2EE8;  
+.modal {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width: 579px;
+  height: 516px;
+  background-color: white;
+  z-index: 100;
+  opacity: 1;
+  transition-property: opacity, visibility, transform;
+  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+  transition-duration: 250ms;
+  border-radius: 18px;
+  text-align: center;
+  padding: 20px;
+  border: 2px solid #111;
+  position: relative;
+}
+
+.dark-theme .modal {
+  background-color: rgba(32, 32, 36, 1);
+  border: 2px solid #fff;
+
+  a {
+    color: #fff;
+  }
+}
+
+.link:hover {
+  color: #4f2ee8;
 }
 
 .dark-theme .link:hover {
-    color: #4F2EE8;
+  color: #4f2ee8;
 }
 
 .form {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
 }
 
 .modal__input-group {
-    display: flex;
-    justify-content: center;
-    width: 499px;
-    padding: 20px 173px 20px 40px;
-    align-items: center;
-    gap: 10px;
-    border-radius: 40px;
-    border: 2px solid #111;
-    margin-bottom: 28px;
+  display: flex;
+  justify-content: center;
+  width: 499px;
+  padding: 20px 173px 20px 40px;
+  align-items: center;
+  gap: 10px;
+  border-radius: 40px;
+  border: 2px solid #111;
+  margin-bottom: 28px;
 }
 
 .dark-theme .modal__input-group {
-    border: 2px solid white;
+  border: 2px solid white;
 }
 
 .modal__input-group input {
-    flex: 1;
-    border: none;
-    background: transparent;
+  flex: 1;
+  border: none;
+  background: transparent;
 }
 
 .modal__sign-up {
-    display: flex;
-    width: 499px;
-    padding: 20px 173px;
-    justify-content: center;
-    align-items: flex-start;
-    gap: 10px;
-    border-radius: 40px;
-    background: #111;
-    color: #fff;
-    text-decoration: none;
-    margin-top: 12px;
-    border: black;
+  display: flex;
+  width: 499px;
+  padding: 20px 173px;
+  justify-content: center;
+  align-items: flex-start;
+  gap: 10px;
+  border-radius: 40px;
+  background: #111;
+  color: #fff;
+  text-decoration: none;
+  margin-top: 12px;
+  border: black;
 }
 
 .links {
-    display: flex;
-    justify-content: center;
-    margin-top: 20px;
+  display: flex;
+  justify-content: center;
+  margin-top: 20px;
 }
 
 .links a {
-    margin: 0 10px;
-    text-decoration: none;
-    color: rgba(17, 17, 17, 0.50);
+  margin: 0 10px;
+  text-decoration: none;
+  color: rgba(17, 17, 17, 0.5);
 }
 
 .modal__close-button {
-    position: absolute;
-    display: flex;
-    width: 30px;
-    height: 30px;
-    right: 8px;
-    top: 15px;
-    background-color: transparent;
-    border: transparent;
-    cursor: pointer;
+  position: absolute;
+  display: flex;
+  width: 30px;
+  height: 30px;
+  right: 8px;
+  top: 15px;
+  background-color: transparent;
+  border: transparent;
+  cursor: pointer;
 }
 
-
-
-
-
 .hidden {
-    display: none;
+  display: none;
 }
 
 .dark-theme .modal__close-button {
-    color: #fff;
+  color: #fff;
 }
 
 .dark-theme ::placeholder {
-    color: #fff;
+  color: #fff;
 }
 
 .dark-theme .modal__sign-up {
-    background-color: #fff;
-    color: black;
+  background-color: #fff;
+  color: black;
 }

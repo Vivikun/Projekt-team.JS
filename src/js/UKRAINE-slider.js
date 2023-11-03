@@ -7,7 +7,6 @@ import prytula from '/src/images/ukraina-support/Prytula.png';
 import frontieres from '/src/images/ukraina-support/Frontiers.png';
 import vision from '/src/images/ukraina-support/Vision.png';
 import united from '/src/images/ukraina-support/United.png';
-
 const organizations = [
   {
     title: 'Save the Children',
@@ -74,9 +73,7 @@ const organizations = [
     height: 32,
   },
 ];
-
 const logoContainer = document.querySelector('.ukraine-solider');
-
 function logoList() {
   const markup = organizations
     .map(({ title, url, img, width, height }, index) => {
@@ -93,9 +90,7 @@ function logoList() {
     .join('');
   logoContainer.insertAdjacentHTML('beforeend', markup);
 }
-
 logoList();
-
 document.addEventListener('DOMContentLoaded', function () {
   const scrollButton = document.querySelector('.scroll-btn');
   const orgList = document.querySelector('.scroll-container');
@@ -103,7 +98,6 @@ document.addEventListener('DOMContentLoaded', function () {
   const scrollSpeed = 10;
   let isScrolling = false;
   let isScrollingDown = true;
-
   scrollButton.addEventListener('click', () => {
     if (!isScrolling) {
       isScrolling = true;
@@ -112,19 +106,15 @@ document.addEventListener('DOMContentLoaded', function () {
       isScrollingDown = !isScrollingDown;
     }
   });
-
   function animateScroll() {
     if (isScrolling) {
       orgList.scrollTop += isScrollingDown ? scrollAmount : -scrollAmount;
-
       if (orgList.scrollTop >= orgList.scrollHeight - orgList.clientHeight) {
         isScrollingDown = true;
       }
-
       if (orgList.scrollTop <= 0) {
         isScrollingDown = false;
       }
-
       requestAnimationFrame(animateScroll);
     }
   }

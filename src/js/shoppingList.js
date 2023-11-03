@@ -5,14 +5,14 @@ import appleImage1 from '../images/shoppingList/apple-shop-1x.png';
 import appleImage2 from '../images/shoppingList/apple-shop-2x.png';
 import bookshopImage1 from '../images/shoppingList/bookshop-1x.png';
 import bookshopImage2 from '../images/shoppingList/bookshop-2x.png';
+import { getBooksId } from './book-api';
+import logoTrash from '/src/images/trash.svg';
 
 const shoppingListEl = document.querySelector('.shopping__cards');
 const notificationContainerEl = document.querySelector('.shopping__storage');
-// const shoppingHeadingEl = document.querySelector('.shopping__heading');
-const shoppingBtnTrash = document.querySelector('.shopping__btn');
+
 const SHOP_LIST_KEY = 'selected-books';
 
-const logoTrashPath = new URL('/src/images/icons.svg', import.meta.url);
 const navlinks = document.querySelectorAll('.navigation__link');
 
 function setActiveState(elements) {
@@ -31,32 +31,35 @@ function setActiveState(elements) {
     }
   });
 }
-const loadFromLocalStorage = () => {
-  let bookList = storageMethods.load(SHOP_LIST_KEY);
-  if (bookList?.length > 0) {
-    loadAndRenderBooks(bookList);
+const renderBooks = async () => {
+  let bookIdList = storageMethods.load(SHOP_LIST_KEY);
+  console.log(bookIdList);
+  if (bookIdList?.length > 0) {
+    bookIdList.forEach(async bookId => {
+      const bookInfo = await getBooksId(bookId);
+      loadAndRenderBooks(bookInfo);
+    });
+    shoppingListEl.addEventListener('click', onTrashClick);
   }
 };
-loadFromLocalStorage();
+
+renderBooks();
 
 setActiveState(navlinks);
 
-function loadAndRenderBooks(data) {
-  let booksDetails = data;
-  const markup = booksDetails
-    .map(
-      ({
-        _id,
-        book_image,
-        author,
-        book_image_width,
-        book_image_height,
-        title,
-        list_name,
-        description,
-        buy_links: [amazon, apple, , , bookshop],
-      }) => {
-        return `<li class="shopping__card" data-id="${_id}">
+function loadAndRenderBooks(booksDetails) {
+  const {
+    _id,
+    book_image,
+    author,
+    book_image_width,
+    book_image_height,
+    title,
+    list_name,
+    description,
+    buy_links: [amazon, apple, , , , bookshop],
+  } = booksDetails;
+  const markup = `<li class="shopping__card" id="${_id}">
       <div class="shopping__block">
         <div>
           <div class="shopping__thumb">
@@ -87,30 +90,12 @@ function loadAndRenderBooks(data) {
           </ul>
         </div>
       </div>
-      <button type="button" class="shopping__btn" aria-label="Delete the book from shopping list">
-        <svg class="shopping__btn-icon" width="18" height="18">
-        <use href="${logoTrashPath}#icon-trash"></use>
-        </svg>
+      <button type="button" class="shopping__btn" data-id="${_id}" aria-label="Delete the book from shopping list"> 
+   <img src="${logoTrash}"/>
       </button>
     </li>`;
-      },
-    )
-    .join('');
-
-  shoppingListEl.innerHTML = markup;
-  const shoppingBtnTrash = document.querySelector('.shopping__btn');
-  shoppingBtnTrash.addEventListener('click', onTrashClick);
+  shoppingListEl.innerHTML += markup;
   notificationContainerEl.style.display = 'none';
-}
-
-function cutNameCategory(name) {
-  if (window.innerWidth <= 768) {
-    if (name.length > 20) {
-      return name.substring(0, 20) + '...';
-    }
-    return name;
-  }
-  return name;
 }
 
 function onTrashClick(e) {
@@ -119,39 +104,22 @@ function onTrashClick(e) {
   if (!target) {
     return;
   }
-  //*
-  const bookEl = target.closest('.shopping__card');
-  const seekedId = bookEl.dataset.id.trim();
-  //*
-  // Find the index of the book to be removed
-  //*
+
+  const bookId = target.dataset.id;
   const storedBookIds = storageMethods.load('selected-books');
-  const removedElIndexFromStorage = storedBookIds.findIndex(id => id === seekedId);
-
-  //* Remove the book from the array
+  const removedElIndexFromStorage = storedBookIds.indexOf(bookId);
   storedBookIds.splice(removedElIndexFromStorage, 1);
-  //*
   storageMethods.save(SHOP_LIST_KEY, storedBookIds);
-  // Retrieve stored book IDs from local storage
+  const newStoredBookIds = storageMethods.load('selected-books');
 
-  // Check if the book ID was found in local storage
-  if (removedElIndexFromStorage !== -1) {
-    // Save the updated array to local storage
-    storageMethods.save('selected-books', storedBookIds);
+  storageMethods.save('selected-books', storedBookIds);
 
-    // Remove the book element from the DOM
-    console.log(bookEl);
-    bookEl.remove();
-    //---------------
-
-    //--------------------
-    if (SHOP_LIST_KEY.length === 0) {
-      shoppingListEl.style.display = 'none';
-      shoppingListEl.classList.add('container_inactive');
-    }
-
-    //----------------------
-  } else {
-    console.error('Book ID not found in local storage.');
+  if (newStoredBookIds.length === 0) {
+    notificationContainerEl.style.display = 'block';
+    shoppingListEl.style.display = 'none';
+    shoppingListEl.classList.add('container_inactive');
   }
+  const bookToRemove = document.getElementById(bookId);
+
+  bookToRemove.remove();
 }

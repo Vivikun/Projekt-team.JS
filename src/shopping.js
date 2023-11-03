@@ -1,11 +1,7 @@
 import './sass/main.scss';
 import './js/book-api.js';
-// import './js/home-categories.js';
 import './js/mobile-menu.js';
 import './js/UKRAINE-slider';
 import './js/shoppingList.js';
-// import './js/home-books.js';
 import './js/signup-modal.js';
 import './js/darkmode.js';
-// import './js/pop-up';
-// import './js/local-storage';

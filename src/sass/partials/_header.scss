@@ -86,7 +86,6 @@ a,ul  {
     transition: background-color 0.3s; 
     border-radius: 36px; 
     text-decoration: none;
-    // display: none // Do usunięcia (pojawia się po zalogowaniu)
     
     &__hamburger {
       background-color: transparent;
@@ -277,7 +276,7 @@ input:checked + .slider:before {
   color: white;
   padding-left: 14px;
   cursor: pointer;
-  display: none; // do usunięcia (pojawia się po zalogowaniu)
+  display: none;
 
   &__down-arrow {
     position: absolute;

@@ -2,11 +2,9 @@ import { getCategoryList, getSelectedCategory } from './book-api';
 import Notiflix from 'notiflix';
 
 export { showTypeBook, markupTopBooksByType };
-//----------------------------------------------
 const homeContainer = document.querySelector('.home__category-container');
 const categoriesList = document.querySelector('.categories-list');
 const homeBooksByType = document.querySelector('.home-typeBook');
-//------------------------------------------------
 const createTopBooksMarkup = async () => {
   try {
     const data = await getTopBooks();
@@ -18,8 +16,6 @@ const createTopBooksMarkup = async () => {
     console.error('Błąd podczas pobierania danych:', error);
   }
 };
-
-//----------------------------------------
 const renderCategories = async () => {
   try {
     const category = await getCategoryList();
@@ -44,9 +40,7 @@ const renderCategories = async () => {
     Notiflix.Notify.failure(`Oops! Something went wrong.`);
   }
 };
-
 renderCategories();
-
 function markupCategoriesList(categories) {
   return `<li class="category-item" data-id="all-categories">
         All categories</li>
@@ -59,19 +53,18 @@ function markupCategoriesList(categories) {
           )
           .join('')}`;
 }
-
 const showTypeBook = async type => {
   const typeBooksMore = await getSelectedCategory(type);
   homeContainer.classList.remove('container_active');
   homeBooksByType.classList.add('container_active');
   homeBooksByType.innerHTML = markupTopBooksByType(typeBooksMore, type);
 };
-
 function markupTopBooksByType(data, typeBooks) {
   if (data.length > 0) {
-    return `<h2 class="home-heading">${typeBooks.substring(0, typeBooks.lastIndexOf(' '))}<span class="home-heading_custom"> ${typeBooks
-      .split(' ')
-      .pop()}</span></h2>
+    return `<h2 class="home-heading">${typeBooks.substring(
+      0,
+      typeBooks.lastIndexOf(' '),
+    )}<span class="home-heading_custom"> ${typeBooks.split(' ').pop()}</span></h2>
         <ul class="book-item__list">
         ${data
           .map(
@@ -102,9 +95,3 @@ function markupTopBooksByType(data, typeBooks) {
     Notiflix.Notify.failure(`Not found`);
   }
 }
-
-// Funkcja createTopBooksMarkup nie zwraca żadnych danych.
-// upewnij się, że masz zdefiniowaną funkcję getSelectedCategory i że zwraca ona oczekiwane dane.
-// pobierasz dane za pomocą await getTopBooks();, ale nie robisz nic z pobranymi danymi.
-// upewni się, że istnieje odpowiedni przycisk o id "save-books-button" na stronie,
-// sprawdź, czy masz zdefiniowane wszystkie niezbędne funkcje i obiekty, takie jak getTopBooks i storageMethods.
