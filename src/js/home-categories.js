@@ -1,6 +1,5 @@
-import { getCategoryList, getSelectedCategory } from './book-api';
+import { getCategoryList, getSelectedCategory, getTopBooks } from './book-api';
 import Notiflix from 'notiflix';
-
 export { showTypeBook, markupTopBooksByType };
 const homeContainer = document.querySelector('.home__category-container');
 const categoriesList = document.querySelector('.categories-list');
@@ -28,7 +27,6 @@ const renderCategories = async () => {
           ActiveCategory.classList.remove('active');
         }
         event.target.classList.add('active');
-
         if (event.target.dataset.id === 'all-categories') {
           createTopBooksMarkup();
         } else {
@@ -68,7 +66,7 @@ function markupTopBooksByType(data, typeBooks) {
         <ul class="book-item__list">
         ${data
           .map(
-            book => `<li class="book-item">
+            book => `<li class="book-item" data-id="${book._id}">
             <a href="#" rel="noopener noreferrer" data-id='${book._id}'>
             <div>
             <img
@@ -77,7 +75,8 @@ function markupTopBooksByType(data, typeBooks) {
                 class="book-item_image"
                 width="180"
                 height="256"
-                loading="lazy"               
+                loading="lazy"
+                data-id="${book._id}"
             />
             </div>
             <div>

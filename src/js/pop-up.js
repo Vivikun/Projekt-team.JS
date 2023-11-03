@@ -2,13 +2,11 @@
 import { getBooksId } from './book-api';
 import Notiflix from 'notiflix';
 import LsService from './storage-methods';
-
 import amazonImage1 from '/src/images/shoppingList/amazon-shop-1x.png';
 import amazonImage2 from '/src/images/shoppingList/amazon-shop-2x.png';
 import appleImage1 from '/src/images/shoppingList/apple-shop-1x.png';
 import appleImage2 from '/src/images/shoppingList/apple-shop-2x.png';
 import bookshopImage1 from '/src/images/shoppingList/bookshop-1x.png';
-import bookshopImage2 from '/src/images/shoppingList/bookshop-2x.png';
 import bookshopImage2 from '/src/images/shoppingList/bookshop-2x.png';
 // document.addEventListener('DOMContentLoaded', () => {
 //   let currentBookData = null;
@@ -30,17 +28,16 @@ async function createPopUp(id) {
   try {
     const booksDetails1 = await getBooksId(id);
     LsService.save('active-book', booksDetails1);
-    LsService.load('selected-books')?.find(el => el._id === booksDetails1._id);
     const {
       _id,
       book_image,
       author,
       title,
       description,
-      buy_links: [amazon, apple, , , bookshop],
+      buy_links: [amazon, apple, , , , bookshop],
     } = booksDetails1;
     const isActivBook = Boolean(
-      LsService.load('selected-books')?.find(el => el._id === booksDetails1._id),
+      LsService.load('selected-books')?.find(el => el === booksDetails1._id),
     );
     const markup = `<div class="modal-info" data-id="${_id}">
      <img class="modal-info__image" src="${book_image}" alt="${title}" />
@@ -56,18 +53,18 @@ async function createPopUp(id) {
        }" target="_blank" crossorigin="anonymous"  rel="noopener noreferrer" aria-label="Amazon">
        <img srcset="${amazonImage1} 1x, ${amazonImage2} 2x" src="${amazonImage1}" alt="amazon" />
        </a>
-       </li> 
+       </li>
        <li>
        <a class="modal-info__link" href="${
          apple.url
-       }" target="_blank" crossorigin="anonymous"  rel="noopener noreferrer" aria-label="Apple-books">      
+       }" target="_blank" crossorigin="anonymous"  rel="noopener noreferrer" aria-label="Apple-books">
        <img srcset="${appleImage1} 1x, ${appleImage2} 2x" src="${appleImage1}" alt="apple-books" />
        </a>
        </li>
        <li>
        <a class="modal-info__link" href="${
          bookshop.url
-       }" target="_blank" crossorigin="anonymous"  rel="noopener noreferrer" aria-label="Bookshop">         
+       }" target="_blank" crossorigin="anonymous"  rel="noopener noreferrer" aria-label="Bookshop">
        <img srcset="${bookshopImage1} 1x, ${bookshopImage2} 2x" src="${bookshopImage1}" alt="bookshop" />
        </a>
        </li>
@@ -89,8 +86,8 @@ async function createPopUp(id) {
   }
 }
 function onLinksClick(links) {
-  for (let i = 0; i < links.length; i++) {
-    let link = links[i];
+  for (const element of links) {
+    let link = element;
     link.addEventListener('click', function (e) {
       e.preventDefault();
       window.open(this.href);
@@ -99,7 +96,6 @@ function onLinksClick(links) {
 }
 const closePopUp = () => {
   backdrop.classList.add('popup-is-hidden');
-
   btnClosePopUp.removeEventListener('click', closePopUp);
   backdrop.removeEventListener('click', backdropClickHandler);
   document.removeEventListener('keydown', keydownHandler);
@@ -107,6 +103,7 @@ const closePopUp = () => {
 const backdropClickHandler = event => {
   if (event.target === backdrop) {
     closePopUp();
+    LsService.remove('active-book');
   }
 };
 popUp.addEventListener('click', event => {
@@ -119,8 +116,11 @@ const keydownHandler = e => {
 };
 const openPopUp = e => {
   e.preventDefault();
-  if (!e.target.closest('li')) return;
-  const bookId = e.target.dataset.id;
+  const bookId = e.target.dataset?.id;
+  console.log(bookId);
+  if (!bookId) {
+    return;
+  }
   btnClosePopUp.addEventListener('click', closePopUp);
   backdrop.addEventListener('click', backdropClickHandler);
   document.addEventListener('keydown', keydownHandler);
