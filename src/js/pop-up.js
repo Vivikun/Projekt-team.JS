@@ -48,15 +48,12 @@ async function createPopUp(id) {
        <div  class="modal-info__icons >
        <ul>
        <li>
-       <a class="modal-info__link" href="${
-         amazon.url
-       }" target="_blank" crossorigin="anonymous"  rel="noopener noreferrer" aria-label="Amazon">
+       <a class="modal-info__link" href="${amazon.url}" target="_blank" crossorigin="anonymous"  rel="noopener noreferrer" aria-label="Amazon">
        <img srcset="${amazonImage1} 1x, ${amazonImage2} 2x" src="${amazonImage1}" alt="amazon" />
        </a>
        </li>
        <li>
-       <a class="modal-info__link" href="${
-         apple.url
+       <a class="modal-info__link" href="${apple.url
        }" target="_blank" crossorigin="anonymous"  rel="noopener noreferrer" aria-label="Apple-books">
        <img srcset="${appleImage1} 1x, ${appleImage2} 2x" src="${appleImage1}" alt="apple-books" />
        </a>
