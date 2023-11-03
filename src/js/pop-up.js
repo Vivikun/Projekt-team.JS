@@ -23,7 +23,6 @@ const comment = document.querySelector('.popup__comment');
 const popupText = document.querySelector('.popup__text');
 const listBooks = document.querySelector('.books-container'); //*
 const selectedCatBooks = document.querySelector('.book-item__list');
-console.log(0, selectedCatBooks);
 const listBooksInCategories = document.querySelector('.home-typeBook'); //*
 const modalPopEl = document.querySelector('[data-modal]');
 async function createPopUp(id) {
@@ -125,7 +124,6 @@ const keydownHandler = e => {
 const openPopUp = e => {
   e.preventDefault();
   const bookId = e.target.dataset?.id;
-  console.log(bookId);
   if (!bookId) {
     return;
   }
