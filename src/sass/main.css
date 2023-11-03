@@ -174,12 +174,19 @@ img {
     flex-basis: calc((100% - 100px) / 5);
   }
 }
+.dark-theme .category-item--all {
+  color: rgba(255, 255, 255, 0.60)
+}
 .dark-theme .category-item {
   color: rgba(255, 255, 255, 0.60)
 }
+.dark-theme .category-item--all:active,
+.dark-theme .category-item--all:hover,
+.dark-theme .category-item--all:focus,
 .dark-theme .category-item.active,
 .dark-theme .category-item:hover,
-.dark-theme .category-item:focus {
+.dark-theme .category-item:focus
+ {
   text-transform: uppercase;
   font-weight: 700;
   color: #EAC645;
