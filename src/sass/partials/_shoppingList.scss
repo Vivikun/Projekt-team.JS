@@ -1,11 +1,9 @@
-//markup 3
 .layout-shop {
   padding-top: 40px;
   padding-bottom: 10px;
   display: flex;
   flex-direction: row;
   gap: 40px;
-  //  background-color: darkmagenta;
 }
 .shopping-container {
   padding-top: 40px;
@@ -21,13 +19,11 @@
 
 .shopping-layout {
   width: 100%;
-  //  background-color: #74c7ee;
   justify-content: left;
   padding-right: 24;
 }
 .shopping__page {
   margin-left: 0px;
-  // background-color: rgb(210, 30, 162);
   @include desktop {
     flex-grow: 1;
   }
@@ -45,13 +41,7 @@
   &--color {
     color: #4f2ee8;
   }
-
-  // &.empty-js {
-  //   margin-bottom: 140px;
-  // }
 }
-
-// Card
 
 .shopping__card {
   position: relative;
@@ -152,12 +142,6 @@
   }
 }
 
-// .shopping__wrap-shops--tablet {
-//   display: flex;
-//   justify-content: space-between;
-//   align-items: end;
-// }
-
 .shopping__shops {
   display: flex;
   align-items: center;
@@ -241,7 +225,6 @@
   color: #111111;
 
   @include tablet {
-    // display: none;
     flex-grow: 1;
     display: block;
   }
@@ -256,10 +239,7 @@
   transform: translateY(-7);
 }
 
-// Notification
-
 .shopping__storage {
-  // display: none;
   display: block;
   margin: 0 auto;
 
@@ -280,106 +260,9 @@
   margin: auto;
 }
 
-
 .no-icon {
   display: none;
 }
-.container_inactive{
+.container_inactive {
   display: none;
 }
-//first, basic markup
-// V2
-// .book {
-//   border: 1px solid #ddd;
-//   padding: 10px;
-//   margin: 10px;
-//   display: inline-block;
-//   width: calc(20% - 20px);
-//   vertical-align: top;
-// }
-
-// .book img {
-//   width: 100%;
-//   height: auto;
-// }
-//-----------
-//markup nr 1
-// #books-container {
-//   display: flex;
-//   flex-wrap: wrap;
-//   gap: 16px;
-//   padding: 16px;
-// }
-
-// .book {
-//   border: 1px solid #ccc;
-//   padding: 8px;
-//   width: 200px;
-// }
-
-// .book img {
-//   max-width: 100%;
-//   height: auto;
-// }
-
-// .buy-links a {
-//   display: inline-block;
-//   margin-right: 8px;
-//   padding: 4px;
-//   border: 1px solid #ccc;
-//   text-decoration: none;
-//   color: #000;
-// }
-// /* General styles for the container */
-// #render-books {
-//   display: flex;
-//   flex-direction: column;
-//   align-items: center;
-//   margin-top: 20px;
-// }
-
-// /* Each book card style */
-// .book {
-//   display: flex;
-//   flex-direction: column;
-//   align-items: center;
-//   width: 300px;
-//   padding: 20px;
-//   margin: 10px 0;
-//   box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-//   border-radius: 5px;
-//   background-color: #fff;
-// }
-
-// .book img {
-//   width: 100%; /* Make sure the image takes up the full width of the card, but respects its aspect ratio */
-//   border-radius: 5px;
-//   margin-bottom: 10px;
-// }
-
-// .book h3 {
-//   font-size: 20px;
-//   font-weight: bold;
-//   margin: 10px 0;
-// }
-
-// .book p {
-//   font-size: 14px;
-//   color: yellow;
-//   margin: 5px 0;
-// }
-
-// /* Buy Links */
-// .book a {
-//   font-size: 14px;
-//   color: #0066c0; /* Amazon blue */
-//   text-decoration: none;
-//   margin: 5px;
-//   transition: color 0.3s;
-// }
-
-// .book a:hover {
-//   color: #004080; /* Darker blue for hover effect */
-// }
-
-//-----------------------

@@ -6,7 +6,6 @@ const save = (key, value) => {
     console.error('Set state error: ', error.message);
   }
 };
-
 const load = key => {
   try {
     const data = localStorage.getItem(key);
@@ -15,7 +14,6 @@ const load = key => {
     console.error('Get state error: ', error.message);
   }
 };
-
 const remove = key => {
   try {
     localStorage.removeItem(key);
@@ -23,7 +21,6 @@ const remove = key => {
     console.error('Remove state error: ', error.message);
   }
 };
-
 export default {
   save,
   load,

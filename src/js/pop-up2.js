@@ -57,30 +57,28 @@ const removeFromLocalStorage = () => {
   toggleButtonsVisibility();
 };
 
-const createPopUp = async bookId => {
-  const bookData = await getBooksId(bookId);
-  currentBookData = bookData;
+const bookData = await getBooksId(bookId);
+currentBookData = bookData;
 
-  const storedBooks = JSON.parse(localStorage.getItem('books')) || [];
-  isBookAlreadyInShoppingList = storedBooks.some(book => book._id === bookData._id);
-  toggleButtonsVisibility();
+const storedBooks = JSON.parse(localStorage.getItem('books')) || [];
+isBookAlreadyInShoppingList = storedBooks.some(book => book._id === bookData._id);
+toggleButtonsVisibility();
 
-  bookCover.src = bookData.book_image;
-  bookAmazonLink.href = bookData.amazon_product_url;
-  const markup = `<h2 class="popup__title">${bookData.title}</h2>
+bookCover.src = bookData.book_image;
+bookAmazonLink.href = bookData.amazon_product_url;
+const markup = `<h2 class="popup__title">${bookData.title}</h2>
                 <p class="popup__author">${bookData.author}</p>
                 <p class="popup__text">${bookData.description}</p>`;
-  bookDescription.innerHTML = markup;
+bookDescription.innerHTML = markup;
 
-  const shopsBooks = bookData.buy_links
-    .slice(1)
-    .map(
-      link =>
-        `<li class="popup__shops-item"><a class="popup__shops-link" href="${link.url}" target="_blank">${link.name}</a></li>`,
-    )
-    .join('');
-  shopsList.innerHTML = shopsBooks;
-};
+const shopsBooks = bookData.buy_links
+  .slice(1)
+  .map(
+    link =>
+      `<li class="popup__shops-item"><a class="popup__shops-link" href="${link.url}" target="_blank">${link.name}</a></li>`,
+  )
+  .join('');
+shopsList.innerHTML = shopsBooks;
 
 const closePopUp = () => {
   backdrop.classList.add('popup-is-hidden');
