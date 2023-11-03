@@ -45,7 +45,7 @@ async function createPopUp(id) {
        <h2 class="popup__title">${title}</h2>
        <p class="popup__author">${author}</p>
        <p class="popup__text">${description}</p>
-       <div  class="modal-info__icons >
+       <div  class="modal-info__icons">
        <ul>
        <li>
        <a class="modal-info__link" href="${amazon.url}" target="_blank" crossorigin="anonymous"  rel="noopener noreferrer" aria-label="Amazon">
