@@ -22,6 +22,8 @@ const popUp = document.querySelector('.popup');
 const comment = document.querySelector('.popup__comment');
 const popupText = document.querySelector('.popup__text');
 const listBooks = document.querySelector('.books-container'); //*
+const selectedCatBooks = document.querySelector('.book-item__list');
+console.log(0, selectedCatBooks);
 const listBooksInCategories = document.querySelector('.home-typeBook'); //*
 const modalPopEl = document.querySelector('[data-modal]');
 async function createPopUp(id) {
@@ -45,15 +47,18 @@ async function createPopUp(id) {
        <h2 class="popup__title">${title}</h2>
        <p class="popup__author">${author}</p>
        <p class="popup__text">${description}</p>
-       <div  class="modal-info__icons">
+       <div class="modal-info__icons" >
        <ul>
        <li>
-       <a class="modal-info__link" href="${amazon.url}" target="_blank" crossorigin="anonymous"  rel="noopener noreferrer" aria-label="Amazon">
+       <a class="modal-info__link" href="${
+         amazon.url
+       }" target="_blank" crossorigin="anonymous"  rel="noopener noreferrer" aria-label="Amazon">
        <img srcset="${amazonImage1} 1x, ${amazonImage2} 2x" src="${amazonImage1}" alt="amazon" />
        </a>
        </li>
        <li>
-       <a class="modal-info__link" href="${apple.url
+       <a class="modal-info__link" href="${
+         apple.url
        }" target="_blank" crossorigin="anonymous"  rel="noopener noreferrer" aria-label="Apple-books">
        <img srcset="${appleImage1} 1x, ${appleImage2} 2x" src="${appleImage1}" alt="apple-books" />
        </a>
@@ -126,3 +131,4 @@ const openPopUp = e => {
 };
 listBooks.addEventListener('click', openPopUp);
 listBooksInCategories.addEventListener('click', openPopUp);
+selectedCatBooks?.addEventListener('click', openPopUp);

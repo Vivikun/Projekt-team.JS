@@ -66,8 +66,7 @@ function renderSelectedCategory(selectedCategoryData) {
     const selectedCategoryTitle = document.createElement('h1');
     selectedCategoryTitle.textContent = selectedCategoryData[0].list_name;
     selectedCategorySection.appendChild(selectedCategoryTitle);
-    const selectedBookList = document.createElement('ul');
-    selectedBookList.classList.add('book-item__list');
+    const selectedBookList = document.querySelector('.book-item__list');
     selectedCategorySection.appendChild(selectedBookList);
     selectedCategoryData.forEach(book => {
       const bookItem = document.createElement('li');
