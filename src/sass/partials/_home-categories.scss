@@ -126,15 +126,22 @@
     flex-direction: column;
     max-width: 356px;
   }
-  .dark-theme .category-item {
-    color: rgba(255, 255, 255, 0.6);
+  .dark-theme .category-item--all {
+    color: rgba(255, 255, 255, 0.60)
   }
+  .dark-theme .category-item {
+    color: rgba(255, 255, 255, 0.60)
+  }
+  .dark-theme .category-item--all:active,
+  .dark-theme .category-item--all:hover,
+  .dark-theme .category-item--all:focus,
   .dark-theme .category-item.active,
   .dark-theme .category-item:hover,
-  .dark-theme .category-item:focus {
+  .dark-theme .category-item:focus
+   {
     text-transform: uppercase;
     font-weight: 700;
-    color: #4F2EE8;
+    color: #EAC645;
     transform: scale(1);
   }
   @include mobile {
